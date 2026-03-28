@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Be_Vietnam_Pro:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#66002b",
+              "on-primary-fixed-variant": "#004e5f",
+              "on-secondary-container": "#e9c3ff",
+              "outline-variant": "#3c494e",
+              "secondary": "#e2b6ff",
+              "surface-container": "#201f21",
+              "secondary-container": "#8900d5",
+              "surface-container-low": "#1c1b1d",
+              "surface-container-high": "#2a2a2c",
+              "on-tertiary-fixed": "#3f0018",
+              "tertiary-container": "#ffacbe",
+              "on-secondary": "#4d007a",
+              "error-container": "#93000a",
+              "on-error-container": "#ffdad6",
+              "surface-container-lowest": "#0e0e10",
+              "on-surface": "#e5e1e4",
+              "on-secondary-fixed": "#2f004d",
+              "on-tertiary-container": "#a10048",
+              "on-surface-variant": "#bbc9cf",
+              "surface-dim": "#131315",
+              "inverse-surface": "#e5e1e4",
+              "primary-fixed-dim": "#3cd7ff",
+              "tertiary-fixed-dim": "#ffb1c2",
+              "surface": "#131315",
+              "background": "#131315",
+              "surface-tint": "#3cd7ff",
+              "error": "#ffb4ab",
+              "primary-container": "#00d4ff",
+              "inverse-primary": "#00677e",
+              "outline": "#859398",
+              "on-primary": "#003642",
+              "on-tertiary-fixed-variant": "#8f0040",
+              "on-background": "#e5e1e4",
+              "on-error": "#690005",
+              "on-primary-container": "#00586b",
+              "primary": "#a8e8ff",
+              "secondary-fixed-dim": "#e2b6ff",
+              "primary-fixed": "#b4ebff",
+              "surface-container-highest": "#353437",
+              "tertiary": "#ffd4dc",
+              "on-secondary-fixed-variant": "#6e00ab",
+              "inverse-on-surface": "#313032",
+              "surface-variant": "#353437",
+              "secondary-fixed": "#f3daff",
+              "tertiary-fixed": "#ffd9e0",
+              "on-primary-fixed": "#001f27",
+              "surface-bright": "#39393b"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+        }
+        .neon-text-glow {
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+        .glass-panel {
+            background: rgba(42, 42, 44, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-hidden">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full flex flex-col p-6 z-40 bg-[#1c1b1d] font-['Be_Vietnam_Pro'] text-sm font-medium w-64">
+<div class="text-xl font-black text-[#e5e1e4] mb-8">Sonic Pulse</div>
+<div class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-3 px-4 py-3 text-[#e5e1e4]/70 hover:bg-[#2a2a2c]/50 hover:text-[#e5e1e4] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#e5e1e4]/70 hover:bg-[#2a2a2c]/50 hover:text-[#e5e1e4] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span>Explore</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#00d4ff] bg-[#2a2a2c] rounded-lg shadow-[0_0_15px_rgba(0,212,255,0.15)] translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="library_music">library_music</span>
+<span>Library</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#e5e1e4]/70 hover:bg-[#2a2a2c]/50 hover:text-[#e5e1e4] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="add_box">add_box</span>
+<span>Create Playlist</span>
+</a>
+</div>
+<div class="flex flex-col gap-2 mt-auto pt-6 border-t border-outline-variant/10">
+<a class="flex items-center gap-3 px-4 py-3 text-[#e5e1e4]/70 hover:bg-[#2a2a2c]/50 hover:text-[#e5e1e4] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#e5e1e4]/70 hover:bg-[#2a2a2c]/50 hover:text-[#e5e1e4] transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Help</span>
+</a>
+<div class="mt-4 flex items-center gap-3 px-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="User profile avatar with premium badge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhvs5uzP_10qOwm612yqrJd-wtaWpIhky7ios8IEBb56yRAb_IScueZDRsizlVxlslRKNTk-cKW1Zb7yakXYVNVblMC_-fUeIY66UcWaHJn7uFh0B_FOpPJvlDuW7GLJfcF8heSPFr5JK7Zu6JR_jScOVp_2UcijYoCJrZcmEKG1ZK62_M7h0GZ-dTvJUOWiU2WXjhnZOALu8cP-2ec9ESmskXu1p-15ku5ck88CMyrYEEJkAOZm09NGuvc_rPuH1dNn8_cW7iylA"/>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-on-surface">Sonic User</span>
+<span class="text-[10px] text-[#00d4ff] uppercase tracking-wider font-black">Premium Member</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-64 flex flex-col h-screen relative bg-surface">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-8 py-4 h-16 sticky top-0 z-30 bg-[#131315] font-['Space_Grotesk'] tracking-tight">
+<div class="flex items-center gap-8">
+<h1 class="text-2xl font-bold tracking-tighter text-[#00d4ff]">Sonic Pulse</h1>
+<div class="hidden md:flex gap-6 items-center">
+<span class="text-[#e5e1e4]/60 hover:text-[#00d4ff] transition-colors duration-300 cursor-pointer">Music</span>
+<span class="text-[#e5e1e4]/60 hover:text-[#00d4ff] transition-colors duration-300 cursor-pointer">Podcasts</span>
+<span class="text-[#e5e1e4]/60 hover:text-[#00d4ff] transition-colors duration-300 cursor-pointer">Live</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="bg-surface-container-lowest border-none rounded-full py-2 pl-10 pr-4 text-sm w-64 focus:ring-2 focus:ring-primary-container transition-all outline-none" placeholder="Search tracks, artists..." type="text"/>
+</div>
+<button class="p-2 text-on-surface-variant hover:text-[#00d4ff] transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-[#00d4ff] transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Page Canvas -->
+<div class="flex-grow flex flex-col px-12 py-8 overflow-y-auto">
+<!-- Playlist Header -->
+<div class="flex items-end gap-8 mb-12">
+<div class="w-64 h-64 rounded-xl bg-gradient-to-br from-primary-container/20 to-secondary-container/20 flex items-center justify-center border border-outline-variant/10 shadow-2xl relative overflow-hidden group">
+<div class="absolute inset-0 bg-surface-container-lowest opacity-40"></div>
+<span class="material-symbols-outlined text-8xl text-primary/30 relative z-10" data-icon="favorite">favorite</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-headline font-bold text-sm tracking-[0.2em] text-primary uppercase">Playlist</span>
+<h2 class="font-headline text-7xl font-extrabold tracking-tighter text-on-surface mb-2">Favori Şarkılarım</h2>
+<div class="flex items-center gap-4 text-on-surface-variant font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="person">person</span> Sonic User</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>0 Şarkı</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>0 dk 0 sn</span>
+</div>
+</div>
+</div>
+<!-- Empty State -->
+<div class="flex-grow flex flex-col items-center justify-center py-20 bg-surface-container-low rounded-3xl border border-outline-variant/5">
+<div class="relative mb-8 group">
+<!-- Neon Glow Background -->
+<div class="absolute inset-0 bg-primary-container/20 blur-[60px] rounded-full group-hover:bg-secondary-container/30 transition-all duration-700"></div>
+<!-- Music Note Icon -->
+<div class="relative w-32 h-32 flex items-center justify-center bg-surface-container-high rounded-full border border-primary-container/30 shadow-[0_0_30px_rgba(0,212,255,0.1)]">
+<span class="material-symbols-outlined text-6xl text-primary-container neon-text-glow" data-icon="music_note">music_note</span>
+<!-- Decorative Floating Particles -->
+<span class="absolute -top-2 -right-2 material-symbols-outlined text-secondary text-xl opacity-40 animate-pulse" data-icon="auto_awesome">auto_awesome</span>
+<span class="absolute bottom-2 -left-4 material-symbols-outlined text-tertiary text-lg opacity-30" data-icon="add">add</span>
+</div>
+</div>
+<div class="text-center max-w-md">
+<h3 class="font-headline text-4xl font-black text-on-surface mb-4 tracking-tight">Bu playlist boş</h3>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed mb-10">
+                        Şarkı eklemek için aşağıdaki butonu kullanın. Favori ritimlerini keşfetmeye hemen başla.
+                    </p>
+<button class="group relative px-8 py-4 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold text-lg flex items-center gap-3 transition-all duration-300 hover:scale-105 active:scale-95 hover:shadow-[0_0_25px_rgba(0,212,255,0.4)]">
+<span class="material-symbols-outlined group-hover:rotate-90 transition-transform duration-500" data-icon="add">add</span>
+                        Şarkı Ekle
+                    </button>
+</div>
+</div>
+<!-- Contextual Suggestions Area (Subtle) -->
+<div class="mt-16">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-headline text-xl font-bold text-on-surface">Önerilen Şarkılar</h4>
+<button class="text-sm font-bold text-primary hover:underline">Tümünü Gör</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<!-- Glassy Suggestion Card 1 -->
+<div class="glass-panel p-4 rounded-xl flex items-center gap-4 hover:bg-surface-container-highest/80 transition-all cursor-pointer group">
+<div class="w-14 h-14 rounded-lg bg-surface-container-lowest overflow-hidden">
+<img alt="Album Cover" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Abstract vibrant sound waves album cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuPV7sQxFc3Pp-3WNfcw9tq9i7mxMKhXYn_LbYFjsFzHFOIs_nZf4eOtBX-wO8FUCvIljXEmzQDAuu9m6QqOG5U7N-TgJJkEwan5RBXvyb3dC_F5ZzsQs-CcbETNlFZVv3tdfKx0QeXFIT_t-k0mPCKXZeRIjj-YXyJrHRg6jVdTyzn0MwpPbUtC9lkBw5Mv1u0Kd29Frkqv0Ja5MKHMAGD9lsHglabMgYmpdwp3laqJosn2WuTGkZ2dYEKhqkjCvONu5CNw3IXjA"/>
+</div>
+<div class="flex-grow flex flex-col">
+<span class="font-bold text-on-surface line-clamp-1">Neon Nights</span>
+<span class="text-xs text-on-surface-variant">Synthwave Project</span>
+</div>
+<button class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="add">add</span>
+</button>
+</div>
+<!-- Glassy Suggestion Card 2 -->
+<div class="glass-panel p-4 rounded-xl flex items-center gap-4 hover:bg-surface-container-highest/80 transition-all cursor-pointer group">
+<div class="w-14 h-14 rounded-lg bg-surface-container-lowest overflow-hidden">
+<img alt="Album Cover" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Cyberpunk city lights music cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvw-JrDTnZ9bGtdCzYl1ZLEeNRDJOH20E5ez9RBFTMi9fKgGFqklQ9fQVHGmqcEe0O4dewA03YjaRItueeTGzTH3vcye3V0mnwWcMYQwMHlClFdueT6oZAe81isBGlHii0Bkszc49PxV-NV9_HTVTzjSgQpihc8QVpHyhwYNNmbc9_Pf-ijSZqbxIq4-3WHFCxZJLqkIL4b7ReYuTlgkOZNi3brw60lS9skNWy_Ln4OmRdvGRM7o1vjBYtXlWdMzwcxYzelfD-Z8Q"/>
+</div>
+<div class="flex-grow flex flex-col">
+<span class="font-bold text-on-surface line-clamp-1">Cyber Pulse</span>
+<span class="text-xs text-on-surface-variant">Digital Echo</span>
+</div>
+<button class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="add">add</span>
+</button>
+</div>
+<!-- Glassy Suggestion Card 3 -->
+<div class="glass-panel p-4 rounded-xl flex items-center gap-4 hover:bg-surface-container-highest/80 transition-all cursor-pointer group">
+<div class="w-14 h-14 rounded-lg bg-surface-container-lowest overflow-hidden">
+<img alt="Album Cover" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Neon concert stage lights background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8Hy3mCdsfNVcys2ZmJJrBi8D0tq1glPnj1xtjLRfaJJDq-UUFEItVr9CDKtzunn3SCUZmelUIYBh4g8uOeljn8vILNasf-jTK9-BY3LlNLg7AHGzHLzg5hlSxZtJIvsUgkqNNpvEpdqvQon14J9wuZ0Zk4o5-KRRKEZOrkvLjt-mX7Hgi7JC40KGIO_N4lA7plJWno7Hn-S-C0F8OheIPchfRelKMuV_PtrP0xqGoJJMWQSNpPSe17WAjYfHjWzwEQ8ECVlKuv7A"/>
+</div>
+<div class="flex-grow flex flex-col">
+<span class="font-bold text-on-surface line-clamp-1">Vibe Check</span>
+<span class="text-xs text-on-surface-variant">The Groove Collective</span>
+</div>
+<button class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Mini Player (Empty State) -->
+<div class="fixed bottom-0 left-64 right-0 h-24 bg-surface-container-highest/90 backdrop-blur-xl border-t border-outline-variant/10 px-8 flex items-center justify-between z-50">
+<div class="flex items-center gap-4 w-1/3">
+<div class="w-14 h-14 rounded bg-surface-container-low border border-outline-variant/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant/30" data-icon="music_note">music_note</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface/40 italic">Oynatılan şarkı yok</span>
+<span class="text-xs text-on-surface-variant/40">Bir şarkı seçin</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-2 w-1/3">
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant/40"><span class="material-symbols-outlined" data-icon="shuffle">shuffle</span></button>
+<button class="text-on-surface-variant/40"><span class="material-symbols-outlined" data-icon="skip_previous">skip_previous</span></button>
+<button class="w-10 h-10 rounded-full bg-on-surface/10 flex items-center justify-center text-on-surface/40">
+<span class="material-symbols-outlined fill" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button class="text-on-surface-variant/40"><span class="material-symbols-outlined" data-icon="skip_next">skip_next</span></button>
+<button class="text-on-surface-variant/40"><span class="material-symbols-outlined" data-icon="repeat">repeat</span></button>
+</div>
+<div class="w-full flex items-center gap-3">
+<span class="text-[10px] font-medium text-on-surface-variant/40">0:00</span>
+<div class="flex-grow h-1 bg-surface-variant rounded-full relative">
+<div class="absolute left-0 top-0 h-full w-0 bg-primary rounded-full"></div>
+</div>
+<span class="text-[10px] font-medium text-on-surface-variant/40">0:00</span>
+</div>
+</div>
+<div class="flex items-center justify-end gap-4 w-1/3">
+<button class="text-on-surface-variant/60 hover:text-primary transition-colors"><span class="material-symbols-outlined text-xl" data-icon="lyrics">lyrics</span></button>
+<button class="text-on-surface-variant/60 hover:text-primary transition-colors"><span class="material-symbols-outlined text-xl" data-icon="queue_music">queue_music</span></button>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant/60 text-xl" data-icon="volume_up">volume_up</span>
+<div class="w-24 h-1 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full w-2/3 bg-on-surface-variant/60"></div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

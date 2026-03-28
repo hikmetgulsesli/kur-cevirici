@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ReelForge Hesap Yönetim Merkezi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7c3bed",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#171121",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["DM Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'DM Sans', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-body">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-primary/20 px-10 py-4 bg-background-light dark:bg-background-dark sticky top-0 z-10">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6 flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">movie_edit</span>
+</div>
+<h2 class="font-display text-xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100">ReelForge</h2>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<button class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="bg-primary/20 bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-primary/30 cursor-pointer" data-alt="Kullanıcı profil fotoğrafı minyatürü" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2MqvKw3FVPSu_WE_PdrPgD1tNIs7MNwPe7W9QqgyljcacnI7Y36eUNeDehyqnLRVYEO4wCsROVfxunsyXS8aXPMg1LvBsH-9YeUA32aMP6D6n-CzZ1ibKuVa3SKojc9IQ2FeJvzpNo827MKMCdcRW3W_k_HRAAEJEmU9EcQ5v6h3Ucf1RpyKcMQUH4MAljgN4klSyRCNfNH6_km41Iym98uOO7BtflMfUPKam6cbD4c3k4-ZbH95pg1LLlMhLTVw1ad_si9gc");'></div>
+</div>
+</header>
+<main class="flex-1 w-full max-w-7xl mx-auto px-6 py-8 flex gap-8">
+<aside class="w-64 shrink-0 flex flex-col gap-6">
+<div class="flex flex-col px-2">
+<h1 class="font-display text-2xl font-bold leading-normal text-slate-900 dark:text-slate-100 mb-1">Hesap Yönetimi</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">Ayarlarınızı yönetin</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary text-white font-medium transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-sm">Profilim</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">security</span>
+<span class="text-sm font-medium">Güvenlik</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">code</span>
+<span class="text-sm font-medium">API Erişimi</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">link</span>
+<span class="text-sm font-medium">Bağlı Platformlar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">credit_card</span>
+<span class="text-sm font-medium">Ödeme Yöntemleri</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-sm font-medium">Bildirimler</span>
+</a>
+</nav>
+</aside>
+<section class="flex-1 flex flex-col gap-8">
+<div class="border-b border-primary/20 pb-6">
+<h2 class="font-display text-3xl font-bold leading-tight text-slate-900 dark:text-slate-100">Profilim</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-2">Genel profil bilgilerinizi güncelleyin ve özelleştirin.</p>
+</div>
+<div class="flex flex-col gap-10">
+<div class="flex flex-col sm:flex-row sm:items-center gap-6 p-6 rounded-xl bg-white dark:bg-background-dark border border-primary/10 dark:border-primary/20 shadow-sm">
+<div class="bg-primary/20 bg-center bg-no-repeat aspect-square bg-cover rounded-full w-28 h-28 ring-4 ring-primary/10" data-alt="Kullanıcı profil fotoğrafı büyük boy" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC2G-HEV0YEo_fZxHusf8M7Z197kxN_Xjpfo1luczUPSIBzZwMe0k6Erbrv0fX2t6HaQdE9tqcQ9rHm26elWauJwvBwCA3xPrIzfKiu5n5aU-eaPkZcHT8mlxPApxyyXrzPvQgI3yicJyi_kT3rYBjbQX7G67ghdq0XfKjQ6XR6QnkKgM0ulHijBigQb0_cCBFwNPmuteZjVKN_78XED9R2lr-l2gPhNspktX0CaCCQXTRWRl98eT0iYv-dRGM-863OwJSsWmMQ");'></div>
+<div class="flex flex-col gap-4 flex-1">
+<div>
+<h3 class="font-display text-xl font-bold text-slate-900 dark:text-slate-100">Profil Fotoğrafı</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">PNG veya JPG (Maksimum 5MB boyutunda)</p>
+</div>
+<div class="flex gap-3">
+<button class="px-5 py-2.5 rounded-lg bg-primary text-white text-sm font-medium hover:bg-primary/90 transition-colors">
+                                    Fotoğrafı Değiştir
+                                </button>
+<button class="px-5 py-2.5 rounded-lg border border-primary/30 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-primary/10 transition-colors">
+                                    Kaldır
+                                </button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-6 p-6 rounded-xl bg-white dark:bg-background-dark border border-primary/10 dark:border-primary/20 shadow-sm">
+<h3 class="font-display text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">Kişisel Bilgiler</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<label class="flex flex-col gap-2">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300">Görünen Ad</span>
+<input class="form-input rounded-lg border-primary/30 bg-transparent text-slate-900 dark:text-slate-100 focus:border-primary focus:ring-primary placeholder:text-slate-400 h-12 px-4" placeholder="Adınızı girin" type="text" value="Alex Yılmaz"/>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300">E-posta Adresi</span>
+<input class="form-input rounded-lg border-primary/30 bg-transparent text-slate-900 dark:text-slate-100 focus:border-primary focus:ring-primary placeholder:text-slate-400 h-12 px-4" placeholder="E-posta adresiniz" type="email" value="alex@reelforge.ai"/>
+</label>
+</div>
+<label class="flex flex-col gap-2">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300">Biyografi</span>
+<textarea class="form-textarea rounded-lg border-primary/30 bg-transparent text-slate-900 dark:text-slate-100 focus:border-primary focus:ring-primary placeholder:text-slate-400 px-4 py-3 min-h-[120px] resize-y" placeholder="Kendinizden bahsedin..."></textarea>
+<p class="text-xs text-slate-500 dark:text-slate-400 text-right">0 / 500 karakter</p>
+</label>
+</div>
+<div class="flex flex-col gap-6 p-6 rounded-xl bg-white dark:bg-background-dark border border-primary/10 dark:border-primary/20 shadow-sm">
+<div>
+<h3 class="font-display text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">Sosyal Medya Bağlantıları</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Videolarınızı doğrudan bu platformlara aktarmak için hesaplarınızı bağlayın.</p>
+</div>
+<div class="flex flex-col gap-4">
+<label class="flex flex-col gap-2">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+                                    YouTube Kanalı
+                                </span>
+<div class="relative flex items-center">
+<span class="absolute left-4 text-slate-400 text-sm">youtube.com/@</span>
+<input class="form-input rounded-lg border-primary/30 bg-transparent text-slate-900 dark:text-slate-100 focus:border-primary focus:ring-primary placeholder:text-slate-400 h-12 w-full pl-[115px] pr-4" placeholder="kullaniciadi" type="text"/>
+</div>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">music_video</span>
+                                    TikTok Profili
+                                </span>
+<div class="relative flex items-center">
+<span class="absolute left-4 text-slate-400 text-sm">tiktok.com/@</span>
+<input class="form-input rounded-lg border-primary/30 bg-transparent text-slate-900 dark:text-slate-100 focus:border-primary focus:ring-primary placeholder:text-slate-400 h-12 w-full pl-[100px] pr-4" placeholder="kullaniciadi" type="text"/>
+</div>
+</label>
+</div>
+</div>
+<div class="flex justify-end mt-4 mb-12">
+<button class="px-8 py-3.5 rounded-lg bg-primary text-white text-base font-bold hover:bg-primary/90 shadow-md shadow-primary/20 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                            Değişiklikleri Kaydet
+                        </button>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body></html>

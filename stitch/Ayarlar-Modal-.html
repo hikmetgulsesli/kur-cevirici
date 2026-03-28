@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Be+Vietnam+Pro:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-background": "#e5e1e4",
+                        "surface-dim": "#131315",
+                        "on-tertiary-fixed": "#3f0018",
+                        "on-surface-variant": "#bbc9cf",
+                        "secondary-container": "#8900d5",
+                        "tertiary": "#ffd4dc",
+                        "primary-fixed": "#b4ebff",
+                        "surface": "#131315",
+                        "inverse-surface": "#e5e1e4",
+                        "tertiary-fixed-dim": "#ffb1c2",
+                        "secondary-fixed": "#f3daff",
+                        "on-tertiary-container": "#a10048",
+                        "primary": "#a8e8ff",
+                        "on-secondary-fixed-variant": "#6e00ab",
+                        "on-primary": "#003642",
+                        "on-error": "#690005",
+                        "on-primary-container": "#00586b",
+                        "on-tertiary-fixed-variant": "#8f0040",
+                        "surface-container-low": "#1c1b1d",
+                        "inverse-on-surface": "#313032",
+                        "tertiary-fixed": "#ffd9e0",
+                        "surface-container-lowest": "#0e0e10",
+                        "secondary-fixed-dim": "#e2b6ff",
+                        "surface-bright": "#39393b",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#ffacbe",
+                        "on-secondary-container": "#e9c3ff",
+                        "outline-variant": "#3c494e",
+                        "inverse-primary": "#00677e",
+                        "surface-container-highest": "#353437",
+                        "surface-variant": "#353437",
+                        "primary-fixed-dim": "#3cd7ff",
+                        "on-secondary-fixed": "#2f004d",
+                        "secondary": "#e2b6ff",
+                        "surface-container-high": "#2a2a2c",
+                        "on-tertiary": "#66002b",
+                        "surface-tint": "#3cd7ff",
+                        "primary-container": "#00d4ff",
+                        "outline": "#859398",
+                        "on-surface": "#e5e1e4",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#001f27",
+                        "surface-container": "#201f21",
+                        "on-secondary": "#4d007a",
+                        "error": "#ffb4ab",
+                        "background": "#131315",
+                        "on-primary-fixed-variant": "#004e5f"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+        }
+        .custom-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #a8e8ff;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(168, 232, 255, 0.8);
+        }
+        .glass-panel {
+            background: rgba(42, 42, 44, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex items-center justify-center p-4">
+<!-- TopAppBar Structure Mockup (Suppressed as requested for focused task but respecting context) -->
+<nav class="bg-[#131315] text-[#e5e1e4]/60 font-['Space_Grotesk'] tracking-tighter text-2xl uppercase flex justify-between items-center px-8 h-20 w-full z-50 fixed top-0 shadow-[0_0_20px_rgba(0,212,255,0.15)]">
+<div class="text-[#e5e1e4] font-bold tracking-tighter">Sonic Pulse</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-[#00d4ff] cursor-pointer">settings</span>
+<span class="material-symbols-outlined hover:text-[#00d4ff] transition-colors cursor-pointer">close</span>
+</div>
+</nav>
+<!-- Main Content Canvas (Settings Modal) -->
+<main class="w-full max-w-2xl mt-24 mb-24">
+<div class="glass-panel rounded-xl border border-outline-variant/15 shadow-2xl overflow-hidden flex flex-col">
+<!-- Modal Header -->
+<header class="p-8 flex justify-between items-center border-b border-outline-variant/10">
+<h1 class="font-headline text-3xl font-bold tracking-tight uppercase text-on-surface">Ayarlar</h1>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-bright transition-colors active:scale-95">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</header>
+<!-- Modal Body -->
+<div class="p-8 space-y-12">
+<!-- Section 1: Ses Ayarları -->
+<section class="space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">volume_up</span>
+<h2 class="font-headline text-xl font-semibold tracking-tight">Ses Ayarları</h2>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg space-y-4">
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-medium uppercase tracking-widest text-on-surface-variant">Ses Seviyesi</span>
+<span class="font-headline font-bold text-primary">70%</span>
+</div>
+<input class="w-full h-1.5 bg-surface-variant rounded-lg appearance-none cursor-pointer custom-range" max="100" min="0" type="range" value="70"/>
+<div class="flex justify-between text-[10px] uppercase tracking-tighter text-on-surface-variant/50">
+<span>Sessiz</span>
+<span>Maksimum</span>
+</div>
+</div>
+</section>
+<!-- Section 2: Tema -->
+<section class="space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">palette</span>
+<h2 class="font-headline text-xl font-semibold tracking-tight">Tema</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+<!-- Electric Blue (Selected) -->
+<button class="flex flex-col items-center gap-3 p-4 rounded-lg bg-surface-container-high border-2 border-primary/50 neon-glow-primary transition-all active:scale-95">
+<div class="w-8 h-8 rounded-full bg-[#00d4ff] shadow-[0_0_12px_#00d4ff]"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary text-center">Electric Blue</span>
+</button>
+<!-- Neon Purple -->
+<button class="flex flex-col items-center gap-3 p-4 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all active:scale-95">
+<div class="w-8 h-8 rounded-full bg-[#8900d5]"></div>
+<span class="text-[10px] font-medium uppercase tracking-widest text-on-surface-variant text-center">Neon Purple</span>
+</button>
+<!-- Neon Pink -->
+<button class="flex flex-col items-center gap-3 p-4 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all active:scale-95">
+<div class="w-8 h-8 rounded-full bg-[#ffb1c2]"></div>
+<span class="text-[10px] font-medium uppercase tracking-widest text-on-surface-variant text-center">Neon Pink</span>
+</button>
+<!-- Neon Green -->
+<button class="flex flex-col items-center gap-3 p-4 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all active:scale-95">
+<div class="w-8 h-8 rounded-full bg-[#00ff9d]"></div>
+<span class="text-[10px] font-medium uppercase tracking-widest text-on-surface-variant text-center">Neon Green</span>
+</button>
+<!-- Neon Yellow -->
+<button class="flex flex-col items-center gap-3 p-4 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all active:scale-95">
+<div class="w-8 h-8 rounded-full bg-[#fff000]"></div>
+<span class="text-[10px] font-medium uppercase tracking-widest text-on-surface-variant text-center">Neon Yellow</span>
+</button>
+</div>
+</section>
+<!-- Section 3: Veri Yönetimi -->
+<section class="space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">database</span>
+<h2 class="font-headline text-xl font-semibold tracking-tight text-on-surface">Veri Yönetimi</h2>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg flex flex-col md:flex-row justify-between items-center gap-4 border border-error/10">
+<div class="text-center md:text-left">
+<h3 class="font-bold text-on-surface">Uygulama Önbelleği</h3>
+<p class="text-sm text-on-surface-variant">Yerel verileri ve tercihleri temizleyerek uygulamayı sıfırlayın.</p>
+</div>
+<button class="px-6 py-3 bg-error-container text-on-error-container rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-red-600 transition-colors active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">delete_forever</span>
+                            LocalStorage temizle
+                        </button>
+</div>
+</section>
+</div>
+<!-- Modal Footer -->
+<footer class="p-8 bg-surface-container-highest flex flex-col md:flex-row gap-4 justify-end items-center">
+<button class="w-full md:w-auto px-10 py-4 bg-surface-container-low text-on-surface border border-outline-variant/20 rounded-lg font-headline font-bold uppercase tracking-widest hover:bg-surface-bright transition-all active:scale-95">
+                    İptal
+                </button>
+<button class="w-full md:w-auto px-12 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-lg font-headline font-black uppercase tracking-widest shadow-[0_0_20px_rgba(0,212,255,0.3)] hover:shadow-[0_0_30px_rgba(0,212,255,0.5)] transition-all active:scale-95">
+                    Kaydet
+                </button>
+</footer>
+</div>
+</main>
+<!-- SideNavBar Mockup (Suppressed but logic applied) -->
+<aside class="hidden md:flex flex-col py-8 px-4 h-full w-64 left-0 fixed bg-[#1c1b1d] space-y-4 font-['Be_Vietnam_Pro'] text-sm font-medium">
+<div class="text-[#00d4ff] font-black px-4 mb-8">SONIC PULSE</div>
+<div class="space-y-2">
+<div class="flex items-center gap-4 px-4 py-3 text-[#e5e1e4]/40 hover:bg-[#2a2a2c] hover:text-[#e5e1e4] rounded-lg transition-all cursor-pointer">
+<span class="material-symbols-outlined">library_music</span> Library
+            </div>
+<div class="flex items-center gap-4 px-4 py-3 text-[#e5e1e4]/40 hover:bg-[#2a2a2c] hover:text-[#e5e1e4] rounded-lg transition-all cursor-pointer">
+<span class="material-symbols-outlined">explore</span> Discover
+            </div>
+<div class="flex items-center gap-4 px-4 py-3 text-[#e5e1e4]/40 hover:bg-[#2a2a2c] hover:text-[#e5e1e4] rounded-lg transition-all cursor-pointer">
+<span class="material-symbols-outlined">radio</span> Radio
+            </div>
+<div class="flex items-center gap-4 px-4 py-3 text-[#00d4ff] font-bold border-r-2 border-[#00d4ff] bg-[#2a2a2c] rounded-l-lg transition-all cursor-pointer">
+<span class="material-symbols-outlined">settings</span> Settings
+            </div>
+</div>
+<div class="mt-auto p-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Neon user portrait with glitch effects" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmQylKmTgtdiw9DfjTXH5Y6P1SizDmqJtRtSq25IVH5c6yAh0jqpECcqSjX9RjlFfJiOAkmiwSBE0CKUUlTHH0KyhaDas08kewNyLlJMOrrCxlUwAozEMpT1CP8rncilJj53xEZnOWwzAdYMuZcW50De1h7buITNwYhXydsh3FVoSvCJj2znw5CgJIbe_tVY4kxwZy5u6-i3T3aXxMx2jWt3iF1WIY4vunpTOp-oufrvQNVbZKvuzB8KklYRxMdWIBwdcC7cFMyIw"/>
+</div>
+<div>
+<div class="text-xs font-bold text-on-surface">Neon Listener</div>
+<div class="text-[10px] text-primary/70 uppercase">Premium Tier</div>
+</div>
+</div>
+</aside>
+<!-- BottomNavBar Structure (Visible on mobile) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-safe bg-[#131315]/80 backdrop-blur-xl h-24 border-t border-[#e5e1e4]/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+<div class="flex flex-col items-center text-[#e5e1e4]/50 hover:text-[#00d4ff] transition-all">
+<span class="material-symbols-outlined">play_circle</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-widest mt-1">Player</span>
+</div>
+<div class="flex flex-col items-center text-[#e5e1e4]/50 hover:text-[#00d4ff] transition-all">
+<span class="material-symbols-outlined">queue_music</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-widest mt-1">Queue</span>
+</div>
+<div class="flex flex-col items-center text-[#e5e1e4]/50 hover:text-[#00d4ff] transition-all">
+<span class="material-symbols-outlined">notes</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-widest mt-1">Lyrics</span>
+</div>
+<div class="flex flex-col items-center text-[#e5e1e4]/50 hover:text-[#00d4ff] transition-all">
+<span class="material-symbols-outlined">devices</span>
+<span class="font-['Be_Vietnam_Pro'] text-[10px] uppercase tracking-widest mt-1">Devices</span>
+</div>
+</div>
+</body></html>

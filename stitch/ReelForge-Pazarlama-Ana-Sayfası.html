@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ReelForge - Yüzünüzü Göstermeden Viral Videolar Oluşturun</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7c3bed",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#171121",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#231a33",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#463366",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 sm:px-8 md:px-16 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1 w-full">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-4 sm:px-10 py-3 mb-8">
+<div class="flex items-center gap-4">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">ReelForge</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#features">Özellikler</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#how-it-works">Nasıl Çalışır</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#pricing">Fiyatlandırma</a>
+<a class="text-sm font-medium leading-normal hover:text-primary transition-colors" href="#faq">SSS</a>
+</div>
+<div class="flex gap-2">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark hover:bg-border-light dark:hover:bg-border-dark transition-colors text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Giriş Yap</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white hover:bg-primary/90 transition-colors text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Ücretsiz Başlayın</span>
+</button>
+</div>
+</div>
+<div class="md:hidden flex items-center">
+<span class="material-symbols-outlined cursor-pointer">menu</span>
+</div>
+</header>
+<!-- Hero Section -->
+<div class="@container">
+<div class="flex flex-col gap-6 px-4 py-10 @[864px]:flex-row-reverse items-center">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl @[480px]:min-w-[400px] @[864px]:w-1/2 relative overflow-hidden shadow-2xl shadow-primary/20 border border-border-light dark:border-border-dark" data-alt="Abstract vibrant digital art creation" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBavlJrVeW6NBzTQzZhZdAdN4G2mb1GEqOM9wGD6FwZMBifLezftunyX8sJpAosr5FS6wXH8s41BkH9GfBhWzwpoQejVWHUhXS9XfWKOxmSlL5LYe9Elen4QX4-roFix1O0Qe5E30OTidQ7JO0kuQSUO1vQi0lDuWDNii7pRhpzl47Xy9G2jlh5nTUW7sfokaKC4fYGeeO23in9RBSgsvyJQqrToGT1gR66xjlOi2n1sggezSyR38ExFwd4Mc_qbZ08HLE4N0BF");'>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent flex items-end p-6">
+<div class="flex items-center gap-3">
+<button class="flex shrink-0 items-center justify-center rounded-full size-12 bg-primary text-white hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">play_arrow</span>
+</button>
+<div>
+<p class="text-white font-bold text-sm">Platformu İzle</p>
+<p class="text-white/80 text-xs">2 dk video</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-6 @[480px]:min-w-[400px] @[864px]:w-1/2 @[864px]:justify-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary w-fit text-sm font-medium border border-primary/20">
+<span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+                                Yapay Zeka Destekli Video Üretimi
+                            </div>
+<div class="flex flex-col gap-4 text-left">
+<h1 class="text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[864px]:text-6xl text-slate-900 dark:text-white">
+                                    Yüzünüzü Göstermeden Viral Videolar Oluşturun
+                                </h1>
+<h2 class="text-base font-normal leading-relaxed text-slate-600 dark:text-slate-300 @[480px]:text-lg max-w-[600px]">
+                                    Yapay zeka destekli senaryo ve görsel oluşturma ile saniyeler içinde TikTok, Instagram Reels ve YouTube Shorts için izlenme rekorları kıran videolar üretin.
+                                </h2>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 mt-2">
+<button class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-all shadow-lg shadow-primary/30">
+<span class="truncate">Ücretsiz Başlayın</span>
+</button>
+<button class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark text-slate-900 dark:text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-border-light dark:hover:bg-border-dark transition-all">
+<span class="truncate">Nasıl Çalışır?</span>
+</button>
+</div>
+<div class="flex items-center gap-4 mt-4">
+<div class="flex -space-x-2">
+<img alt="Kullanıcı avatarı" class="w-8 h-8 rounded-full border-2 border-background-light dark:border-background-dark" data-alt="Small user profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJLpJuBlI8GDXmpzK-CCuPf2ZYO50NSbM99g2R3lM5xde_Fvh9D19scXhhooGTfDTONeljs_U8jp3tfDw_T89KoHBIQQAc--Tti17BXEztU43ZxMXSusdaJ7lTleV-IwAPu5TtDDxpPdI2qb81uVExnbz8hoZQiO2DafaJ5YlGnZlIt1mqs-rXVWBZCvut46tTVM5h3d6KK42VJZknFzNYaQ50xmO564wgpYNKRZkijox8DfZjxpIiAo_I95uxKMzRNNAH5voi"/>
+<img alt="Kullanıcı avatarı" class="w-8 h-8 rounded-full border-2 border-background-light dark:border-background-dark" data-alt="Small user profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpjM_PV_P43RLnm1yrriITXd2eaWB_c6SwWr8GeGos6UlZ663lZNwKA3uApMWy1A5kHeYLUGMSYddnDTx85hqOL29daV-eW2uc04wwZxdztaCfXKFF_4KrdPcQGXmX_hyyXbLIACx34kj_DgKeGqVyNjRjfdNOtFAetddGJYaziwEQpzYolRZ4qBTpYzMGfxk19FTgWk31bhVvN-VirSy-OCz8uipOt5qHrSRWZ3RQhVKQriuLWHyVAuApZ-P5iqTiWlB6XOBx"/>
+<img alt="Kullanıcı avatarı" class="w-8 h-8 rounded-full border-2 border-background-light dark:border-background-dark" data-alt="Small user profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-tDoZx0YY9eK61aUrJcODfgQm3PF9Dg1vrG4FG8Z-9kYCEUjRrpVDg9UZoE184KHdimiaVka8bGv_KlZjQO2asIzKvyKw2Llk6dICHPCoWbWMm3fNFrP5R7qzmxcGWAw17leNisL4VjX_Ga2CZhnweHZPyGTCFJQKHRDAoZ440U31-5QjUp3kX7sRHThDgisI4NWwOgyy57IM1pbxGt9GDXFCbsl878gcFNajTKNAkxr4KYbqQmqBIh6GhwICf0fO9NX18FMe"/>
+<div class="w-8 h-8 rounded-full border-2 border-background-light dark:border-background-dark bg-surface-dark flex items-center justify-center text-[10px] font-bold text-white">+2K</div>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">2,000+ içerik üreticisi kullanıyor</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Features Section -->
+<div class="flex flex-col gap-10 px-4 py-20 @container mt-10" id="features">
+<div class="flex flex-col gap-4 items-center text-center">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-2 border border-primary/20">Özellikler</div>
+<h1 class="text-[32px] font-bold leading-tight @[480px]:text-4xl max-w-[720px] text-slate-900 dark:text-white">
+                            Video Üretimini Otomatikleştirin
+                        </h1>
+<p class="text-base font-normal leading-normal max-w-[600px] text-slate-600 dark:text-slate-300">
+                            İçerik üretim sürecinizin her adımını yapay zeka ile hızlandırın ve kolaylaştırın. Fikir aşamasından paylaşıma kadar her şey tek platformda.
+                        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+<!-- Feature 1 -->
+<div class="flex flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark p-6 hover:border-primary/50 transition-colors shadow-sm">
+<div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-2xl">edit_document</span>
+</div>
+<div class="flex flex-col gap-2">
+<h2 class="text-xl font-bold leading-tight text-slate-900 dark:text-white">Yapay Zeka Senaryo</h2>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-normal leading-relaxed">
+                                    Sadece bir konu girin, yapay zekamız saniyeler içinde kancası (hook) güçlü, viral olmaya aday ve ilgi çekici video senaryoları oluştursun.
+                                </p>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="flex flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark p-6 hover:border-primary/50 transition-colors shadow-sm">
+<div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-2xl">palette</span>
+</div>
+<div class="flex flex-col gap-2">
+<h2 class="text-xl font-bold leading-tight text-slate-900 dark:text-white">Görsel Stiller</h2>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-normal leading-relaxed">
+                                    Markanıza veya hikayenize uygun onlarca farklı görsel stil arasından seçim yapın. Anime, gerçekçi, suluboya veya 3D stiller ile videolarınızı özelleştirin.
+                                </p>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="flex flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark p-6 hover:border-primary/50 transition-colors shadow-sm">
+<div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-2xl">share</span>
+</div>
+<div class="flex flex-col gap-2">
+<h2 class="text-xl font-bold leading-tight text-slate-900 dark:text-white">Otomatik Paylaşım</h2>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-normal leading-relaxed">
+                                    Hazırlanan videoları indirmeden doğrudan TikTok, Instagram Reels ve YouTube Shorts hesaplarınıza gönderin veya ileri bir tarihe planlayın.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Pricing Section -->
+<div class="flex flex-col gap-10 px-4 py-20 mt-10" id="pricing">
+<div class="flex flex-col gap-4 items-center text-center">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-2 border border-primary/20">Fiyatlandırma</div>
+<h1 class="text-[32px] font-bold leading-tight @[480px]:text-4xl text-slate-900 dark:text-white">
+                            Her İhtiyaca Uygun Planlar
+                        </h1>
+<p class="text-base font-normal leading-normal max-w-[600px] text-slate-600 dark:text-slate-300">
+                            Aylık veya yıllık planlardan size en uygun olanı seçin. İstediğiniz zaman iptal edebilirsiniz.
+                        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8 max-w-[1000px] mx-auto w-full">
+<!-- Starter Plan -->
+<div class="flex flex-col p-6 rounded-xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Başlangıç</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-3xl font-black text-slate-900 dark:text-white">$0</span>
+<span class="text-sm text-slate-500 dark:text-slate-400">/ay</span>
+</div>
+<ul class="flex flex-col gap-3 mb-8 flex-1">
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    Ayda 5 video
+                                </li>
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    Standart görsel kalitesi
+                                </li>
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    ReelForge filigranı
+                                </li>
+</ul>
+<button class="w-full h-10 rounded-lg bg-border-light dark:bg-border-dark text-slate-900 dark:text-white font-bold text-sm hover:bg-border-light/80 dark:hover:bg-border-dark/80 transition-colors">
+                                Hemen Başla
+                            </button>
+</div>
+<!-- Creator Plan -->
+<div class="flex flex-col p-6 rounded-xl border-2 border-primary bg-surface-light dark:bg-surface-dark relative transform md:-translate-y-4 shadow-xl shadow-primary/20">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold tracking-wide">
+                                EN POPÜLER
+                            </div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 mt-2">Üretici</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-3xl font-black text-slate-900 dark:text-white">$29</span>
+<span class="text-sm text-slate-500 dark:text-slate-400">/ay</span>
+</div>
+<ul class="flex flex-col gap-3 mb-8 flex-1">
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    Ayda 30 video
+                                </li>
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    Yüksek çözünürlük (1080p)
+                                </li>
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    Filigransız çıktı
+                                </li>
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    Otomatik paylaşım (1 hesap)
+                                </li>
+</ul>
+<button class="w-full h-10 rounded-lg bg-primary text-white font-bold text-sm hover:bg-primary/90 transition-colors">
+                                Planı Seç
+                            </button>
+</div>
+<!-- Pro Plan -->
+<div class="flex flex-col p-6 rounded-xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Pro</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-3xl font-black text-slate-900 dark:text-white">$79</span>
+<span class="text-sm text-slate-500 dark:text-slate-400">/ay</span>
+</div>
+<ul class="flex flex-col gap-3 mb-8 flex-1">
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    Ayda 100 video
+                                </li>
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    Ultra HD çözünürlük (4K)
+                                </li>
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    Özel ses klonlama
+                                </li>
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    Sınırsız hesap paylaşımı
+                                </li>
+</ul>
+<button class="w-full h-10 rounded-lg bg-border-light dark:bg-border-dark text-slate-900 dark:text-white font-bold text-sm hover:bg-border-light/80 dark:hover:bg-border-dark/80 transition-colors">
+                                Planı Seç
+                            </button>
+</div>
+<!-- Enterprise Plan -->
+<div class="flex flex-col p-6 rounded-xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Kurumsal</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-3xl font-black text-slate-900 dark:text-white">Özel</span>
+</div>
+<ul class="flex flex-col gap-3 mb-8 flex-1">
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    Sınırsız video
+                                </li>
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    API erişimi
+                                </li>
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    Özel yapay zeka modelleri
+                                </li>
+<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                    7/24 öncelikli destek
+                                </li>
+</ul>
+<button class="w-full h-10 rounded-lg bg-border-light dark:bg-border-dark text-slate-900 dark:text-white font-bold text-sm hover:bg-border-light/80 dark:hover:bg-border-dark/80 transition-colors">
+                                İletişime Geç
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

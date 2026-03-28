@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#b4ebff",
+            "primary": "#a8e8ff",
+            "outline": "#859398",
+            "tertiary-fixed-dim": "#ffb1c2",
+            "secondary-fixed-dim": "#e2b6ff",
+            "secondary-fixed": "#f3daff",
+            "on-error-container": "#ffdad6",
+            "surface-variant": "#353437",
+            "surface-tint": "#3cd7ff",
+            "on-surface-variant": "#bbc9cf",
+            "surface-container-low": "#1c1b1d",
+            "secondary-container": "#8900d5",
+            "on-primary-fixed-variant": "#004e5f",
+            "background": "#131315",
+            "on-secondary-fixed": "#2f004d",
+            "tertiary": "#ffd4dc",
+            "surface-container-lowest": "#0e0e10",
+            "on-secondary-container": "#e9c3ff",
+            "on-secondary": "#4d007a",
+            "error-container": "#93000a",
+            "tertiary-container": "#ffacbe",
+            "tertiary-fixed": "#ffd9e0",
+            "on-tertiary-container": "#a10048",
+            "error": "#ffb4ab",
+            "surface-container-high": "#2a2a2c",
+            "on-surface": "#e5e1e4",
+            "surface": "#131315",
+            "primary-container": "#00d4ff",
+            "on-primary-fixed": "#001f27",
+            "on-background": "#e5e1e4",
+            "surface-container-highest": "#353437",
+            "on-tertiary-fixed-variant": "#8f0040",
+            "primary-fixed-dim": "#3cd7ff",
+            "on-primary": "#003642",
+            "on-tertiary-fixed": "#3f0018",
+            "surface-dim": "#131315",
+            "on-secondary-fixed-variant": "#6e00ab",
+            "on-error": "#690005",
+            "on-tertiary": "#66002b",
+            "surface-bright": "#39393b",
+            "inverse-surface": "#e5e1e4",
+            "surface-container": "#201f21",
+            "inverse-primary": "#00677e",
+            "secondary": "#e2b6ff",
+            "inverse-on-surface": "#313032",
+            "outline-variant": "#3c494e",
+            "on-primary-container": "#00586b"
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk"],
+            "body": ["Be Vietnam Pro"],
+            "label": ["Space Grotesk"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .neon-glow-tertiary {
+      box-shadow: 0 0 20px rgba(255, 172, 190, 0.3);
+    }
+    .neon-text-tertiary {
+      text-shadow: 0 0 12px rgba(255, 172, 190, 0.6);
+    }
+    .glass-panel {
+      backdrop-filter: blur(20px);
+      background: rgba(42, 42, 44, 0.6);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-tertiary/30">
+<!-- Navigation Suppressed for Focused Error Screen as per Hierarchy -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#1c1b1d] shadow-[0_0_20px_rgba(0,212,255,0.15)]">
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold text-[#e5e1e4] font-['Space_Grotesk'] tracking-tighter uppercase">Sonic Pulse</span>
+</div>
+<div class="flex items-center">
+<button class="text-[#e5e1e4]/60 hover:text-[#00d4ff] transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+</header>
+<main class="min-h-screen flex items-center justify-center px-6 pt-16 pb-24">
+<!-- Center Content Bento Grid / Asymmetric Layout -->
+<div class="max-w-4xl w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+<!-- Left Decoration / Visual Anchor -->
+<div class="hidden md:flex md:col-span-5 flex-col items-center justify-center">
+<div class="relative group">
+<!-- Atmospheric Glow Background -->
+<div class="absolute inset-0 bg-tertiary/20 blur-[80px] rounded-full scale-150 group-hover:bg-tertiary/30 transition-all duration-700"></div>
+<div class="relative z-10 flex flex-col items-center">
+<span class="material-symbols-outlined text-[160px] text-tertiary-container neon-text-tertiary" data-icon="warning" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div class="mt-8 font-headline text-5xl font-bold text-on-surface/10 select-none tracking-widest uppercase">ERROR 500</div>
+</div>
+</div>
+</div>
+<!-- Right Content / Messaging -->
+<div class="md:col-span-7 flex flex-col items-center md:items-start text-center md:text-left space-y-8">
+<div class="space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-error-container/20 text-error border border-error/20 font-label text-xs tracking-wider uppercase">
+<span class="material-symbols-outlined text-sm" data-icon="sync_problem">sync_problem</span>
+            Sistem Kesintisi
+          </div>
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-on-surface leading-[0.9]">
+            Bir hata <span class="text-tertiary">oluştu</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-md font-body leading-relaxed">
+            LocalStorage dolu veya şarkı yüklenemedi. Lütfen tekrar deneyin veya ayarlarınızı kontrol edin.
+          </p>
+</div>
+<!-- Action Matrix -->
+<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+<button class="px-10 py-4 rounded-full bg-gradient-to-br from-tertiary to-tertiary-container text-on-tertiary font-headline font-bold text-lg flex items-center justify-center gap-3 transition-all duration-300 cubic-bezier(0.22,1,0.36,1) hover:scale-105 active:scale-95 neon-glow-tertiary">
+<span class="material-symbols-outlined" data-icon="refresh">refresh</span>
+            Tekrar Dene
+          </button>
+<button class="px-10 py-4 rounded-full border border-outline-variant hover:border-primary/50 text-on-surface font-headline font-bold text-lg flex items-center justify-center gap-3 transition-all duration-300 hover:bg-surface-container-high active:scale-95">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+            Ayarlara Git
+          </button>
+</div>
+<!-- System Status Detail / Secondary Data -->
+<div class="w-full max-w-sm pt-8">
+<div class="flex flex-col gap-3 p-4 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<div class="flex justify-between items-center text-xs font-label text-on-surface-variant uppercase tracking-widest">
+<span>Hata Kodu</span>
+<span class="text-tertiary">SP_STORAGE_04</span>
+</div>
+<div class="h-[1px] w-full bg-outline-variant/20"></div>
+<div class="flex justify-between items-center text-xs font-label text-on-surface-variant uppercase tracking-widest">
+<span>Sunucu Durumu</span>
+<span class="text-primary">Çalışıyor</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Only Header / Redundant if Top Bar is Fixed but good for layout structure -->
+<div class="md:hidden fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2">
+<div class="w-12 h-[2px] bg-tertiary/20"></div>
+<div class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_rgba(255,172,190,0.8)]"></div>
+<div class="w-12 h-[2px] bg-tertiary/20"></div>
+</div>
+<!-- Ambient pulse effect behind everything -->
+<div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+<div class="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-primary/5 blur-[120px] rounded-full"></div>
+<div class="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] bg-secondary/5 blur-[120px] rounded-full"></div>
+</div>
+</body></html>

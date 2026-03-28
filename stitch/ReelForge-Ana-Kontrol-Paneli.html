@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ReelForge Ana Kontrol Paneli</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&amp;family=DM+Sans:opsz,wght@9..40,400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7a55f7",
+                        "secondary": "#22d3ee",
+                        "background-light": "#f6f5f8",
+                        "background-dark": "#141022",
+                        "surface-dark": "#1e1831",
+                        "surface-hover": "#2b2249",
+                        "text-light": "#e2e8f0",
+                        "text-muted": "#9e90cb"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["DM Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-text-light font-body antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col lg:flex-row overflow-x-hidden">
+<!-- Sidebar -->
+<div class="flex flex-col w-full lg:w-64 border-r border-surface-hover bg-surface-dark flex-shrink-0">
+<div class="flex h-full min-h-[700px] flex-col justify-between p-4">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-gradient-to-tr from-primary to-secondary aspect-square rounded-xl flex items-center justify-center size-10">
+<span class="material-symbols-outlined text-white font-bold text-2xl">movie_filter</span>
+</div>
+<h1 class="text-white text-xl font-display font-bold leading-normal">ReelForge</h1>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/20 text-primary font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">home</span>
+<span class="text-sm">Ana Panel</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-surface-hover hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-white">movie</span>
+<span class="text-sm font-medium">Projeler</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-surface-hover hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-white">folder</span>
+<span class="text-sm font-medium">Kütüphane</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-surface-hover hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-white">bar_chart</span>
+<span class="text-sm font-medium">Analizler</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-surface-hover hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-white">settings</span>
+<span class="text-sm font-medium">Ayarlar</span>
+</a>
+</div>
+</div>
+<div class="mt-8">
+<div class="rounded-xl bg-surface-hover p-4 border border-white/5">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-secondary">diamond</span>
+<p class="text-white text-sm font-medium">Pro Plan</p>
+</div>
+<p class="text-text-muted text-xs mb-4">Gelişmiş AI özellikleri ve daha hızlı render süreleri.</p>
+<button class="w-full py-2 bg-primary hover:bg-primary/90 text-white rounded-lg text-sm font-medium transition-colors">Planı Yükselt</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex flex-col flex-1 min-w-0 bg-background-dark">
+<!-- Header -->
+<header class="flex items-center justify-between border-b border-surface-hover px-6 py-4 bg-background-dark/80 backdrop-blur-md sticky top-0 z-10">
+<div class="flex items-center gap-4">
+<h2 class="text-white text-2xl font-display font-bold hidden sm:block">Ana Kontrol Paneli</h2>
+</div>
+<div class="flex items-center gap-4 sm:gap-6 flex-1 justify-end">
+<div class="relative hidden md:block max-w-md w-full">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-text-muted text-lg">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 border border-surface-hover rounded-xl leading-5 bg-surface-dark text-text-light placeholder-text-muted focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary sm:text-sm transition-colors" placeholder="Proje veya video ara..." type="text"/>
+</div>
+<button class="relative p-2 rounded-full text-text-muted hover:bg-surface-hover hover:text-white transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 block h-2 w-2 rounded-full bg-secondary ring-2 ring-background-dark"></span>
+</button>
+<button class="flex items-center gap-2 rounded-full p-1 hover:bg-surface-hover transition-colors">
+<img alt="User Profile" class="h-9 w-9 rounded-full object-cover border border-surface-hover" data-alt="Portrait of a user" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGRKqD5l-6FC3njaSHjZkeg4SoBMxmoYvtC2b54EyzD8AmmNMikZCqdr4ZxTN06mTcTgh_A3En6v5V7UxaMGj8VJklY8xlhMfM3ram2-iqAiM-zA-EztSgQLP0P7thZs7orblzogfubVrL8hckSO-wHCde3sOuxV7IPI7PlSSrslxsOJ0TR4JPO8_XecwHOfSrCh-HY0eFvyuhsb3S6IKMuzejYrIJXDqg0HZy6a_OBT5CIpakVYJ1qqTIf0p-mW8OVqu45Qp8"/>
+</button>
+</div>
+</header>
+<!-- Dashboard Content -->
+<main class="flex-1 overflow-y-auto p-6 space-y-8">
+<!-- Top Section: Credits & Quick Actions -->
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+<!-- Credit Balance Widget -->
+<div class="col-span-1 bg-surface-dark rounded-2xl p-6 border border-surface-hover flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-text-muted/50 text-4xl">toll</span>
+</div>
+<h3 class="text-text-muted text-sm font-medium mb-4 self-start">Kredi Bakiyesi</h3>
+<div class="relative flex items-center justify-center size-32 mb-2">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-hover" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="62.8" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-3xl font-display font-bold text-white">450</span>
+</div>
+</div>
+<p class="text-xs text-text-muted mt-2">Bu ay %75 kullanıldı</p>
+</div>
+<!-- Quick Actions -->
+<div class="col-span-1 lg:col-span-3 grid grid-cols-2 md:grid-cols-4 gap-4">
+<button class="flex flex-col items-center justify-center gap-3 bg-primary/10 hover:bg-primary/20 border border-primary/20 rounded-2xl p-6 transition-all group">
+<div class="size-12 rounded-full bg-primary/20 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">add_box</span>
+</div>
+<span class="text-white text-sm font-medium">Yeni Video</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-3 bg-surface-dark hover:bg-surface-hover border border-surface-hover rounded-2xl p-6 transition-all group">
+<div class="size-12 rounded-full bg-surface-hover text-secondary flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">video_library</span>
+</div>
+<span class="text-white text-sm font-medium">Kütüphaneye Göz At</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-3 bg-surface-dark hover:bg-surface-hover border border-surface-hover rounded-2xl p-6 transition-all group">
+<div class="size-12 rounded-full bg-surface-hover text-text-muted flex items-center justify-center group-hover:text-white group-hover:scale-110 transition-all">
+<span class="material-symbols-outlined text-2xl">analytics</span>
+</div>
+<span class="text-text-muted group-hover:text-white text-sm font-medium transition-colors">Analizleri Görüntüle</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-3 bg-surface-dark hover:bg-surface-hover border border-surface-hover rounded-2xl p-6 transition-all group">
+<div class="size-12 rounded-full bg-surface-hover text-text-muted flex items-center justify-center group-hover:text-white group-hover:scale-110 transition-all">
+<span class="material-symbols-outlined text-2xl">shopping_cart</span>
+</div>
+<span class="text-text-muted group-hover:text-white text-sm font-medium transition-colors">Kredi Satın Al</span>
+</button>
+</div>
+</div>
+<!-- Stats Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-dark rounded-xl p-5 border border-surface-hover flex items-center justify-between">
+<div>
+<p class="text-text-muted text-sm mb-1">Toplam Video</p>
+<h4 class="text-white text-2xl font-display font-bold">128</h4>
+</div>
+<div class="size-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined">movie</span>
+</div>
+</div>
+<div class="bg-surface-dark rounded-xl p-5 border border-surface-hover flex items-center justify-between">
+<div>
+<p class="text-text-muted text-sm mb-1">Bu Haftaki Renderlar</p>
+<h4 class="text-white text-2xl font-display font-bold">14</h4>
+</div>
+<div class="size-10 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined">memory</span>
+</div>
+</div>
+<div class="bg-surface-dark rounded-xl p-5 border border-surface-hover flex items-center justify-between">
+<div>
+<p class="text-text-muted text-sm mb-1">Favori Stil</p>
+<h4 class="text-white text-lg font-display font-bold">Cyberpunk 2077</h4>
+</div>
+<div class="size-10 rounded-lg bg-fuchsia-500/10 text-fuchsia-400 flex items-center justify-center">
+<span class="material-symbols-outlined">brush</span>
+</div>
+</div>
+</div>
+<!-- Recent Activity -->
+<div>
+<h3 class="text-white text-lg font-display font-bold mb-4">Son Aktiviteler</h3>
+<div class="bg-surface-dark rounded-2xl border border-surface-hover overflow-hidden">
+<div class="divide-y divide-surface-hover">
+<!-- Activity Item 1 -->
+<div class="p-4 flex items-center gap-4 hover:bg-surface-hover/50 transition-colors">
+<div class="relative size-16 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Abstract render" class="w-full h-full object-cover" data-alt="Abstract colorful fluid rendering" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB71ZJ97sB7OGRGprERF3EGxxbkaXtHQKm2OhjZFCVlOwx6wYAF8cAS4fycQutTzNv0n0d3VS93bDNWCqmnCvImUX8AoDoYmV-wJISZWtsbUjbGs-CKZtKT9z5VtluQ4bw5gJEf755B15AtcAtp3Ww_zm7uRm3t1zkFv6xo5VQYgFrgUJNaXsj2cH5FikoYGF9fABXFsF71W1ZeJm5Gko3jMsD2XePLeb27EGQT6IO_g2ilWQOWSwtlHvuAnrjv0MsE1Gjyg1uA"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">play_circle</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-white text-sm font-medium truncate">Neon Nights Promo Video</h4>
+<p class="text-text-muted text-xs flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                        Render Tamamlandı
+                                    </p>
+</div>
+<div class="text-right">
+<p class="text-text-muted text-xs">2 saat önce</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-primary/20 text-primary mt-1">-15 Kredi</span>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="p-4 flex items-center gap-4 hover:bg-surface-hover/50 transition-colors">
+<div class="size-16 rounded-lg bg-surface-hover border border-white/5 flex items-center justify-center flex-shrink-0 text-secondary">
+<span class="material-symbols-outlined text-3xl">upload_file</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-white text-sm font-medium truncate">Raw_Footage_04.mp4</h4>
+<p class="text-text-muted text-xs flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[14px]">cloud_upload</span>
+                                        Kütüphaneye Yüklendi
+                                    </p>
+</div>
+<div class="text-right">
+<p class="text-text-muted text-xs">5 saat önce</p>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="p-4 flex items-center gap-4 hover:bg-surface-hover/50 transition-colors">
+<div class="relative size-16 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Cyberpunk render" class="w-full h-full object-cover" data-alt="Cyberpunk styled character render" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnoJhdIEw1oG8iyUKuRjA3jIcEn3Rqtuukv39GC9nLivP_OAxZ6VkjJUfOTdEJgHIylwDscVbKJRTlz-sl7EnnEDbjzb1pA5DsNqh6d4UjlXFsHrPTYEdJAZnHVbdfqZwyozZ6U6BEFZYVutb4G8_BjUdlNQDqW1SphayA3c1R9FjfdkcMo4EnuhlPBB6GwGwgrhHcbuhpLiMahXEE2-fEwZOVkx9na1LZsQg7Vo2GKVO4ttK7Qata1Oa504on_agpJZkIzSfE"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-white text-sm font-medium truncate">Character Avatar Generation</h4>
+<p class="text-text-muted text-xs flex items-center gap-2 mt-1 text-secondary">
+<span class="material-symbols-outlined text-[14px] animate-spin">sync</span>
+                                        İşleniyor (85%)
+                                    </p>
+</div>
+<div class="text-right">
+<p class="text-text-muted text-xs">Şimdi</p>
+</div>
+</div>
+</div>
+<div class="p-3 border-t border-surface-hover text-center">
+<button class="text-sm text-primary hover:text-primary/80 font-medium transition-colors">Tümünü Gör</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>
