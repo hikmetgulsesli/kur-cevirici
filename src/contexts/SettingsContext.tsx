@@ -44,37 +44,29 @@ export function SettingsProvider({ children }: SettingsProviderProps) {
   const [settings, setSettings] = useState<SettingsState>(loadSettings);
 
   useEffect(() => {
-    // Apply theme to html element
+    saveSettings(settings);
+  }, [settings]);
+
+  useEffect(() => {
     const root = document.documentElement;
+    root.classList.remove('dark', 'light');
     if (settings.theme === 'dark') {
       root.classList.add('dark');
     } else {
-      root.classList.remove('dark');
+      root.classList.add('light');
     }
   }, [settings.theme]);
 
   const setTheme = (theme: Theme) => {
-    setSettings(prev => {
-      const next = { ...prev, theme };
-      saveSettings(next);
-      return next;
-    });
+    setSettings(prev => ({ ...prev, theme }));
   };
 
   const setDefaultSourceCurrency = (currency: string) => {
-    setSettings(prev => {
-      const next = { ...prev, defaultSourceCurrency: currency };
-      saveSettings(next);
-      return next;
-    });
+    setSettings(prev => ({ ...prev, defaultSourceCurrency: currency }));
   };
 
   const setDefaultTargetCurrency = (currency: string) => {
-    setSettings(prev => {
-      const next = { ...prev, defaultTargetCurrency: currency };
-      saveSettings(next);
-      return next;
-    });
+    setSettings(prev => ({ ...prev, defaultTargetCurrency: currency }));
   };
 
   return (

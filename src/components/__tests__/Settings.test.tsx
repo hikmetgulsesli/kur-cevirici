@@ -43,6 +43,7 @@ describe('SettingsModal', () => {
   beforeEach(() => {
     localStorageMock.clear();
     vi.clearAllMocks();
+    document.documentElement.className = '';
   });
 
   afterEach(() => {
@@ -234,6 +235,7 @@ describe('SettingsContext', () => {
   beforeEach(() => {
     localStorageMock.clear();
     vi.clearAllMocks();
+    document.documentElement.className = '';
   });
 
   afterEach(() => {

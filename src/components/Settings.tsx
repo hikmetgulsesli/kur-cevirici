@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent } from 'react';
+import { useState, type ChangeEvent, type MouseEvent } from 'react';
 import { useSettings } from '../contexts/SettingsContext';
 import type { Theme } from '../types';
 import './Settings.css';
@@ -53,7 +53,7 @@ function ModalContent({ settings, onSave, onCancel }: ModalContentProps) {
           onClick={onCancel}
           aria-label="Kapat"
         >
-          <span className="material-symbols-outlined" style={{ fontSize: '1.5rem' }}>close</span>
+          <span className="material-symbols-outlined">close</span>
         </button>
       </header>
 
@@ -61,7 +61,7 @@ function ModalContent({ settings, onSave, onCancel }: ModalContentProps) {
         {/* Tema Section */}
         <section className="settings-section">
           <div className="settings-section-header">
-            <span className="material-symbols-outlined settings-section-icon" style={{ fontVariationSettings: "'FILL' 1" }}>palette</span>
+            <span className="material-symbols-outlined settings-section-icon">palette</span>
             <h3 className="settings-section-title">Tema</h3>
           </div>
           <div className="settings-section-content">
@@ -91,7 +91,7 @@ function ModalContent({ settings, onSave, onCancel }: ModalContentProps) {
         {/* Varsayilan Birimler Section */}
         <section className="settings-section">
           <div className="settings-section-header">
-            <span className="material-symbols-outlined settings-section-icon" style={{ fontVariationSettings: "'FILL' 1" }}>currency_exchange</span>
+            <span className="material-symbols-outlined settings-section-icon">currency_exchange</span>
             <h3 className="settings-section-title">Varsayilan Birimler</h3>
           </div>
           <div className="settings-section-content">
@@ -108,7 +108,7 @@ function ModalContent({ settings, onSave, onCancel }: ModalContentProps) {
                 ))}
               </select>
             </div>
-            <div className="select-container" style={{ marginTop: '0.75rem' }}>
+            <div className="select-container">
               <label className="select-label" htmlFor="target-currency">Varsayilan hedef birim</label>
               <select
                 id="target-currency"
@@ -147,7 +147,7 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
     onClose();
   };
 
-  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleOverlayClick = (e: MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       onClose();
     }
