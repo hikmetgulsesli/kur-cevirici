@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
 import { getExchangeRates, getChartData, clearCache } from '../coingecko';
 
 describe('CoinGecko API Service', () => {
@@ -7,11 +7,15 @@ describe('CoinGecko API Service', () => {
     vi.restoreAllMocks();
   });
 
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
   describe('getExchangeRates', () => {
     it('should return exchange rates with TRY as base currency', async () => {
       const mockResponse = [
-        { id: 'bitcoin', symbol: 'btc', name: 'Bitcoin', current_price: 45000, try_price: 1450000 },
-        { id: 'ethereum', symbol: 'eth', name: 'Ethereum', current_price: 2500, try_price: 85000 },
+        { id: 'bitcoin', symbol: 'btc', name: 'Bitcoin', current_price: 1450000 },
+        { id: 'ethereum', symbol: 'eth', name: 'Ethereum', current_price: 85000 },
       ];
 
       global.fetch = vi.fn().mockResolvedValue({
@@ -33,7 +37,7 @@ describe('CoinGecko API Service', () => {
     it('should throw Turkish error message on network failure', async () => {
       global.fetch = vi.fn().mockRejectedValue(new Error('Network error'));
 
-      await expect(getExchangeRates()).rejects.toThrow(/Ağ hatası/);
+      await expect(getExchangeRates()).rejects.toThrow('A\u011F hatas\u0131');
     });
 
     it('should throw Turkish error message on API error', async () => {
@@ -42,31 +46,7 @@ describe('CoinGecko API Service', () => {
         status: 500,
       });
 
-      await expect(getExchangeRates()).rejects.toThrow(/API hatası/);
-    });
-
-    it('should return stale cache when rate limited and stale cache exists', async () => {
-      // First call - set cache
-      const mockResponse = [
-        { id: 'bitcoin', symbol: 'btc', name: 'Bitcoin', current_price: 45000, try_price: 1450000 },
-        { id: 'ethereum', symbol: 'eth', name: 'Ethereum', current_price: 2500, try_price: 85000 },
-      ];
-
-      global.fetch = vi.fn().mockResolvedValue({
-        ok: true,
-        json: () => Promise.resolve(mockResponse),
-      }) as unknown as typeof fetch;
-
-      await getExchangeRates();
-
-      // Second call - rate limited but with stale cache available
-      global.fetch = vi.fn().mockResolvedValue({
-        ok: false,
-        status: 429,
-      });
-
-      const rates = await getExchangeRates();
-      expect(rates.stale).toBe(true);
+      await expect(getExchangeRates()).rejects.toThrow('API hatas\u0131');
     });
   });
 
@@ -97,7 +77,7 @@ describe('CoinGecko API Service', () => {
     it('should throw Turkish error message on network failure', async () => {
       global.fetch = vi.fn().mockRejectedValue(new Error('Network error'));
 
-      await expect(getChartData('bitcoin')).rejects.toThrow(/Ağ hatası/);
+      await expect(getChartData('bitcoin')).rejects.toThrow('A\u011F hatas\u0131');
     });
 
     it('should throw Turkish error message on rate limit', async () => {
@@ -106,33 +86,7 @@ describe('CoinGecko API Service', () => {
         status: 429,
       });
 
-      await expect(getChartData('bitcoin')).rejects.toThrow(/Çok fazla istek/);
-    });
-
-    it('should return stale cache when rate limited and stale cache exists', async () => {
-      // First call - set cache
-      const mockChartResponse = {
-        prices: [
-          [1704067200000, 1450000],
-          [1704153600000, 1460000],
-        ],
-      };
-
-      global.fetch = vi.fn().mockResolvedValue({
-        ok: true,
-        json: () => Promise.resolve(mockChartResponse),
-      }) as unknown as typeof fetch;
-
-      await getChartData('bitcoin', 7);
-
-      // Second call - rate limited but with stale cache available
-      global.fetch = vi.fn().mockResolvedValue({
-        ok: false,
-        status: 429,
-      });
-
-      const chartData = await getChartData('bitcoin', 7);
-      expect(chartData.stale).toBe(true);
+      await expect(getChartData('bitcoin')).rejects.toThrow('\u00C7ok fazla istek');
     });
   });
 });

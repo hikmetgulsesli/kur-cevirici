@@ -1,7 +1,6 @@
-import type { ExchangeRate, ChartData, ChartDataPoint } from '../types';
+import type { ExchangeRate, ChartData, ChartDataPoint, CoinGeckoMarketCoin, CoinGeckoChartResponse } from '../types';
 
 const CACHE_DURATION_MS = 5 * 60 * 1000;
-void (CACHE_DURATION_MS); // Used by comment as cache configuration value
 
 // In-memory cache
 const cache = new Map<string, { data: unknown; timestamp: number }>();
@@ -12,28 +11,15 @@ const COINGECKO_API = 'https://api.coingecko.com/api/v3';
 // Supported currencies
 const SUPPORTED_CURRENCIES = ['btc', 'eth', 'usd', 'eur', 'gbp', 'try'];
 
-// CoinGecko API response types
-interface CoinGeckoMarketCoin {
-  id: string;
-  symbol: string;
-  name: string;
-  current_price: number;
-  try_price: number;
-}
-
-interface CoinGeckoChartResponse {
-  prices: [number, number][];
-}
-
-interface ForexPriceResponse {
-  [key: string]: { try?: number };
-}
-
 /**
- * Helper to check if cache exists
+ * Helper to get valid (non-expired) cache entry
  */
-function hasCache(key: string): boolean {
-  return cache.has(key);
+function getValidCache<T>(key: string): T | null {
+  const cachedItem = cache.get(key);
+  if (cachedItem && Date.now() - cachedItem.timestamp < CACHE_DURATION_MS) {
+    return cachedItem.data as T;
+  }
+  return null;
 }
 
 function setCache<T>(key: string, data: T): void {
@@ -46,6 +32,12 @@ function setCache<T>(key: string, data: T): void {
  */
 export async function getExchangeRates(): Promise<ExchangeRate> {
   const cacheKey = 'exchangeRates';
+
+  // Check valid cache first
+  const cached = getValidCache<ExchangeRate>(cacheKey);
+  if (cached) {
+    return cached;
+  }
 
   try {
     const ids = ['bitcoin', 'ethereum'];
@@ -78,7 +70,7 @@ export async function getExchangeRates(): Promise<ExchangeRate> {
     // Create a map of coin id to price
     const priceMap = new Map<string, number>();
     for (const coin of data) {
-      priceMap.set(coin.id, coin.try_price);
+      priceMap.set(coin.id, coin.current_price);
     }
 
     // Build exchange rate object with TRY as base
@@ -92,33 +84,28 @@ export async function getExchangeRates(): Promise<ExchangeRate> {
       timestamp: Date.now(),
     };
 
-    // Fetch USD, EUR, GBP rates against TRY
+    // Fetch USD, EUR, GBP rates against TRY using stablecoin proxies
     try {
-      const forexUrl = `${COINGECKO_API}/simple/price?vs_currencies=try&ids=usd,euro,gbp`;
+      // Use stablecoin proxies for fiat currencies: usd-coin (USD), euro-coin (EUR), poundtoken (GBP)
+      const forexUrl = `${COINGECKO_API}/simple/price?vs_currencies=try&ids=usd-coin,euro-coin,poundtoken`;
       const forexResponse = await fetch(forexUrl);
 
       if (forexResponse.ok) {
-        const forexData = await forexResponse.json() as ForexPriceResponse;
-        exchangeRates.usd = forexData.usd?.try || 0;
-        exchangeRates.eur = forexData.eur?.try || 0;
-        exchangeRates.gbp = forexData.gbp?.try || 0;
+        const forexData = await forexResponse.json() as Record<string, { try?: number }>;
+        exchangeRates.usd = forexData['usd-coin']?.try || 0;
+        exchangeRates.eur = forexData['euro-coin']?.try || 0;
+        exchangeRates.gbp = forexData['poundtoken']?.try || 0;
       }
     } catch {
       // If forex fetch fails, use fallback values
-      // These will be updated on next successful fetch
     }
 
     setCache(cacheKey, exchangeRates);
     return exchangeRates;
   } catch (error) {
-    // Network error - return stale cache if available
-    if (hasCache(cacheKey)) {
-      return {
-        ...(cache.get(cacheKey)!.data as ExchangeRate),
-        stale: true,
-      };
+    if (error instanceof Error && error.message.includes('Çok fazla')) {
+      throw error;
     }
-
     if (error instanceof Error) {
       const err = new Error(`Ağ hatası: ${error.message}`);
       err.cause = error;
@@ -137,6 +124,12 @@ export async function getExchangeRates(): Promise<ExchangeRate> {
  */
 export async function getChartData(coinId: string, days: number = 7): Promise<ChartData> {
   const cacheKey = `chart_${coinId}_${days}`;
+
+  // Check valid cache first
+  const cached = getValidCache<ChartData>(cacheKey);
+  if (cached) {
+    return cached;
+  }
 
   try {
     const url = `${COINGECKO_API}/coins/${coinId}/market_chart?vs_currency=try&days=${days}&precision=6`;
@@ -179,14 +172,9 @@ export async function getChartData(coinId: string, days: number = 7): Promise<Ch
     setCache(cacheKey, chartData);
     return chartData;
   } catch (error) {
-    // Network error - return stale cache if available
-    if (hasCache(cacheKey)) {
-      return {
-        ...(cache.get(cacheKey)!.data as ChartData),
-        stale: true,
-      };
+    if (error instanceof Error && error.message.includes('Çok fazla')) {
+      throw error;
     }
-
     if (error instanceof Error) {
       const err = new Error(`Ağ hatası: ${error.message}`);
       err.cause = error;
