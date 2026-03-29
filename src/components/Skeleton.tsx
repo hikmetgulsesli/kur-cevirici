@@ -30,10 +30,11 @@ export function ConverterSkeleton({ className }: ConverterSkeletonProps) {
 
 interface CurrencyListSkeletonProps {
   className?: string;
+  count?: number;
 }
 
-export function CurrencyListSkeleton({ className }: CurrencyListSkeletonProps) {
-  const items = [1, 2, 3, 4, 5, 6];
+export function CurrencyListSkeleton({ className, count = 6 }: CurrencyListSkeletonProps) {
+  const items = Array.from({ length: count }, (_, i) => i);
 
   return (
     <div className={`currency-list-skeleton ${className || ''}`} role="status" aria-label="Kur listesi yükleniyor">

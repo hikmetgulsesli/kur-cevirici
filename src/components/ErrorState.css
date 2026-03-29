@@ -42,7 +42,7 @@
   font-weight: 600;
   color: var(--on-primary-container);
   cursor: pointer;
-  transition: all 150ms ease-out;
+  transition: background-color 150ms ease-out, color 150ms ease-out, transform 150ms ease-out;
 }
 
 .error-retry-btn:hover {

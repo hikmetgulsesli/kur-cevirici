@@ -20,6 +20,12 @@
   border-radius: var(--radius-md);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}
+
 /* Converter Skeleton */
 .converter-skeleton {
   display: flex;
@@ -39,7 +45,7 @@
 .skeleton-select-label {
   width: 60px;
   height: 12px;
-  background: var(--surface-container-high);
+  background-color: var(--surface-container-high);
   border-radius: var(--radius-sm);
 }
 

@@ -34,7 +34,7 @@ describe('CurrencyListSkeleton', () => {
     expect(screen.getByRole('status', { name: 'Kur listesi yükleniyor' })).toBeInTheDocument();
   });
 
-  it('should render 6 animated shimmer rows', () => {
+  it('should render 6 animated shimmer rows by default', () => {
     const { container } = render(<CurrencyListSkeleton />);
     const skeletonItems = container.querySelectorAll('.currency-skeleton-item');
     expect(skeletonItems.length).toBe(6);
@@ -47,11 +47,17 @@ describe('CurrencyListSkeleton', () => {
     expect(container.querySelector('.skeleton-refresh-btn')).toBeInTheDocument();
   });
 
-  it('should render skeleton elements with animation class', () => {
+  it('should render skeleton elements with shimmer class', () => {
     const { container } = render(<CurrencyListSkeleton />);
     const skeletons = container.querySelectorAll('.skeleton');
     skeletons.forEach((skeleton: Element) => {
       expect(skeleton.classList.contains('skeleton')).toBe(true);
     });
+  });
+
+  it('should accept custom count prop', () => {
+    const { container } = render(<CurrencyListSkeleton count={3} />);
+    const skeletonItems = container.querySelectorAll('.currency-skeleton-item');
+    expect(skeletonItems.length).toBe(3);
   });
 });
