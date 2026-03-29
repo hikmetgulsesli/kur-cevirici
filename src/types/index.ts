@@ -35,9 +35,3 @@ export interface CoinGeckoMarketCoin {
 export interface CoinGeckoChartResponse {
   prices: [number, number][];
 }
-
-// Cache entry type
-export interface CacheEntry<T> {
-  data: T;
-  timestamp: number;
-}
