@@ -30,7 +30,6 @@ export interface CoinGeckoMarketCoin {
   symbol: string;
   name: string;
   current_price: number;
-  try_price: number;
 }
 
 export interface CoinGeckoChartResponse {
