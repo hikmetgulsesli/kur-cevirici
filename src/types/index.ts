@@ -53,3 +53,11 @@ export interface SettingsContextType {
   setDefaultSourceCurrency: (currency: string) => void;
   setDefaultTargetCurrency: (currency: string) => void;
 }
+
+// Currency context type
+export interface CurrencyContextType {
+  rates: ExchangeRate | null;
+  loading: boolean;
+  error: string | null;
+  refetch: () => void;
+}
