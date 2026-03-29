@@ -30,14 +30,9 @@ export interface CoinGeckoMarketCoin {
   symbol: string;
   name: string;
   current_price: number;
+  try_price: number;
 }
 
 export interface CoinGeckoChartResponse {
   prices: [number, number][];
-}
-
-// Cache entry type
-export interface CacheEntry<T> {
-  data: T;
-  timestamp: number;
 }
