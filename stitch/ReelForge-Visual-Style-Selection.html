@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ReelForge - Visual Style Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e21d48",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211115",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-8 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col w-full max-w-[1200px] flex-1">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-primary/10 px-6 lg:px-10 py-4 mb-6">
+<div class="flex items-center gap-4 text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined text-primary text-3xl">movie_edit</span>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">ReelForge</h2>
+</div>
+<div class="flex items-center justify-end gap-6">
+<button class="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors">
+<span class="material-symbols-outlined">help</span> Help
+                            </button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAtIlV4qKX_TxyHFa8gqapZmuW2ClX2-LVQ0RAPyPdWIl4RBtzbOAkXkvk6z2qe4HaEu-E8f5bkczbl2Wf3PNGbGNn8FRRZS39WincRp9BEgtT7fkrIj5nJyNi5cCBvHniAR2NEdWuoHE-fLXrKLwXbyZoIX1z1uIYwXSehHmCBExJw6gc8o8D5z_NDGMKrle1o1o20qKFJiQZ5wPmVsIgwlxFOlDWCjUtCCsoUUuGO8O6iA-HV0Apb8xDD-Awku0Dh8zG-jcOE");'></div>
+</div>
+</header>
+<!-- Progress Stepper -->
+<div class="flex flex-col gap-3 p-4 px-6 lg:px-10">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-base font-semibold text-slate-700 dark:text-slate-300">Step 2 of 7</p>
+<span class="text-sm font-medium text-primary">28% Completed</span>
+</div>
+<div class="rounded-full bg-primary/10 h-2.5 overflow-hidden">
+<div class="h-full rounded-full bg-primary transition-all duration-500" style="width: 28%;"></div>
+</div>
+<div class="flex justify-between mt-1">
+<span class="text-xs text-slate-500 dark:text-slate-400">Project Details</span>
+<span class="text-xs font-bold text-primary">Visual Style</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Audio/Voice</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Generate</span>
+</div>
+</div>
+<!-- Main Content Title -->
+<div class="flex flex-col gap-3 p-4 px-6 lg:px-10 mt-4 mb-6">
+<h1 class="text-3xl md:text-4xl font-bold leading-tight">Choose Visual Style</h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg">Select the artistic direction for your AI video. This will define the overall look and feel of the generated frames.</p>
+</div>
+<!-- Style Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 p-4 px-6 lg:px-10 mb-10">
+<!-- Card 1: Anime (Selected) -->
+<div class="flex flex-col gap-3 pb-3 group cursor-pointer relative rounded-xl border-2 border-primary bg-primary/5 p-3 transition-all hover:shadow-md">
+<div class="absolute top-4 right-4 z-10 bg-primary rounded-full size-6 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div class="w-full aspect-video rounded-lg overflow-hidden relative border border-primary/20">
+<div class="absolute inset-0 bg-gradient-to-tr from-pink-500 to-rose-300 opacity-80" data-alt="Anime pink gradient thumbnail"></div>
+</div>
+<div class="flex items-start justify-between mt-1">
+<div>
+<p class="text-base font-bold text-primary">Anime</p>
+<p class="text-sm text-slate-600 dark:text-slate-400">Vibrant Japanese animation style</p>
+</div>
+</div>
+</div>
+<!-- Card 2: Cinematic -->
+<div class="flex flex-col gap-3 pb-3 group cursor-pointer rounded-xl border-2 border-transparent bg-white dark:bg-slate-800 p-3 shadow-sm hover:border-primary/40 hover:shadow-md transition-all">
+<div class="w-full aspect-video rounded-lg overflow-hidden relative bg-slate-100 dark:bg-slate-700">
+<div class="absolute inset-0 bg-gradient-to-br from-blue-900 to-slate-900 opacity-90" data-alt="Cinematic dark blue thumbnail"></div>
+</div>
+<div class="flex items-start justify-between mt-1">
+<div>
+<p class="text-base font-semibold group-hover:text-primary transition-colors">Cinematic</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Dramatic lighting &amp; depth of field</p>
+</div>
+</div>
+</div>
+<!-- Card 3: Comic Book -->
+<div class="flex flex-col gap-3 pb-3 group cursor-pointer rounded-xl border-2 border-transparent bg-white dark:bg-slate-800 p-3 shadow-sm hover:border-primary/40 hover:shadow-md transition-all">
+<div class="w-full aspect-video rounded-lg overflow-hidden relative bg-slate-100 dark:bg-slate-700">
+<div class="absolute inset-0 bg-gradient-to-tr from-yellow-400 via-red-500 to-blue-500 opacity-80 mix-blend-multiply" data-alt="Comic Book pop art colors thumbnail"></div>
+</div>
+<div class="flex items-start justify-between mt-1">
+<div>
+<p class="text-base font-semibold group-hover:text-primary transition-colors">Comic Book</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Bold outlines and pop-art colors</p>
+</div>
+</div>
+</div>
+<!-- Card 4: Realistic -->
+<div class="flex flex-col gap-3 pb-3 group cursor-pointer rounded-xl border-2 border-transparent bg-white dark:bg-slate-800 p-3 shadow-sm hover:border-primary/40 hover:shadow-md transition-all">
+<div class="w-full aspect-video rounded-lg overflow-hidden relative bg-slate-100 dark:bg-slate-700">
+<div class="absolute inset-0 bg-gradient-to-br from-stone-400 to-amber-700 opacity-70" data-alt="Realistic natural tones thumbnail"></div>
+</div>
+<div class="flex items-start justify-between mt-1">
+<div>
+<p class="text-base font-semibold group-hover:text-primary transition-colors">Realistic</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Lifelike, photographic quality</p>
+</div>
+</div>
+</div>
+<!-- Card 5: Cyberpunk -->
+<div class="flex flex-col gap-3 pb-3 group cursor-pointer rounded-xl border-2 border-transparent bg-white dark:bg-slate-800 p-3 shadow-sm hover:border-primary/40 hover:shadow-md transition-all">
+<div class="w-full aspect-video rounded-lg overflow-hidden relative bg-slate-100 dark:bg-slate-700">
+<div class="absolute inset-0 bg-gradient-to-r from-purple-600 via-fuchsia-500 to-cyan-400 opacity-90" data-alt="Cyberpunk neon purple/cyan thumbnail"></div>
+</div>
+<div class="flex items-start justify-between mt-1">
+<div>
+<p class="text-base font-semibold group-hover:text-primary transition-colors">Cyberpunk</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Neon-lit, futuristic aesthetics</p>
+</div>
+</div>
+</div>
+<!-- Card 6: Ghibli -->
+<div class="flex flex-col gap-3 pb-3 group cursor-pointer rounded-xl border-2 border-transparent bg-white dark:bg-slate-800 p-3 shadow-sm hover:border-primary/40 hover:shadow-md transition-all">
+<div class="w-full aspect-video rounded-lg overflow-hidden relative bg-slate-100 dark:bg-slate-700">
+<div class="absolute inset-0 bg-gradient-to-br from-emerald-300 to-yellow-200 opacity-80" data-alt="Ghibli soft green/yellow thumbnail"></div>
+</div>
+<div class="flex items-start justify-between mt-1">
+<div>
+<p class="text-base font-semibold group-hover:text-primary transition-colors">Studio Ghibli</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Soft, painted fantasy style</p>
+</div>
+</div>
+</div>
+<!-- Card 7: Pixel Art -->
+<div class="flex flex-col gap-3 pb-3 group cursor-pointer rounded-xl border-2 border-transparent bg-white dark:bg-slate-800 p-3 shadow-sm hover:border-primary/40 hover:shadow-md transition-all">
+<div class="w-full aspect-video rounded-lg overflow-hidden relative bg-slate-100 dark:bg-slate-700">
+<!-- Simulated pixel pattern via CSS gradient -->
+<div class="absolute inset-0 bg-[linear-gradient(45deg,#3b82f6_25%,transparent_25%,transparent_75%,#3b82f6_75%,#3b82f6),linear-gradient(45deg,#3b82f6_25%,transparent_25%,transparent_75%,#3b82f6_75%,#3b82f6)] bg-[length:20px_20px] bg-[position:0_0,10px_10px] bg-slate-800 opacity-70" data-alt="Pixel Art retro 8-bit thumbnail"></div>
+</div>
+<div class="flex items-start justify-between mt-1">
+<div>
+<p class="text-base font-semibold group-hover:text-primary transition-colors">Pixel Art</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Retro 8-bit / 16-bit graphics</p>
+</div>
+</div>
+</div>
+<!-- Card 8: Dark Noir -->
+<div class="flex flex-col gap-3 pb-3 group cursor-pointer rounded-xl border-2 border-transparent bg-white dark:bg-slate-800 p-3 shadow-sm hover:border-primary/40 hover:shadow-md transition-all">
+<div class="w-full aspect-video rounded-lg overflow-hidden relative bg-slate-100 dark:bg-slate-700">
+<div class="absolute inset-0 bg-gradient-to-b from-gray-900 to-gray-400 opacity-90" data-alt="Dark Noir black/white thumbnail"></div>
+</div>
+<div class="flex items-start justify-between mt-1">
+<div>
+<p class="text-base font-semibold group-hover:text-primary transition-colors">Dark Noir</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">High contrast black &amp; white</p>
+</div>
+</div>
+</div>
+<!-- Card 9: Watercolor -->
+<div class="flex flex-col gap-3 pb-3 group cursor-pointer rounded-xl border-2 border-transparent bg-white dark:bg-slate-800 p-3 shadow-sm hover:border-primary/40 hover:shadow-md transition-all">
+<div class="w-full aspect-video rounded-lg overflow-hidden relative bg-slate-100 dark:bg-slate-700">
+<div class="absolute inset-0 bg-gradient-to-tr from-blue-200 via-pink-200 to-yellow-200 opacity-80 blur-sm" data-alt="Watercolor pastel wash thumbnail"></div>
+</div>
+<div class="flex items-start justify-between mt-1">
+<div>
+<p class="text-base font-semibold group-hover:text-primary transition-colors">Watercolor</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Fluid, pastel wash textures</p>
+</div>
+</div>
+</div>
+<!-- Card 10: 3D Render -->
+<div class="flex flex-col gap-3 pb-3 group cursor-pointer rounded-xl border-2 border-transparent bg-white dark:bg-slate-800 p-3 shadow-sm hover:border-primary/40 hover:shadow-md transition-all">
+<div class="w-full aspect-video rounded-lg overflow-hidden relative bg-slate-100 dark:bg-slate-700">
+<div class="absolute inset-0 bg-gradient-to-r from-indigo-500 from-10% via-purple-500 via-30% to-pink-500 to-90% opacity-80" data-alt="3D Render modern gradient thumbnail"></div>
+</div>
+<div class="flex items-start justify-between mt-1">
+<div>
+<p class="text-base font-semibold group-hover:text-primary transition-colors">3D Render</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Clean, modern Pixar-like 3D</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Navigation -->
+<div class="mt-auto border-t border-primary/10 bg-white dark:bg-slate-900 px-6 lg:px-10 py-6 sticky bottom-0 z-20">
+<div class="flex justify-between items-center max-w-[1200px] mx-auto">
+<button class="flex items-center justify-center gap-2 rounded-lg h-12 px-8 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold transition-colors">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+<span>Back</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-lg h-12 px-10 bg-primary hover:bg-primary/90 text-white font-bold shadow-lg shadow-primary/30 transition-all">
+<span>Next Step</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

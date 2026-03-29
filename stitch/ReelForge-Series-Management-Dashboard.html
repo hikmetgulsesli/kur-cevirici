@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ReelForge Series Management Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e21d48",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211115",
+                        "surface-dark": "#31181e",
+                        "border-dark": "#46252c",
+                        "text-muted": "#c7949f"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["DM Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex">
+<!-- Sidebar -->
+<aside class="w-64 bg-background-light dark:bg-background-dark border-r border-slate-200 dark:border-border-dark flex flex-col h-screen sticky top-0">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary/20 w-10 h-10 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">movie_filter</span>
+</div>
+<div>
+<h1 class="font-display font-bold text-lg leading-tight">ReelForge</h1>
+<p class="text-xs text-slate-500 dark:text-text-muted">Series Management</p>
+</div>
+</div>
+<nav class="flex-1 px-4 py-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-surface-dark transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:bg-surface-dark dark:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">view_list</span>
+<span class="font-medium text-sm">My Series</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-surface-dark transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard_customize</span>
+<span class="font-medium text-sm">Templates</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-surface-dark transition-colors" href="#">
+<span class="material-symbols-outlined">auto_awesome_motion</span>
+<span class="font-medium text-sm">Bulk Generation</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-surface-dark transition-colors mt-8" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium text-sm">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-border-dark">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-surface-dark bg-cover bg-center" data-alt="User profile avatar image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_W8FfJ51ZvmWNgzv-99n_MDfnP78np1BKd77hkdouwCQuidWrfdQincwCP3FMOuckroRN-Uo5JLPITHumRVGKD2epGd7L4UNgMv4sgVde5D8NBnEOG_4PRwYFd7nZ_HdHHn28LiYGRu_aqTCqKCZn622zzvpOpdE1UoVs9FtELgQMmEZorFhCy7Ny9BCt-ne1MGNNTtarZYYpUqFc0l7IPe2FDitrQdIsDYyxqXnpit8uFVNxOaYz95QC8n7cJv_DPwvnAuMG');"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium truncate">Alex Carter</p>
+<p class="text-xs text-slate-500 dark:text-text-muted truncate">Pro Plan</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
+<!-- Header -->
+<header class="h-16 flex items-center justify-between px-8 border-b border-slate-200 dark:border-border-dark bg-background-light dark:bg-background-dark shrink-0">
+<h2 class="font-display font-bold text-xl">My Series</h2>
+<div class="flex items-center gap-4">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-text-muted text-sm">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-slate-100 dark:bg-surface-dark border-transparent focus:border-primary focus:ring-0 rounded-lg text-sm dark:text-white placeholder:text-slate-400 dark:placeholder:text-text-muted" placeholder="Search series..." type="text"/>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Create Series
+                </button>
+</div>
+</header>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto p-8">
+<div class="max-w-6xl mx-auto space-y-8">
+<!-- Series Templates -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-display font-bold text-lg">Series Templates</h3>
+<a class="text-sm text-primary hover:text-primary/80 font-medium" href="#">View All</a>
+</div>
+<div class="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+<!-- Template 1 -->
+<div class="min-w-[280px] bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-border-dark overflow-hidden hover:border-primary/50 cursor-pointer transition-colors group">
+<div class="h-32 bg-slate-200 dark:bg-border-dark relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300" data-alt="Abstract gradient for Daily Facts template" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCs9-gYg4RppMweEET4fBdOHCeCwACtxhNDQn3T7jC2rUPP-MbD9eWW8V_gGsmbzX-xn-GImWmsICnFJMB26RnOaNDjH9Wwo5O9xc88SFDTr0D8J6VZp096sg2WcBYbF3lWxuFTTBdKQTJoEmjmSf74tL4gNzJ0fsSV28kFaks71e0UCYYkoAwo22bTX43xPtgvYRfbnwT_Avwa9gwuwVaRwq6x7dPLJPOkg3eSFWpQElkxEkmq7_Hb5Rh-Sfs_S9rPYxI2WAih');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5 text-white">
+<span class="material-symbols-outlined text-sm">lightbulb</span>
+<span class="text-sm font-medium">Educational</span>
+</div>
+</div>
+<div class="p-4">
+<h4 class="font-display font-bold mb-1">Daily Facts</h4>
+<p class="text-sm text-slate-500 dark:text-text-muted">Short, engaging facts designed for daily posting to build audience habit.</p>
+</div>
+</div>
+<!-- Template 2 -->
+<div class="min-w-[280px] bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-border-dark overflow-hidden hover:border-primary/50 cursor-pointer transition-colors group">
+<div class="h-32 bg-slate-200 dark:bg-border-dark relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300" data-alt="Abstract gradient for Story Series template" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDDmc_KjGn3MsXSgSV6WMFZLeIk85xvGzjlC40x_yPLK6nPRdxqxY1LYgEE5sJv__Y_8CWgHSS1QOcc5ML-pQaKU66u3WjRyMyk06z5qy7X_jH96BO_OMbVzJZdsQTT11CV2JwjZddzNY4Pv6fo7qwt4NFohFFMijaUDxol7oEvLl63vqzQ6V-tgqBDdUNrvSrzy0nfvONiwO1s01za5HqVU-tLVGf5AGfrYP_3BEF6CAc390z421m4qYWHoW4xizcgDgXwTCIK');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5 text-white">
+<span class="material-symbols-outlined text-sm">menu_book</span>
+<span class="text-sm font-medium">Narrative</span>
+</div>
+</div>
+<div class="p-4">
+<h4 class="font-display font-bold mb-1">Story Series</h4>
+<p class="text-sm text-slate-500 dark:text-text-muted">Sequential narrative driven content perfect for multipart storytelling.</p>
+</div>
+</div>
+<!-- Template 3 -->
+<div class="min-w-[280px] bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-border-dark overflow-hidden hover:border-primary/50 cursor-pointer transition-colors group">
+<div class="h-32 bg-slate-200 dark:bg-border-dark relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300" data-alt="Abstract gradient for Tutorial Series template" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDoqgCSbvk6_EQPk7WivJkne9dUS6g_V7Zb_OE31AzoYVJLfXZ5Bwh1Li1x1__jY07Ne62zpGjnkzUQcHzzuueo3hiL_Lyo_PEz3hPllgCjy2f3NeAkQaPz1rIF_xCbSBWCEq42F6bXTFh5HUtoyCF-wa245X7MEu5oF3bs7i5OrUcNprwdGyLVFDCMUmX8fv0FsBUnVSkhBvuO4FDjZCmdMXPhBFQHEUznM89s_0DCZKzOLOsIXg8vpfeG_9apLWSQDaggf82B');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5 text-white">
+<span class="material-symbols-outlined text-sm">school</span>
+<span class="text-sm font-medium">Instructional</span>
+</div>
+</div>
+<div class="p-4">
+<h4 class="font-display font-bold mb-1">Tutorial Series</h4>
+<p class="text-sm text-slate-500 dark:text-text-muted">Step-by-step guides with clear visual progression and voiceovers.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Active Series -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-display font-bold text-lg">Active Series</h3>
+<button class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">sort</span>
+                            Sort by: Recently Updated
+                        </button>
+</div>
+<div class="space-y-4">
+<!-- Expanded Series Card -->
+<div class="bg-white dark:bg-surface-dark rounded-xl border border-primary/30 overflow-hidden">
+<!-- Card Header -->
+<div class="p-5 flex items-start gap-5">
+<div class="w-24 h-32 rounded-lg bg-slate-200 dark:bg-border-dark bg-cover bg-center shrink-0" data-alt="Thumbnail for Daily Space Facts series" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCdpBkB1V735WEeH-ix2Nvo2tACyBKSH_cktP0UCM-1PmcVntlRpe_oQEsAp8JX5elSTzVVUSfrtzSqPJ72UMyzR16WwoapJ196hH_9rDfIp0xW_pVReBCn22M_VgCxQ8pvnFAczkoWgWIbGskh6bORUutibACiIuTg0LkU5boCyRVluma76mkEPI28TqNVhzE3Qin3eLev0YBlO7sdL3GWwKtt1P1m24EnWX2eKiNuDTHukpy_8DNbBESVVDfPp7DCwEbmCNeK');"></div>
+<div class="flex-1 min-w-0 pt-1">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-display font-bold text-xl mb-1">Daily Space Facts</h4>
+<p class="text-sm text-slate-500 dark:text-text-muted">Template: Daily Facts • Last updated 2 hrs ago</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-1.5 text-slate-400 hover:text-primary dark:text-text-muted dark:hover:text-primary rounded-md hover:bg-slate-100 dark:hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 text-slate-400 hover:text-red-500 dark:text-text-muted dark:hover:text-red-500 rounded-md hover:bg-slate-100 dark:hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+<button class="p-1.5 text-primary bg-primary/10 rounded-md ml-2 transition-colors">
+<span class="material-symbols-outlined text-[20px]">expand_less</span>
+</button>
+</div>
+</div>
+<div class="mt-4">
+<div class="flex justify-between text-sm mb-1.5">
+<span class="font-medium">Progress</span>
+<span class="text-slate-500 dark:text-text-muted">12/30 Episodes Generated</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-border-dark rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 40%"></div>
+</div>
+</div>
+<div class="mt-4 flex gap-3">
+<button class="bg-primary/10 hover:bg-primary/20 text-primary px-3 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">auto_awesome_motion</span>
+                                            Bulk Generate
+                                        </button>
+<button class="bg-slate-100 dark:bg-border-dark hover:bg-slate-200 dark:hover:bg-border-dark/80 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+                                            Preview Series
+                                        </button>
+</div>
+</div>
+</div>
+<!-- Nested Episode List -->
+<div class="border-t border-slate-200 dark:border-border-dark bg-slate-50 dark:bg-background-dark/50 p-5">
+<div class="flex justify-between items-center mb-4">
+<h5 class="font-medium text-sm text-slate-700 dark:text-slate-300">Episodes</h5>
+<div class="flex gap-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">10 Completed</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400">2 Scheduled</span>
+</div>
+</div>
+<div class="space-y-2">
+<!-- Episode Item: Completed -->
+<div class="flex items-center justify-between p-3 bg-white dark:bg-surface-dark rounded-lg border border-slate-200 dark:border-border-dark hover:border-slate-300 dark:hover:border-border-dark/80 transition-colors">
+<div class="flex items-center gap-4">
+<span class="text-sm font-medium text-slate-400 dark:text-text-muted w-6 text-center">12</span>
+<div class="w-10 h-10 rounded bg-slate-200 dark:bg-border-dark bg-cover bg-center shrink-0" data-alt="Thumbnail for episode 12" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAvLMlROCc8AZq2K7i4LHqK1pWCNblZYNMxrLnftHCR0arY06eS5jbERVQW6iUqIUZdNVdBeTN82AxbJ3UucX1rrGUEjAegm9hWXHhhkLywQTb2WsyAAChtWy43X8SG5H45GU_UlIWVzDu3K_GDTT8HbAiNHETF8tZYESDpqLjf-j2xAnWM5EHUKDsCff5YrBdHcPlZB1S3BcIoXTK_B5qKyaFlV04v0jF2wve0psi1hFiD1VyG-gLI3eatnvQVhmSyBILlbbp4');"></div>
+<div>
+<p class="font-medium text-sm">The Rings of Saturn</p>
+<p class="text-xs text-slate-500 dark:text-text-muted">0:45 • Generated yesterday</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Completed</span>
+<button class="text-slate-400 hover:text-slate-600 dark:text-text-muted dark:hover:text-slate-200"><span class="material-symbols-outlined text-[20px]">more_vert</span></button>
+</div>
+</div>
+<!-- Episode Item: Scheduled -->
+<div class="flex items-center justify-between p-3 bg-white dark:bg-surface-dark rounded-lg border border-slate-200 dark:border-border-dark hover:border-slate-300 dark:hover:border-border-dark/80 transition-colors">
+<div class="flex items-center gap-4">
+<span class="text-sm font-medium text-slate-400 dark:text-text-muted w-6 text-center">13</span>
+<div class="w-10 h-10 rounded bg-slate-200 dark:bg-border-dark bg-cover bg-center shrink-0 opacity-70" data-alt="Thumbnail for episode 13" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0UnDey1oY-xrgmXrpYMmXb2QBE-z3rkXhkeh-dxmmMcaUoOL0g-TR42-Sc8MBVl2TsJfUlajzxACzjxCrpSlpnITv8NEw6qgaZxmoOBzUuaz6qrmRdhnmKLK-xtBEYjKrzFStR-qQ2N9IH7nUHO5r0dXExH8eVS6CP6R84Tc6_QBJGDryNG1NoFejjn1ivUj2aXqWXrC2MJprdlmI5J0XMMXoQFU9yPusIYVCJxTTj35d3wOB5ivq5-zpY7zZAv24oMBYx5NV');"></div>
+<div>
+<p class="font-medium text-sm">Moons of Jupiter</p>
+<p class="text-xs text-slate-500 dark:text-text-muted">0:50 • Scheduled for Tomorrow</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400">Scheduled</span>
+<button class="text-slate-400 hover:text-slate-600 dark:text-text-muted dark:hover:text-slate-200"><span class="material-symbols-outlined text-[20px]">more_vert</span></button>
+</div>
+</div>
+<!-- Episode Item: Draft -->
+<div class="flex items-center justify-between p-3 bg-white dark:bg-surface-dark rounded-lg border border-slate-200 dark:border-border-dark border-dashed opacity-80">
+<div class="flex items-center gap-4">
+<span class="text-sm font-medium text-slate-400 dark:text-text-muted w-6 text-center">14</span>
+<div class="w-10 h-10 rounded bg-slate-100 dark:bg-border-dark/50 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-slate-400 dark:text-text-muted">draft</span>
+</div>
+<div>
+<p class="font-medium text-sm text-slate-600 dark:text-slate-300">Untitled: Mars Rover</p>
+<p class="text-xs text-slate-500 dark:text-text-muted">Script generated</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-800 dark:bg-border-dark dark:text-slate-300">Draft</span>
+<button class="text-slate-400 hover:text-slate-600 dark:text-text-muted dark:hover:text-slate-200"><span class="material-symbols-outlined text-[20px]">more_vert</span></button>
+</div>
+</div>
+</div>
+<button class="w-full mt-3 py-3 rounded-lg border border-dashed border-slate-300 dark:border-border-dark text-sm font-medium text-slate-500 hover:text-primary dark:text-text-muted dark:hover:text-primary hover:border-primary/50 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+                                    Add Episode Manually
+                                </button>
+</div>
+</div>
+<!-- Collapsed Series Card -->
+<div class="bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-border-dark hover:border-slate-300 dark:hover:border-border-dark/80 transition-colors p-5 flex items-start gap-5 cursor-pointer">
+<div class="w-24 h-32 rounded-lg bg-slate-200 dark:bg-border-dark bg-cover bg-center shrink-0" data-alt="Thumbnail for Tech History series" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8zfaOWwL-x4OyX1xB00upSpEiD2ugbQo-qX3WMCr9usxhPEJcl9DTAvaji0kv_60CnBHBZnpt6IksKQLxXZJY9o_iLTvigJlvCU6LQbvlfjokgJWs-kk0qFNWSubQK6IQS2QRbDbMAaD63-LYvK8SexCUexUZNCWq7kEMimx4rQrhe5gcgRoaKpKsnJmrgt7RT_gUt3vnR1eqO4otht4PResrtx1edt_DZmv6XHjX0ZfcrtYydfQxW4tdKYaCTb074ZmHf54n');"></div>
+<div class="flex-1 min-w-0 pt-1">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h4 class="font-display font-bold text-xl mb-1">Tech History Bites</h4>
+<p class="text-sm text-slate-500 dark:text-text-muted">Template: Story Series • Last updated 3 days ago</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-1.5 text-slate-400 hover:text-primary dark:text-text-muted dark:hover:text-primary rounded-md hover:bg-slate-100 dark:hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 text-slate-400 hover:text-red-500 dark:text-text-muted dark:hover:text-red-500 rounded-md hover:bg-slate-100 dark:hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+<button class="p-1.5 text-slate-400 hover:text-slate-600 dark:text-text-muted dark:hover:text-slate-200 rounded-md hover:bg-slate-100 dark:hover:bg-border-dark ml-2 transition-colors">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</button>
+</div>
+</div>
+<div class="mt-4">
+<div class="flex justify-between text-sm mb-1.5">
+<span class="font-medium">Progress</span>
+<span class="text-slate-500 dark:text-text-muted">5/10 Episodes Generated</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-border-dark rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 50%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body></html>

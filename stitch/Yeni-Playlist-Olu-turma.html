@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#3cd7ff",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#8900d5",
+                        "on-secondary-fixed-variant": "#6e00ab",
+                        "tertiary-fixed-dim": "#ffb1c2",
+                        "surface-dim": "#131315",
+                        "surface-container-lowest": "#0e0e10",
+                        "on-tertiary-fixed-variant": "#8f0040",
+                        "on-tertiary": "#66002b",
+                        "on-primary-fixed-variant": "#004e5f",
+                        "on-primary-fixed": "#001f27",
+                        "surface-container-low": "#1c1b1d",
+                        "on-secondary-fixed": "#2f004d",
+                        "secondary": "#e2b6ff",
+                        "outline-variant": "#3c494e",
+                        "primary": "#a8e8ff",
+                        "on-primary-container": "#00586b",
+                        "secondary-fixed-dim": "#e2b6ff",
+                        "on-surface": "#e5e1e4",
+                        "tertiary-fixed": "#ffd9e0",
+                        "inverse-primary": "#00677e",
+                        "on-tertiary-fixed": "#3f0018",
+                        "surface-container-high": "#2a2a2c",
+                        "primary-fixed-dim": "#3cd7ff",
+                        "surface-bright": "#39393b",
+                        "on-primary": "#003642",
+                        "inverse-on-surface": "#313032",
+                        "secondary-fixed": "#f3daff",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#bbc9cf",
+                        "outline": "#859398",
+                        "on-secondary-container": "#e9c3ff",
+                        "background": "#131315",
+                        "primary-container": "#00d4ff",
+                        "surface-container-highest": "#353437",
+                        "surface-container": "#201f21",
+                        "surface": "#131315",
+                        "tertiary": "#ffd4dc",
+                        "primary-fixed": "#b4ebff",
+                        "on-tertiary-container": "#a10048",
+                        "on-secondary": "#4d007a",
+                        "tertiary-container": "#ffacbe",
+                        "surface-variant": "#353437",
+                        "on-background": "#e5e1e4",
+                        "inverse-surface": "#e5e1e4"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.2), 0 0 30px rgba(0, 212, 255, 0.1);
+        }
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            background: rgba(28, 27, 29, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-20 bg-[#131315] shadow-[0_0_20px_rgba(0,212,255,0.15)]">
+<div class="text-2xl font-bold tracking-tighter text-[#00d4ff] uppercase font-headline">Sonic Pulse</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#e5e1e4] opacity-70 font-headline tracking-tighter uppercase hover:text-[#00d4ff] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]" href="#">Kütüphane</a>
+<a class="text-[#e5e1e4] opacity-70 font-headline tracking-tighter uppercase hover:text-[#00d4ff] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]" href="#">Keşfet</a>
+<a class="text-[#e5e1e4] opacity-70 font-headline tracking-tighter uppercase hover:text-[#00d4ff] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]" href="#">Radyo</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="text-[#e5e1e4] opacity-70 hover:text-[#00d4ff] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-[#e5e1e4] opacity-70 hover:text-[#00d4ff] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/20">
+<img alt="Kullanıcı Profili" class="w-full h-full object-cover" data-alt="User profile circular avatar photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLPDq1ZHbQ2Q4f61WUfXvHhTtgwKkcX-4ACcm7JPiss0F3pKuFxWt83lq4Rk_q_HrYlLrkxLxS6jCyU3hqAX4k-Yug1GHWycIsEKlbEXKNJzl8pBSk6GYpldgkDzzwY5VkbM9gJgF1O6Z-bSs5P82dktmuM85LR40YPZBFLvdPqDyJkew4a4R9clO6wULo6nsuRimRsH5GBlwkpnK8-Cp4tul2cc-eno7dlhfV_MlpUOpQJoDkGXVAoeqvPA8TJHscdVUXvkl9rFA"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 flex flex-col pt-24 pb-8 bg-[#1c1b1d] font-body text-sm antialiased z-40">
+<div class="px-6 mb-8 flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Müzik Sever</p>
+<p class="text-xs text-on-surface-variant">Premium Üye</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-4 text-[#e5e1e4]/60 py-3 px-6 hover:bg-white/5 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Ana Sayfa</span>
+</a>
+<a class="flex items-center gap-4 text-[#e5e1e4]/60 py-3 px-6 hover:bg-white/5 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="library_music">library_music</span>
+<span>Kitaplığım</span>
+</a>
+<a class="flex items-center gap-4 text-[#e5e1e4]/60 py-3 px-6 hover:bg-white/5 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span>Beğenilenler</span>
+</a>
+<a class="flex items-center gap-4 bg-gradient-to-r from-[#00d4ff]/10 to-transparent text-[#00d4ff] border-r-4 border-[#00d4ff] py-3 px-6 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span>Yeni Playlist</span>
+</a>
+</nav>
+<div class="px-6 mb-8">
+<button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold rounded-lg shadow-lg shadow-primary/20 active:scale-95 transition-all">
+                Şimdi Dinle
+            </button>
+</div>
+<footer class="mt-auto space-y-1">
+<a class="flex items-center gap-4 text-[#e5e1e4]/60 py-3 px-6 hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Ayarlar</span>
+</a>
+<a class="flex items-center gap-4 text-[#e5e1e4]/60 py-3 px-6 hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Çıkış</span>
+</a>
+</footer>
+</aside>
+<!-- Main Content / Empty State -->
+<main class="ml-64 pt-20 p-8 min-h-screen flex flex-col">
+<div class="flex-1 flex flex-col items-center justify-center text-center">
+<div class="w-48 h-48 mb-8 relative">
+<div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
+<div class="relative w-full h-full border-2 border-dashed border-outline-variant/30 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-7xl text-on-surface-variant opacity-20" data-icon="playlist_add">playlist_add</span>
+</div>
+</div>
+<h2 class="font-headline text-3xl font-bold tracking-tight mb-2">Henüz playlist yok</h2>
+<p class="text-on-surface-variant max-w-sm mb-8">Kendi müzik dünyanı yaratmaya başlamak için ilk playlist'ini oluştur.</p>
+<button class="px-8 py-3 rounded-full border border-primary/30 text-primary hover:bg-primary/10 transition-colors flex items-center gap-2 font-bold uppercase tracking-wider text-sm">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+                Playlist Oluştur
+            </button>
+</div>
+</main>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm">
+<!-- Modal Content -->
+<div class="w-full max-w-md bg-[#1a1a2e] rounded-2xl overflow-hidden neon-glow border border-primary/20 flex flex-col">
+<!-- Modal Header -->
+<div class="flex items-center justify-between px-6 py-5 border-b border-outline-variant/10">
+<h3 class="font-headline text-xl font-bold text-on-surface tracking-tight uppercase">Yeni Playlist</h3>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-1">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-8">
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="block font-headline text-xs font-bold uppercase tracking-widest text-primary/80" for="playlist-name">
+                            Playlist Adi
+                        </label>
+<input class="w-full bg-surface-container-lowest border-none focus:ring-2 focus:ring-primary/50 text-on-surface rounded-xl px-4 py-4 placeholder:text-on-surface-variant/40 transition-all font-body text-base" id="playlist-name" placeholder="Playlist adini girin" type="text"/>
+</div>
+<div class="bg-surface-container-low/50 p-4 rounded-xl border border-outline-variant/5">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="info" style="font-variation-settings: 'FILL' 1;">info</span>
+<p class="text-xs text-on-surface-variant leading-relaxed">Yeni playlist'ine dilediğin zaman parça ekleyebilir ve kapağını özelleştirebilirsin.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-8 pb-8 pt-2 flex items-center gap-4">
+<button class="flex-1 py-4 text-on-surface-variant hover:text-on-surface hover:bg-white/5 rounded-xl font-bold transition-all uppercase tracking-tighter text-sm">
+                    Iptal
+                </button>
+<button class="flex-1 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-black rounded-xl shadow-[0_0_20px_rgba(0,212,255,0.3)] active:scale-[0.98] transition-all uppercase tracking-tighter text-sm">
+                    Olustur
+                </button>
+</div>
+</div>
+</div>
+<!-- Background Decoration -->
+<div class="fixed top-0 right-0 -z-10 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2"></div>
+<div class="fixed bottom-0 left-0 -z-10 w-[500px] h-[500px] bg-secondary/5 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2"></div>
+</body></html>

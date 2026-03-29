@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ReelForge Kayıt Ol Sayfası</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7c3aed",
+                        "background-light": "#f5f3ff",
+                        "background-dark": "#1e1b4b",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["DM Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body min-h-screen flex flex-col items-center justify-center p-4 selection:bg-primary/30">
+<div class="w-full max-w-md bg-white dark:bg-slate-900 rounded-xl shadow-xl overflow-hidden border border-slate-200 dark:border-slate-800">
+<!-- Header / Logo -->
+<div class="p-8 pb-6 flex flex-col items-center border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3 text-primary mb-4">
+<div class="size-8 rounded bg-primary/10 flex items-center justify-center">
+<svg class="w-5 h-5" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+</div>
+<h2 class="text-slate-900 dark:text-white text-2xl font-bold font-display tracking-tight">ReelForge</h2>
+</div>
+<h1 class="text-slate-900 dark:text-white text-2xl font-bold font-display tracking-tight mb-2">Hesap Oluştur</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm text-center">Yapay zeka ile video oluşturmaya başlamak için hemen kayıt olun.</p>
+</div>
+<!-- Form Content -->
+<div class="p-8 pt-6">
+<form class="flex flex-col gap-4">
+<!-- Ad Soyad -->
+<div class="flex flex-col gap-1.5">
+<label class="text-slate-700 dark:text-slate-300 text-sm font-medium" for="fullName">Ad Soyad</label>
+<input class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary px-4 py-2.5 text-sm transition-colors placeholder:text-slate-400 dark:placeholder:text-slate-500" id="fullName" placeholder="Örn: Ahmet Yılmaz" type="text"/>
+</div>
+<!-- E-posta -->
+<div class="flex flex-col gap-1.5">
+<label class="text-slate-700 dark:text-slate-300 text-sm font-medium" for="email">E-posta Adresi</label>
+<input class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary px-4 py-2.5 text-sm transition-colors placeholder:text-slate-400 dark:placeholder:text-slate-500" id="email" placeholder="ornek@eposta.com" type="email"/>
+</div>
+<!-- Şifre -->
+<div class="flex flex-col gap-1.5">
+<label class="text-slate-700 dark:text-slate-300 text-sm font-medium" for="password">Şifre</label>
+<input class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary px-4 py-2.5 text-sm transition-colors placeholder:text-slate-400 dark:placeholder:text-slate-500" id="password" placeholder="En az 8 karakter" type="password"/>
+</div>
+<!-- Şifre Onayı -->
+<div class="flex flex-col gap-1.5">
+<label class="text-slate-700 dark:text-slate-300 text-sm font-medium" for="confirmPassword">Şifre Onayı</label>
+<input class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary px-4 py-2.5 text-sm transition-colors placeholder:text-slate-400 dark:placeholder:text-slate-500" id="confirmPassword" placeholder="Şifrenizi tekrar girin" type="password"/>
+</div>
+<!-- Checkbox -->
+<div class="flex items-start gap-2 mt-2">
+<div class="flex h-5 items-center">
+<input class="h-4 w-4 rounded border-slate-300 dark:border-slate-700 text-primary focus:ring-primary dark:bg-slate-800" id="terms" type="checkbox"/>
+</div>
+<label class="text-sm text-slate-600 dark:text-slate-400" for="terms">
+<a class="font-medium text-primary hover:text-primary/80 transition-colors" href="#">Kullanım Koşullarını</a> ve <a class="font-medium text-primary hover:text-primary/80 transition-colors" href="#">Gizlilik Politikasını</a> kabul ediyorum.
+                    </label>
+</div>
+<!-- Kayıt Ol Button -->
+<button class="mt-4 w-full bg-primary hover:bg-primary/90 text-white font-medium py-2.5 px-4 rounded-lg transition-colors shadow-sm font-display flex items-center justify-center gap-2" type="submit">
+                    Kayıt Ol
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</form>
+<div class="mt-6 flex items-center justify-between">
+<span class="border-b border-slate-200 dark:border-slate-700 w-1/5 lg:w-1/4"></span>
+<span class="text-xs text-center text-slate-500 dark:text-slate-400 uppercase tracking-wider font-medium">Veya şununla devam et</span>
+<span class="border-b border-slate-200 dark:border-slate-700 w-1/5 lg:w-1/4"></span>
+</div>
+<!-- Social Buttons -->
+<div class="flex flex-col gap-3 mt-6">
+<button class="w-full flex items-center justify-center gap-2 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium py-2.5 px-4 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors text-sm">
+<img alt="Google Logo" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDryU10tHXa01ugtvc3Hr0GvI0vAYimR2LIWCCGi4mkbsmLZkdSAV92W3vhkWKp1czxKhm24qsWg4Odwnt92j0AzAGMSm-JeLBP8YbB7HTTieaMpvgxMMx2obUtNODb-iJAsDGx8HFBipg8wTIytS_Eml6N8DDTMcEgn3QfP6ZeFT7mn83AQlI4qBbFEsDuVwHk6KJOITzg9vYGZWFTJQYKxGbuY71oSZJjL6uhDtN4_bzerW54jgsJ0Xz3hyMxmt0YDIBTYx9w"/>
+                    Google ile Kayıt Ol
+                </button>
+<button class="w-full flex items-center justify-center gap-2 bg-slate-900 dark:bg-slate-800 border border-slate-900 dark:border-slate-700 text-white font-medium py-2.5 px-4 rounded-lg hover:bg-slate-800 dark:hover:bg-slate-700/50 transition-colors text-sm">
+<img alt="GitHub Logo" class="w-5 h-5 filter invert dark:invert-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYvyJnwaVbMrcxE5YL7CgTMDNGvmKe6_rS0Asogfmbf1QYIJiCKZo39nvnxL0vNPkdcsJZDzah5cgzdw8iZf_50G7B8OlqGbph4nhTmzgZ-CO-QU-R2o5OkqKaSzNHoNLXtb8UVUXBFXWVkVyQYu9C1QlPYZlBMCqLU49PJwTtAD9_5oEVlNqUQCoWjIznQfutQY-d9vuftH3y-KGSoKe9dkBlECkPNGLWNpKEHO990q6htxQ0bfWr5GzHBREddyC6AKBgpNJ4"/>
+                    GitHub ile Kayıt Ol
+                </button>
+</div>
+</div>
+<!-- Footer -->
+<div class="bg-slate-50 dark:bg-slate-800/50 py-4 px-8 border-t border-slate-100 dark:border-slate-800 text-center">
+<p class="text-sm text-slate-600 dark:text-slate-400">
+                Zaten bir hesabınız var mı? <a class="font-medium text-primary hover:underline" href="#">Giriş Yap</a>
+</p>
+</div>
+</div>
+</body></html>

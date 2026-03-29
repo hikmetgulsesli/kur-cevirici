@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ReelForge - Background Music</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e02485",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#211119",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["DM Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'DM Sans', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Space Grotesk', sans-serif; }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #e02485;
+            cursor: pointer;
+            margin-top: -6px;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #e6d1dc;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-primary/20 px-8 py-4 bg-background-light dark:bg-background-dark sticky top-0 z-10">
+<div class="flex items-center gap-4 text-slate-900 dark:text-slate-100">
+<div class="text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">movie_filter</span>
+</div>
+<h2 class="text-xl font-bold font-display tracking-tight">ReelForge</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<nav class="flex items-center gap-6 hidden md:flex">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Projects</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Templates</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-sm hover:bg-primary/90 transition-colors">
+<span>Upgrade</span>
+</button>
+<div class="bg-primary/20 bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-primary/30" data-alt="User profile picture placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDArDapvd5kh8GBuYBdpbQlh79h0nAr5nq43LC8Qu3zqKRn_ooZDRr0QYzpRKQwkA3DPhJUiz_AvDj4bC4V5QivU7mvbzdNYucDjogmm8LbuyAz82kJCO1tDdv6XCodXEG69xdUl9b-CpipExf8aPGBWr88sg3yHuQtXyNMSoKnMYVHavhWJObg4CfNBYg8lvR5Rwb-gMSwkvpfSrUVSkXgIyJCgv7kWKwM0rzqFU8pEB3EGSUfvFLrD8xBm66s0Zt2XXY_bLps");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col max-w-[1200px] w-full mx-auto px-4 py-8 md:px-8">
+<!-- Progress Stepper -->
+<div class="flex flex-col gap-3 mb-8 w-full max-w-3xl mx-auto">
+<div class="flex gap-6 justify-between items-end">
+<p class="font-display text-lg font-semibold">Step 6: Background Music</p>
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">6 of 7</p>
+</div>
+<div class="rounded-full bg-primary/20 h-2.5 w-full overflow-hidden">
+<div class="h-full rounded-full bg-primary transition-all duration-500 ease-out" style="width: 85%;"></div>
+</div>
+</div>
+<!-- Header -->
+<div class="mb-8 text-center md:text-left">
+<h1 class="font-display tracking-tight text-3xl md:text-4xl font-bold mb-2">Select Background Music</h1>
+<p class="text-slate-600 dark:text-slate-400">Choose a track to set the mood for your video, or upload your own.</p>
+</div>
+<!-- Category Tabs -->
+<div class="flex overflow-x-auto pb-4 mb-6 border-b border-primary/20 gap-8 scrollbar-hide">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary pb-3 min-w-max" href="#">
+<p class="text-sm font-bold text-primary">Upbeat</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent hover:border-b-primary/50 pb-3 min-w-max transition-colors" href="#">
+<p class="text-sm font-bold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100">Dramatic</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent hover:border-b-primary/50 pb-3 min-w-max transition-colors" href="#">
+<p class="text-sm font-bold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100">Chill</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent hover:border-b-primary/50 pb-3 min-w-max transition-colors" href="#">
+<p class="text-sm font-bold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100">Epic</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent hover:border-b-primary/50 pb-3 min-w-max transition-colors" href="#">
+<p class="text-sm font-bold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100">Lo-fi</p>
+</a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+<!-- Left Column: Music Selection -->
+<div class="lg:col-span-2 flex flex-col gap-6">
+<!-- No Music Option -->
+<div class="flex items-center justify-between gap-4 rounded-xl bg-white dark:bg-slate-800 p-5 shadow-sm border border-primary/10 hover:border-primary/30 transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="bg-slate-100 dark:bg-slate-700 rounded-full p-3 text-slate-500 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">volume_off</span>
+</div>
+<div class="flex flex-col">
+<p class="font-display font-bold text-lg">No Music</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Play video with voiceover only</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-slate-300 dark:border-slate-600 group-hover:border-primary transition-colors"></div>
+</div>
+<!-- Music Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Selected Card -->
+<div class="flex flex-col gap-3 rounded-xl bg-primary/5 p-4 border-2 border-primary relative shadow-sm cursor-pointer">
+<div class="absolute top-3 right-3 bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center z-10 shadow-sm">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<div class="flex gap-4">
+<div class="w-16 h-16 rounded-lg bg-cover bg-center flex-shrink-0 shadow-sm" data-alt="Abstract colorful album art" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuChsf2vnr4aKZea3khvItfy-L4mHpSRREKWyUQ4iJk4XAfUQa7X0oRuzXZJaP2psAMZHYqGubdB1UlxVoOUHI_mRNght0U8PulLUM1B39WY8Z7qJRoK-GMih4x6MGcNSm3RMNXArFrUMdnW1CkvRFRILjbA6COaGyP7L6PBpDdyAjcp19VHkF9HLhZ079Z3XLlElg7euh2m1tl0Tp0PxiwJ4j3R4sJ47w_Qw6GJ5m-f9GCO5W-CyveT7TOgcFM7x08EhTUFBSXB');"></div>
+<div class="flex flex-col justify-center flex-1 min-w-0">
+<p class="font-bold font-display text-base truncate">Neon Horizon</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 truncate">Synthwave Collective</p>
+<p class="text-xs text-slate-400 dark:text-slate-500 mt-1">2:45</p>
+</div>
+<button class="self-center bg-white dark:bg-slate-700 rounded-full w-10 h-10 flex items-center justify-center shadow-sm text-primary hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined">pause</span>
+</button>
+</div>
+<div class="w-full h-8 flex items-end gap-0.5 opacity-80 mt-2 px-1">
+<!-- Simulated waveform -->
+<div class="w-full h-1 bg-primary/30 rounded-full relative">
+<div class="absolute left-0 top-0 bottom-0 w-1/3 bg-primary rounded-full"></div>
+<div class="absolute left-1/3 top-1/2 -translate-y-1/2 w-3 h-3 bg-primary rounded-full shadow-sm"></div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col gap-3 rounded-xl bg-white dark:bg-slate-800 p-4 border border-primary/10 hover:border-primary/30 transition-colors shadow-sm cursor-pointer group">
+<div class="flex gap-4">
+<div class="w-16 h-16 rounded-lg bg-cover bg-center flex-shrink-0 shadow-sm" data-alt="Dark abstract pattern album art" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZE8YQUTsrWq8rXbu9xEa2QVPPtMnanhZUd7SpK6cEs2bOxFsSG9QTDdPM4jmdGmfQ17uZX7hbCTauJywwalPUFbyTQlC8kenHWIVDySmJPx64WhWkNo4NfQB1KlTtjlxwuZ1pyF8h8KwTBn6sc7XYmilPkFFPBL3a7O5qeBQaJWIATS-DEdpT9tT806SdylKFdqOAS78f96Zalt9cIPbJ7lM20s4hghgw0yiaxjjtn_Gm5NTPi2gfSGl9nJpJIus08sBUgSC-');"></div>
+<div class="flex flex-col justify-center flex-1 min-w-0">
+<p class="font-bold font-display text-base truncate">Summer Vibes</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 truncate">DJ Ocean</p>
+<p class="text-xs text-slate-400 dark:text-slate-500 mt-1">3:12</p>
+</div>
+<button class="self-center bg-slate-100 dark:bg-slate-700 rounded-full w-10 h-10 flex items-center justify-center shadow-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors flex-shrink-0">
+<span class="material-symbols-outlined">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col gap-3 rounded-xl bg-white dark:bg-slate-800 p-4 border border-primary/10 hover:border-primary/30 transition-colors shadow-sm cursor-pointer group">
+<div class="flex gap-4">
+<div class="w-16 h-16 rounded-lg bg-cover bg-center flex-shrink-0 shadow-sm" data-alt="Light geometric album art" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAD0kE59zozK90LtENnhXM0vfH4AgZ2CeiU5UX-4VDbuBEZp0sNzJUy0KBCRlv14g-3oniPv8f4b8Lq93oX0VwGK6kLdZ3W8vBcH5fyJl29AFSZgO0T_v25D2IAgTkgESFaPk4V1BRGqwrxaiGWS-OQl47OBAFYh62iLRgMXiafhpxdaNje48yNGtDRWqLcNvd00K3ZLiH0c-hhGRCmyMkvTR7vunkn1pzHtIDOUtNXqinZ54ar_F5z4OvErVk909RWlWtDS79Y');"></div>
+<div class="flex flex-col justify-center flex-1 min-w-0">
+<p class="font-bold font-display text-base truncate">City Lights</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 truncate">Urban Beat</p>
+<p class="text-xs text-slate-400 dark:text-slate-500 mt-1">1:58</p>
+</div>
+<button class="self-center bg-slate-100 dark:bg-slate-700 rounded-full w-10 h-10 flex items-center justify-center shadow-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors flex-shrink-0">
+<span class="material-symbols-outlined">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex flex-col gap-3 rounded-xl bg-white dark:bg-slate-800 p-4 border border-primary/10 hover:border-primary/30 transition-colors shadow-sm cursor-pointer group">
+<div class="flex gap-4">
+<div class="w-16 h-16 rounded-lg bg-cover bg-center flex-shrink-0 shadow-sm" data-alt="Moody textured album art" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDlXYLqmMqY-6zt1ix8CJY0xLeCW_gPfp3VMOn1Y2M6C5iYspRRfwaakG4V_-fljGs7VIhAeKZivFyt8M0FgwnTpmMEZmr8a0N7WoATGnbpbOwRgcHTTEmqCNGMWSpFMMKGz1r8wmjoQBFbjZphgh38L_iJChMbeHH9hBQzafbLoQ-jO6GPu1GEyBLnVCcF005hhC8RjbpOmhertuNsvN7zt-8Me9H3mD8AkBKlRL5Ar2czeKp95hUZ9N9TuuNS8_4oGFXH8Gir');"></div>
+<div class="flex flex-col justify-center flex-1 min-w-0">
+<p class="font-bold font-display text-base truncate">Morning Run</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 truncate">Active Life</p>
+<p class="text-xs text-slate-400 dark:text-slate-500 mt-1">2:20</p>
+</div>
+<button class="self-center bg-slate-100 dark:bg-slate-700 rounded-full w-10 h-10 flex items-center justify-center shadow-sm text-slate-600 dark:text-slate-300 group-hover:text-primary transition-colors flex-shrink-0">
+<span class="material-symbols-outlined">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Recently Used -->
+<div class="mt-4">
+<h3 class="font-display font-semibold text-lg mb-4">Recently Used</h3>
+<div class="flex overflow-x-auto gap-4 pb-4 scrollbar-hide">
+<div class="flex items-center gap-3 bg-white dark:bg-slate-800 p-2 pr-4 rounded-full border border-primary/10 min-w-max shadow-sm cursor-pointer hover:border-primary/30 transition-colors">
+<div class="w-8 h-8 rounded-full bg-cover bg-center flex-shrink-0" data-alt="Small album art icon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbkd8nFSImbl-3BhDB-tbchr5BZgi75j_WZcjxmxV3o8Y_v9L-xk02qbDamCYZwIcR3-CL_fzW7FSBU-O2nZqpW04XfsHd_v7KDZzFcykvp_6m8SfslVjnJc0m0wOcQjhlJvy1FqbmOTXQUXW8cx2myUW3a7FiBfpczxc7-LEoS58RW2UnSRkxirQtupEMKQ-CiVl664pdd4JDeCwPlKBSwxsi700hfoXWKJ4RJRJ_qSqWrYExz8v2Kz0TKS5fbSIajAWnhJ_0');"></div>
+<span class="text-sm font-medium">Epic Journey</span>
+</div>
+<div class="flex items-center gap-3 bg-white dark:bg-slate-800 p-2 pr-4 rounded-full border border-primary/10 min-w-max shadow-sm cursor-pointer hover:border-primary/30 transition-colors">
+<div class="w-8 h-8 rounded-full bg-cover bg-center flex-shrink-0" data-alt="Small album art icon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDW5ffP3oa22MGKeo2C4fZ8J0UPq4Q7uvshgI0Tzq2aKrMA1CD-Y5GuRidnSmiNXQlcFmyz2txdHpzFf0wBAzxFym5hFXK9OiAIc-wPtKI8fBenNf8A_dQlLFI6cwSkXQN1WbORI_DAqV8Yxn4cZhN7t2S3y0UlPxrZbAgSatNxwUdWUI1mlGHAVhb4Y9hiCWF6Z4lTefRkbeqaeIDxb-JC3tFW3Ytawi694xI08SXlisTk8OFa-8cfdRhKY1jDs6HRlw0TPHIm');"></div>
+<span class="text-sm font-medium">Coffee Shop</span>
+</div>
+<div class="flex items-center gap-3 bg-white dark:bg-slate-800 p-2 pr-4 rounded-full border border-primary/10 min-w-max shadow-sm cursor-pointer hover:border-primary/30 transition-colors">
+<div class="w-8 h-8 rounded-full bg-cover bg-center flex-shrink-0" data-alt="Small album art icon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0x6tyTVTkKV3YxeghypcElfEMJvW0_RX7846LOkooxVBsh4u8LLGtBZncT1Vd-evmw2FDefh14gps2rd6i5z5D0yMgA2mjyKyXuQhDcnR4i0FqPTGfz0GDiyEDUQjhBtGVavx_65PCqi91QeSWCPHcL5nUq5D1j5oMd6lafhjX08QDFth8mLtxDd-6_jZL-uoMOJ7uZ7Jve1nWGSwq7eU4_tkKn16dddYRpz7KRsscT3RvO-F8vxWho0GchtAYXeR7pi7VOtv');"></div>
+<span class="text-sm font-medium">Corporate Tech</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Audio Mixer -->
+<div class="lg:col-span-1">
+<div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-primary/10 sticky top-24">
+<div class="flex items-center gap-2 mb-6 text-primary">
+<span class="material-symbols-outlined">tune</span>
+<h3 class="font-display font-bold text-xl text-slate-900 dark:text-slate-100">Audio Mixer</h3>
+</div>
+<div class="flex flex-col gap-8">
+<!-- Volume Balancer -->
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center text-sm font-medium">
+<span class="text-slate-600 dark:text-slate-300 flex items-center gap-1"><span class="material-symbols-outlined text-sm">mic</span> Voice</span>
+<span class="text-slate-600 dark:text-slate-300 flex items-center gap-1">Music <span class="material-symbols-outlined text-sm">music_note</span></span>
+</div>
+<div class="relative pt-1">
+<input class="w-full h-1 bg-primary/20 rounded-lg appearance-none cursor-pointer" max="100" min="0" type="range" value="70"/>
+<div class="flex justify-between text-xs text-slate-400 mt-2 px-1">
+<span>70%</span>
+<span>30%</span>
+</div>
+</div>
+</div>
+<!-- Real-time visualizer mockup -->
+<div class="bg-slate-50 dark:bg-slate-900 rounded-xl p-4 border border-primary/5 flex flex-col items-center justify-center gap-2 h-32">
+<div class="flex items-end gap-1 h-12 w-full justify-center opacity-70">
+<div class="w-1.5 bg-primary/40 rounded-t-sm h-1/4"></div>
+<div class="w-1.5 bg-primary/60 rounded-t-sm h-2/4"></div>
+<div class="w-1.5 bg-primary/80 rounded-t-sm h-full"></div>
+<div class="w-1.5 bg-primary rounded-t-sm h-3/4"></div>
+<div class="w-1.5 bg-primary/60 rounded-t-sm h-1/2"></div>
+<div class="w-1.5 bg-primary/40 rounded-t-sm h-2/4"></div>
+<div class="w-1.5 bg-primary/80 rounded-t-sm h-3/4"></div>
+<div class="w-1.5 bg-primary/50 rounded-t-sm h-1/4"></div>
+<div class="w-1.5 bg-primary rounded-t-sm h-full"></div>
+<div class="w-1.5 bg-primary/70 rounded-t-sm h-2/3"></div>
+<div class="w-1.5 bg-primary/30 rounded-t-sm h-1/3"></div>
+</div>
+<span class="text-xs font-medium text-slate-500 uppercase tracking-wider mt-2 flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Previewing Mix</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="mt-auto pt-8 border-t border-primary/20 flex flex-col sm:flex-row justify-between items-center gap-4">
+<button class="w-full sm:w-auto px-6 py-3 rounded-xl border-2 border-primary/20 text-slate-700 dark:text-slate-300 font-bold hover:bg-primary/5 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">arrow_back</span>
+                Back
+            </button>
+<button class="w-full sm:w-auto px-8 py-3 rounded-xl bg-primary text-white font-bold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/30 flex items-center justify-center gap-2">
+                Next: Final Export
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</main>
+</body></html>

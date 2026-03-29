@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ReelForge - Review and Render</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#de1b42",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211114",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-10 py-4 bg-white dark:bg-slate-900">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-[-0.015em]">ReelForge</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Projects</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Pricing</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Settings</a>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 bg-slate-200 dark:bg-slate-700" data-alt="User Avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAhX15lKI6wRSElR3Nl9mn-ylhbSaWOJRXJoEe0929FbCd6nR2G-mHsdPDPyOoVJ2gmJoJAWXm5-oMVpCgLU7ib8kMla6-vX-A2stK_GOjwSs77pev09lvDTxe_T6_TKotkWMhXqeiLnPYTArL3Z2tWfIDWB3snWsL-Y_amqHTZoFMVE9p7M0rJWtuyZJ4KR_zcho-fApxMMFr34s_NDuVsU02Bj4pfnyFXJlo3dRQss7qKT-aYLrZaXtuB-mIpCpwcqnk5gGmJ");'></div>
+</div>
+</header>
+<!-- Main Content -->
+<div class="px-40 flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col w-full max-w-[1200px] flex-1">
+<!-- Page Header & Progress -->
+<div class="flex flex-col gap-6 mb-8">
+<div>
+<h1 class="text-slate-900 dark:text-slate-100 tracking-tight text-[36px] font-bold leading-tight mb-2">Review and Render</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal">Step 7 of 7: Review your settings and generate your AI video.</p>
+</div>
+<div class="flex flex-col gap-3 max-w-2xl">
+<div class="flex gap-6 justify-between items-end">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">Wizard Progress</p>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-bold leading-normal">100%</p>
+</div>
+<div class="rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden h-2">
+<div class="h-full rounded-full bg-primary transition-all duration-500" style="width: 100%;"></div>
+</div>
+<p class="text-primary text-sm font-medium leading-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Step 7/7 Complete
+                            </p>
+</div>
+</div>
+<!-- Two Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Project Summary -->
+<div class="col-span-1 lg:col-span-5 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
+<h2 class="text-slate-900 dark:text-slate-100 text-[20px] font-bold leading-tight mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined">fact_check</span> Project Summary
+                            </h2>
+<div class="flex flex-col gap-4">
+<!-- Script -->
+<div class="flex items-start gap-4 p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+<div class="text-primary mt-1">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div class="flex-1">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-semibold mb-1">Script Preview</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs line-clamp-2">"In a world where magic and technology intertwine, one young hero must discover the secret of the ancient code..."</p>
+<button class="text-primary text-xs font-medium mt-2 hover:underline">Edit Script</button>
+</div>
+</div>
+<!-- Visual Style -->
+<div class="flex items-start gap-4 p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+<div class="text-primary mt-1">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div class="flex-1 flex justify-between items-center">
+<div>
+<p class="text-slate-900 dark:text-slate-100 text-sm font-semibold mb-1">Visual Style</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Anime</p>
+</div>
+<div class="w-12 h-12 rounded bg-cover bg-center" data-alt="Anime style thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCIN3D6-KTaYpGpLafe1Hzc5YA0U2aWHPoGjwt8r4g31D53rCCEexd1iSHtom6RH7h0sMEKpvS6rtCNZv6klm6-jk_JjJfM-Dh2ecQI4MoU2aE8ytJfBUUFwcVoUNqqFXcWdjq-wBKhVQZkl8wXDiDQyqlLUIkiBrQdxBhXXmSZhfLY9mhCttN-5LsaMx-tQNxdO9YoxUYvp6IpHnLrrjaD6aKS0LqK3bCQvMnLg6-pR56Jw0VrQuXSxk6kUVb2Xm94Zi1E_6b-');"></div>
+</div>
+</div>
+<!-- AI Voice -->
+<div class="flex items-start gap-4 p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+<div class="text-primary mt-1">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div class="flex-1">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-semibold mb-1">AI Voice</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-slate-400">record_voice_over</span>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Sarah (English US, Friendly)</p>
+</div>
+</div>
+</div>
+<!-- Subtitles -->
+<div class="flex items-start gap-4 p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+<div class="text-primary mt-1">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div class="flex-1">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-semibold mb-1">Subtitle Style</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-slate-400">subtitles</span>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Bold, Yellow Text, Black Outline</p>
+</div>
+</div>
+</div>
+<!-- Music -->
+<div class="flex items-start gap-4 p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+<div class="text-primary mt-1">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div class="flex-1">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-semibold mb-1">Background Music</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-slate-400">music_note</span>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Chill Lo-fi (Volume: 15%)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Settings & Render -->
+<div class="col-span-1 lg:col-span-7 flex flex-col gap-6">
+<!-- Video Settings -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
+<h2 class="text-slate-900 dark:text-slate-100 text-[20px] font-bold leading-tight mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined">settings</span> Video Settings
+                                </h2>
+<div class="flex flex-col gap-6">
+<!-- Quality -->
+<div>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium mb-3">Resolution Quality</p>
+<div class="grid grid-cols-2 gap-4">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="quality" type="radio"/>
+<div class="rounded-lg border-2 border-slate-200 dark:border-slate-700 p-4 hover:bg-slate-50 dark:hover:bg-slate-800 peer-checked:border-primary peer-checked:bg-primary/5 transition-all">
+<div class="flex justify-between items-center mb-1">
+<span class="text-slate-900 dark:text-slate-100 font-bold">1080p Full HD</span>
+<span class="material-symbols-outlined text-primary peer-checked:block hidden">check_circle</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Standard high quality, faster render.</p>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="quality" type="radio"/>
+<div class="rounded-lg border-2 border-slate-200 dark:border-slate-700 p-4 hover:bg-slate-50 dark:hover:bg-slate-800 peer-checked:border-primary peer-checked:bg-primary/5 transition-all">
+<div class="flex justify-between items-center mb-1">
+<span class="text-slate-900 dark:text-slate-100 font-bold">4K Ultra HD</span>
+<span class="material-symbols-outlined text-primary hidden peer-checked:block">check_circle</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Highest quality, slower render.</p>
+</div>
+</label>
+</div>
+</div>
+<!-- Aspect Ratio -->
+<div>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium mb-3">Aspect Ratio</p>
+<div class="flex gap-4">
+<button class="flex-1 flex flex-col items-center justify-center gap-2 py-4 rounded-lg border-2 border-primary bg-primary/5 text-primary">
+<span class="material-symbols-outlined text-[32px]">smartphone</span>
+<span class="text-sm font-semibold">9:16</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Reels / TikTok</span>
+</button>
+<button class="flex-1 flex flex-col items-center justify-center gap-2 py-4 rounded-lg border-2 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-slate-300 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+<span class="material-symbols-outlined text-[32px]">desktop_windows</span>
+<span class="text-sm font-semibold">16:9</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">YouTube</span>
+</button>
+<button class="flex-1 flex flex-col items-center justify-center gap-2 py-4 rounded-lg border-2 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-slate-300 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+<span class="material-symbols-outlined text-[32px]">crop_square</span>
+<span class="text-sm font-semibold">1:1</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Instagram Feed</span>
+</button>
+</div>
+</div>
+<!-- Duration Estimate -->
+<div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-lg flex items-center justify-between border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">schedule</span>
+<div>
+<p class="text-slate-900 dark:text-slate-100 text-sm font-semibold">Estimated Duration</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Based on script length</p>
+</div>
+</div>
+<p class="text-slate-900 dark:text-slate-100 font-bold text-lg">~00:45</p>
+</div>
+</div>
+</div>
+<!-- Render Action Area -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm flex flex-col gap-6">
+<label class="flex gap-x-3 items-start cursor-pointer">
+<input checked="" class="mt-1 h-5 w-5 rounded border-slate-300 dark:border-slate-600 bg-transparent text-primary focus:ring-primary focus:ring-offset-0 focus:outline-none" type="checkbox"/>
+<p class="text-slate-600 dark:text-slate-300 text-sm font-normal leading-relaxed">
+                                        I agree to the Terms and Conditions and understand that rendering this video will consume credits from my account balance.
+                                    </p>
+</label>
+<div class="flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+<div class="flex items-center gap-2 bg-primary/10 px-3 py-1.5 rounded-full text-primary">
+<span class="material-symbols-outlined text-[18px]">monetization_on</span>
+<span class="text-sm font-semibold">Cost: 1 Credit</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-bold shadow-lg shadow-primary/30 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">movie</span>
+                                        Start Render
+                                    </button>
+</div>
+<!-- Render State (Simulated Active State) -->
+<div class="mt-4 p-5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50">
+<div class="flex justify-between items-center mb-3">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined animate-spin">sync</span>
+<span class="font-bold text-sm">Rendering Video...</span>
+</div>
+<span class="text-slate-500 dark:text-slate-400 text-sm font-medium">ETA: ~2 mins</span>
+</div>
+<div class="flex items-center gap-4 mb-4">
+<div class="flex-1 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden h-3">
+<div class="h-full rounded-full bg-gradient-to-r from-primary to-rose-400" style="width: 45%;"></div>
+</div>
+<span class="text-slate-900 dark:text-slate-100 font-bold text-sm min-w-[3ch]">45%</span>
+</div>
+<div class="flex justify-end">
+<button class="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 text-sm font-medium px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md transition-colors">
+                                            Cancel Render
+                                        </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ReelForge Analytics Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#e21d48",
+          "background-light": "#f8f6f6",
+          "background-dark": "#211115",
+          "surface-light": "#ffffff",
+          "surface-dark": "#2a161b",
+          "border-light": "#e5e7eb",
+          "border-dark": "#46252c"
+        },
+        fontFamily: {
+          "display": ["Space Grotesk", "sans-serif"],
+          "data": ["DM Sans", "sans-serif"]
+        },
+        borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-data min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 flex-shrink-0 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark flex flex-col justify-between hidden md:flex">
+<div class="flex flex-col gap-4 p-4">
+<div class="flex items-center gap-3 mb-6 px-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User Avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD9VIDlqmvl_VxT1tKDC1hD2S6WV8UOLdTbJ9tqvb2kO2c6NsAiT30oR3wjtl2HrYcW-asHd1Iewx6Hl19gZN4L4J3JKjP-i-_-9QBtChK9LaDGZikCtRquf4f2RsmPzRWp3KTjaPg4bKhrTCs2zgp7i-gtQL7x52N4V1zuulZVHfqrRBr8Wgje1QjajNwbkh8wY0MuR0IrxePwZBfjS3Js2AJfdBiI58YQ6_S2XqaZDVYOMorfX7kd0DBnQVWDQq39zWme5BJB");'></div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-display font-medium leading-normal">ReelForge Analytics</h1>
+<p class="text-primary text-sm font-normal leading-normal">Pro Plan</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-border-light dark:hover:bg-border-dark transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">dashboard</span>
+<span class="text-sm font-medium leading-normal">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary" href="#">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<span class="text-sm font-medium leading-normal">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-border-light dark:hover:bg-border-dark transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">video_library</span>
+<span class="text-sm font-medium leading-normal">My Videos</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-border-light dark:hover:bg-border-dark transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">view_quilt</span>
+<span class="text-sm font-medium leading-normal">Templates</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-border-light dark:hover:bg-border-dark transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">settings</span>
+<span class="text-sm font-medium leading-normal">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-border-light dark:hover:bg-border-dark transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">help</span>
+<span class="text-sm font-medium leading-normal">Help</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-y-auto">
+<!-- Header -->
+<header class="flex items-center justify-between border-b border-border-light dark:border-border-dark px-8 py-4 bg-surface-light dark:bg-surface-dark sticky top-0 z-10">
+<div class="flex items-center gap-4">
+<div class="md:hidden">
+<button class="p-2 -ml-2 text-slate-500 hover:text-slate-900 dark:hover:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-display font-bold leading-tight tracking-[-0.015em] hidden sm:block">ReelForge</h2>
+</div>
+<div class="flex items-center gap-6">
+<button class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined mr-2 text-sm">download</span>
+<span>Export Report</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 hidden sm:block" data-alt="User Avatar Top" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDXLg4dmc2qTY5RSqwZIb2lb9WNMbBleWGU-_AkBd240p8iuNMGK6cQbxmYXmLbKyGXWT_NEWlHBMDhYlZVKO3iRt4kfD8YNxX-hxB1fUldyn27lvWfLdcdZaozu0nPsBgSKId2YcTgIFGcOpMD5Fqgdlous1r6FklFXmZ2tTmO6nDzlI3GdGa0rabvlNMrerMzCdU4v20o6vK_cC4Lzgek-mtsBuvmjWhcsJAmjswLkxAtLl9cC1KX8QM-J0vd2rn7neJuNfSB");'></div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-8 max-w-7xl mx-auto w-full flex flex-col gap-8">
+<!-- Title & Date Range -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<h2 class="text-slate-900 dark:text-white text-3xl font-display font-black leading-tight tracking-[-0.033em]">Insights &amp; Analytics</h2>
+<div class="flex bg-surface-light dark:bg-surface-dark rounded-lg border border-border-light dark:border-border-dark p-1">
+<button class="px-4 py-2 text-sm font-medium rounded-md text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">7 Days</button>
+<button class="px-4 py-2 text-sm font-medium rounded-md bg-border-light dark:bg-border-dark text-slate-900 dark:text-white shadow-sm">30 Days</button>
+<button class="px-4 py-2 text-sm font-medium rounded-md text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">Custom</button>
+</div>
+</div>
+<!-- KPI Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex justify-between items-center">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal">Total Videos</p>
+<span class="material-symbols-outlined text-slate-400 text-sm">movie</span>
+</div>
+<div class="flex items-baseline gap-2 mt-2">
+<p class="text-slate-900 dark:text-white text-3xl font-bold leading-tight">142</p>
+<p class="text-emerald-500 text-sm font-medium leading-normal flex items-center">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> +12%
+              </p>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex justify-between items-center">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal">Credits Used</p>
+<span class="material-symbols-outlined text-slate-400 text-sm">toll</span>
+</div>
+<div class="flex items-baseline gap-2 mt-2">
+<p class="text-slate-900 dark:text-white text-3xl font-bold leading-tight">310</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex justify-between items-center">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal">Avg. Render Time</p>
+<span class="material-symbols-outlined text-slate-400 text-sm">timer</span>
+</div>
+<div class="flex items-baseline gap-2 mt-2">
+<p class="text-slate-900 dark:text-white text-3xl font-bold leading-tight">1m 45s</p>
+<p class="text-slate-400 text-sm font-medium leading-normal flex items-center">
+<span class="material-symbols-outlined text-[16px]">trending_flat</span> -
+              </p>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex justify-between items-center">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal">Popular Style</p>
+<span class="material-symbols-outlined text-slate-400 text-sm">brush</span>
+</div>
+<div class="flex items-baseline gap-2 mt-2">
+<p class="text-slate-900 dark:text-white text-3xl font-bold leading-tight">Anime</p>
+</div>
+</div>
+</div>
+<!-- Charts Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Line Chart (Placeholder) -->
+<div class="lg:col-span-2 rounded-xl bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark p-6 shadow-sm flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-slate-900 dark:text-white font-display font-bold text-lg">Video Production Over Time</h3>
+<button class="text-slate-400 hover:text-slate-900 dark:hover:text-white">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="flex-1 min-h-[300px] w-full relative flex items-end pb-8 pl-8 pt-4">
+<!-- Y Axis Labels -->
+<div class="absolute left-0 top-4 bottom-8 flex flex-col justify-between text-xs text-slate-400">
+<span>100</span>
+<span>75</span>
+<span>50</span>
+<span>25</span>
+<span>0</span>
+</div>
+<!-- Grid lines -->
+<div class="absolute left-8 right-0 top-4 bottom-8 flex flex-col justify-between">
+<div class="w-full border-t border-dashed border-border-light dark:border-border-dark"></div>
+<div class="w-full border-t border-dashed border-border-light dark:border-border-dark"></div>
+<div class="w-full border-t border-dashed border-border-light dark:border-border-dark"></div>
+<div class="w-full border-t border-dashed border-border-light dark:border-border-dark"></div>
+<div class="w-full border-t border-border-light dark:border-border-dark"></div>
+</div>
+<!-- SVG Line Chart Mockup -->
+<svg class="w-full h-full relative z-10" preserveaspectratio="none" viewbox="0 0 100 100">
+<path class="text-primary" d="M0 80 Q 10 60, 20 70 T 40 40 T 60 50 T 80 20 T 100 10" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path class="text-primary/10 dark:text-primary/20" d="M0 100 L 0 80 Q 10 60, 20 70 T 40 40 T 60 50 T 80 20 T 100 10 L 100 100 Z" fill="currentColor"></path>
+</svg>
+<!-- X Axis Labels -->
+<div class="absolute left-8 right-0 bottom-0 flex justify-between text-xs text-slate-400 pt-2">
+<span>Sep 1</span>
+<span>Sep 8</span>
+<span>Sep 15</span>
+<span>Sep 22</span>
+<span>Sep 29</span>
+</div>
+</div>
+</div>
+<!-- Bar Chart (Placeholder) -->
+<div class="rounded-xl bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark p-6 shadow-sm flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-slate-900 dark:text-white font-display font-bold text-lg">Popular Styles</h3>
+</div>
+<div class="flex-1 flex flex-col gap-4 justify-center">
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-sm">
+<span class="text-slate-700 dark:text-slate-300">Anime</span>
+<span class="font-bold">45%</span>
+</div>
+<div class="w-full bg-border-light dark:bg-border-dark rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-sm">
+<span class="text-slate-700 dark:text-slate-300">Cinematic</span>
+<span class="font-bold">25%</span>
+</div>
+<div class="w-full bg-border-light dark:bg-border-dark rounded-full h-2">
+<div class="bg-primary/80 h-2 rounded-full" style="width: 25%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-sm">
+<span class="text-slate-700 dark:text-slate-300">3D Render</span>
+<span class="font-bold">20%</span>
+</div>
+<div class="w-full bg-border-light dark:bg-border-dark rounded-full h-2">
+<div class="bg-primary/60 h-2 rounded-full" style="width: 20%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-sm">
+<span class="text-slate-700 dark:text-slate-300">Pixel Art</span>
+<span class="font-bold">10%</span>
+</div>
+<div class="w-full bg-border-light dark:bg-border-dark rounded-full h-2">
+<div class="bg-primary/40 h-2 rounded-full" style="width: 10%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity Feed -->
+<div class="rounded-xl bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark p-6 shadow-sm">
+<h3 class="text-slate-900 dark:text-white font-display font-bold text-lg mb-6">Recent Activity</h3>
+<div class="flex flex-col gap-4">
+<!-- Activity Item 1 -->
+<div class="flex items-start gap-4 pb-4 border-b border-border-light dark:border-border-dark">
+<div class="size-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-sm">play_circle</span>
+</div>
+<div class="flex-1">
+<p class="text-slate-900 dark:text-white font-medium text-sm">Video Rendered: "Cyberpunk Cityscape"</p>
+<p class="text-slate-500 text-xs mt-1">Render time: 2m 15s • Anime Style</p>
+</div>
+<span class="text-slate-400 text-xs whitespace-nowrap">2 mins ago</span>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex items-start gap-4 pb-4 border-b border-border-light dark:border-border-dark">
+<div class="size-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 flex-shrink-0">
+<span class="material-symbols-outlined text-sm">shopping_cart</span>
+</div>
+<div class="flex-1">
+<p class="text-slate-900 dark:text-white font-medium text-sm">Credits Purchased</p>
+<p class="text-slate-500 text-xs mt-1">Added 500 credits to account</p>
+</div>
+<span class="text-slate-400 text-xs whitespace-nowrap">2 hours ago</span>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex items-start gap-4">
+<div class="size-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-sm">play_circle</span>
+</div>
+<div class="flex-1">
+<p class="text-slate-900 dark:text-white font-medium text-sm">Video Rendered: "Fantasy Character Portrait"</p>
+<p class="text-slate-500 text-xs mt-1">Render time: 1m 30s • Cinematic Style</p>
+</div>
+<span class="text-slate-400 text-xs whitespace-nowrap">5 hours ago</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

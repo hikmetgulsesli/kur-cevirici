@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ReelForge A/B Testing Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#e21d45",
+          "background-light": "#f8f6f6",
+          "background-dark": "#211114",
+        },
+        fontFamily: {
+          "display": ["Space Grotesk"]
+        },
+        borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+  body {
+    font-family: "Space Grotesk", "Noto Sans", sans-serif;
+  }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-row max-w-[1200px] flex-1 gap-6">
+<!-- Sidebar -->
+<div class="flex h-full min-h-[700px] flex-col justify-between w-64 bg-slate-100 dark:bg-slate-900/50 rounded-xl p-4 border border-slate-200 dark:border-slate-800">
+<div class="flex flex-col gap-4">
+<div class="flex gap-3 items-center pb-4 border-b border-slate-200 dark:border-slate-800">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Abstract colorful gradient pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCrPCSstzpZTMG1OhJEP-ketoEbFsSrXK9VEFZhE4v73fXulYCLDzzhbZrA80Ass4zgvNm5-wfZJrC_1tS4nuCTXhEDp4iDDKLRGL5Fa7UJw7WleXzAvz4MjnXdKvDxzI8DduP_vjePSrDCDnyAl1zAfeTsITeUXGygkFcnaseO0392-4N1Rkv2n5UCO9Ezm9rXsGGVVCPwFzLPtVlI8qmxGXhZr8kbHY5_hf19bRfpV48rATs-d1STGJ_KwQ1OSZWB0haLngXX");'></div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-slate-100 text-base font-bold leading-normal">ReelForge</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal">Optimization</p>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">dashboard</span>
+<p class="text-slate-700 dark:text-slate-200 text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">folder</span>
+<p class="text-slate-700 dark:text-slate-200 text-sm font-medium leading-normal">Projects</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary" href="#">
+<span class="material-symbols-outlined">science</span>
+<p class="text-primary text-sm font-medium leading-normal">A/B Testing</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">bar_chart</span>
+<p class="text-slate-700 dark:text-slate-200 text-sm font-medium leading-normal">Analytics</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">settings</span>
+<p class="text-slate-700 dark:text-slate-200 text-sm font-medium leading-normal">Settings</p>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-4 mt-8">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Create Project</span>
+</button>
+<div class="flex flex-col gap-1 border-t border-slate-200 dark:border-slate-800 pt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">help</span>
+<p class="text-slate-700 dark:text-slate-200 text-sm font-medium leading-normal">Help</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">logout</span>
+<p class="text-slate-700 dark:text-slate-200 text-sm font-medium leading-normal">Sign Out</p>
+</a>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex-1 flex flex-col min-w-0">
+<div class="flex flex-wrap items-center justify-between gap-3 p-4 border-b border-slate-200 dark:border-slate-800">
+<div class="flex flex-col gap-1">
+<h2 class="text-slate-900 dark:text-slate-100 tracking-tight text-2xl font-bold leading-tight">Video A/B Testing</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">Test and optimize your video content to maximize engagement.</p>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-medium leading-normal hover:bg-primary/90 transition-colors shadow-sm shadow-primary/20">
+<span class="truncate">Create New Test</span>
+</button>
+</div>
+<!-- Active Tests -->
+<div class="p-4 flex flex-col gap-4">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]">Active Tests</h3>
+<div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/30">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+<th class="px-4 py-3 text-slate-600 dark:text-slate-300 text-sm font-medium leading-normal">Test Name</th>
+<th class="px-4 py-3 text-slate-600 dark:text-slate-300 text-sm font-medium leading-normal">Variants</th>
+<th class="px-4 py-3 text-slate-600 dark:text-slate-300 text-sm font-medium leading-normal">Status</th>
+<th class="px-4 py-3 text-slate-600 dark:text-slate-300 text-sm font-medium leading-normal">Live CTR</th>
+<th class="px-4 py-3 text-slate-600 dark:text-slate-300 text-sm font-medium leading-normal">Avg. Watch Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-slate-100 dark:border-slate-800/50 hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-4 py-4 text-slate-900 dark:text-slate-100 text-sm font-medium leading-normal">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">play_circle</span>
+                        Thumbnail Experiment 1
+                      </div>
+</td>
+<td class="px-4 py-4 text-sm font-normal leading-normal">
+<div class="flex items-center -space-x-2">
+<div class="w-8 h-8 rounded border-2 border-white dark:border-slate-900 bg-cover bg-center" data-alt="Video thumbnail variant A" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB0dd8B-km-jg9D5tLs7yukrGewOXdUGm5Gez0l23CB1btgOH_P1TsPpfWoOaoQdTIGO28VHVY1UqvLJpIEm3DEVZmgafiVIUjxWFkRTnfDHLKqicZql4ZqZirempnlE6BN5sLvfW5Pdm0w2SAPuwkfEk9zZ0l4SoRG5hHX0gZ0kGyMz0vDiGncEFaBNfSL2okGCPFy6Od-seloMXJukWCUzkSRK0TlmQX0cTLa_xDT-42pvc2-7TIPZxyWogpvTw0XvENsmK-O");'></div>
+<div class="w-8 h-8 rounded border-2 border-white dark:border-slate-900 bg-cover bg-center" data-alt="Video thumbnail variant B" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNWP-JyIgFB9uq9EF4KpI3pEMBKzM4TZTb5wXzmf9rvNhdWPqv2Tm_SDL83AkQnaiOnnMchQDEd1OyLBG-rgx_ddcHa_CcMIsfNlE4nZaaH5f8dbHRxRkP6pPubR5NRXhAYCJ2Smf1N4T-_qXbh9Dlm2PL8BB-IMVccVkgsVhXNPsxWhDeET85ymABVrt4LmexvA20q3QSTWmklR3loHcp1TL5ojfoDYnvgYWj8tSrQGFLPOwZDXhEylTvuaEeTtg2r2G6ahLR");'></div>
+<div class="w-8 h-8 rounded border-2 border-white dark:border-slate-900 bg-cover bg-center" data-alt="Video thumbnail variant C" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAsa5qHLBBxc7biY7Z_JPFzAQBF1His_Q9JSbZPhmumPJYmzL6MZXgEvf5xf3dSpQmWr4u6LWRkpSRHH-NanY2dxdwqLkP3wac9N4rylHT3zyvoGBVeJCNvWyQT7o5pKUWFTMOxYSuqB2C1sCTKUCf5_CPGxZVBH5XoL3dQMQNdXrU23EoxgL6IU7PvTmQJ282XAM05lzue4leiinM8p2c_vE9oskAwtmfcoy4ONetOBgW5fmMHUD7dNb1U3mDQZcpJbgGZEE4Q");'></div>
+</div>
+</td>
+<td class="px-4 py-4 text-sm font-normal leading-normal">
+<span class="inline-flex items-center gap-1.5 py-1 px-2 rounded-md bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                        Running
+                      </span>
+</td>
+<td class="px-4 py-4 text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">4.2% <span class="text-green-500 text-xs ml-1">↑ 0.5%</span></td>
+<td class="px-4 py-4 text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">1m 24s</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-4 py-4 text-slate-900 dark:text-slate-100 text-sm font-medium leading-normal">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">title</span>
+                        Title Optimization
+                      </div>
+</td>
+<td class="px-4 py-4 text-sm font-normal leading-normal">
+<div class="flex items-center gap-2">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-xs text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">A</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-xs text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">B</span>
+</div>
+</td>
+<td class="px-4 py-4 text-sm font-normal leading-normal">
+<span class="inline-flex items-center gap-1.5 py-1 px-2 rounded-md bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                        Running
+                      </span>
+</td>
+<td class="px-4 py-4 text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">3.8% <span class="text-slate-500 text-xs ml-1">-</span></td>
+<td class="px-4 py-4 text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">2m 10s</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Completed Tests -->
+<div class="p-4 flex flex-col gap-4">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]">Completed Tests</h3>
+<div class="flex flex-col gap-4">
+<!-- Expanded Completed Test -->
+<div class="rounded-xl border border-primary/30 bg-primary/5 dark:bg-primary/5 p-5 flex flex-col gap-5">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">done_all</span>
+<div>
+<h4 class="text-slate-900 dark:text-slate-100 text-base font-bold">Intro Hook Variations</h4>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Completed Oct 24, 2023 • 14,203 views</p>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-md bg-primary text-white text-xs font-medium hover:bg-primary/90 transition-colors shadow-sm">
+                        Apply Winner
+                      </button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Variant Cards -->
+<div class="flex gap-4">
+<div class="flex-1 rounded-lg border-2 border-amber-400 dark:border-amber-500 bg-white dark:bg-slate-900 p-3 relative shadow-md shadow-amber-500/10">
+<div class="absolute -top-3 -right-3 bg-amber-400 dark:bg-amber-500 text-white p-1 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-sm">workspace_premium</span>
+</div>
+<h5 class="text-slate-700 dark:text-slate-300 text-xs font-bold mb-2 uppercase tracking-wider">Variant B (Winner)</h5>
+<div class="aspect-video rounded bg-slate-200 dark:bg-slate-800 mb-3 bg-cover bg-center" data-alt="Winning video variant thumbnail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBu0DegbZE_iM9OJ0Y4egCf4tgCOomMAJ5Tn4vnzXMfBCs4x4Bgl6rEHuAPEHMrgcZhNUPLs75Iy1b81l2-0f8nP5Y7QoNbtA2KGaFZW3hsioNXZiXotVYHWwGafoyEXlTtW3cIjXoiH026HJZjAjcwK-4uWBBj9vnYFTruxxcet9PoyNASJwUlzrzVhX64UcL5sKZWnOGlbJEq-92wiYwoWs8CWL9XESfPgFcMcLrzFpuw4TSCyRz-p889PfZX7u5kUgSyw3L7");'></div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-sm">
+<span class="text-slate-500 dark:text-slate-400">CTR</span>
+<span class="font-bold text-slate-900 dark:text-slate-100">6.1%</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500 dark:text-slate-400">Retention</span>
+<span class="font-bold text-slate-900 dark:text-slate-100">42%</span>
+</div>
+</div>
+</div>
+<div class="flex-1 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-3 opacity-80">
+<h5 class="text-slate-500 dark:text-slate-400 text-xs font-bold mb-2 uppercase tracking-wider">Original (A)</h5>
+<div class="aspect-video rounded bg-slate-200 dark:bg-slate-800 mb-3 bg-cover bg-center grayscale" data-alt="Original video variant thumbnail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBBZoYOGQQAbT7iHljvlyeXNh9_kNEoJZcHx7ZB1lPOCxmv8SwG6RnK9fvADf_IHsTa0qwNBQmf3vZA2rbPbXV2-UIPrPqXZKEFDAonFR2ityt6T_bODnGAQjjgP0xMAUnClM8C7z-qTGxD5rb4rPEFj_uGLbk6Dlb-DZOQ_8JCZyz0rV0ViScie7hQTcXh5XAbS9jQDOHZgU_Nty6oJxQ4qWqpB-CqGXlCd4YbEO-mTcyXB7tIwdsVJELUA4rR0RBwm7CyBifA");'></div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-sm">
+<span class="text-slate-500 dark:text-slate-400">CTR</span>
+<span class="font-medium text-slate-700 dark:text-slate-300">4.8%</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500 dark:text-slate-400">Retention</span>
+<span class="font-medium text-slate-700 dark:text-slate-300">35%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Chart Placeholder -->
+<div class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 flex flex-col">
+<h5 class="text-slate-700 dark:text-slate-300 text-sm font-medium mb-4">Retention Curve Comparison</h5>
+<div class="flex-1 relative w-full flex items-end justify-between px-2 pt-8 pb-2 border-b border-l border-slate-200 dark:border-slate-700">
+<!-- Simplified Chart Visualization -->
+<svg class="absolute inset-0 h-full w-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path class="drop-shadow-md" d="M 0 10 L 20 20 L 40 40 L 60 45 L 80 60 L 100 65" fill="none" stroke="#e21d45" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<path class="dark:stroke-slate-600" d="M 0 15 L 20 30 L 40 55 L 60 70 L 80 85 L 100 90" fill="none" stroke="#94a3b8" stroke-dasharray="4 4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div class="absolute bottom-2 right-2 flex flex-col gap-1 bg-white/80 dark:bg-slate-900/80 p-1.5 rounded text-[10px]">
+<div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> Variant B</div>
+<div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-slate-400 dark:bg-slate-600"></span> Original</div>
+</div>
+</div>
+<div class="flex justify-between mt-2 text-xs text-slate-400">
+<span>0:00</span>
+<span>1:00</span>
+<span>2:00</span>
+<span>3:00</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

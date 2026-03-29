@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ReelForge Video Detail &amp; Publishing</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&amp;family=DM+Sans:opsz,wght@9..40,400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e21d48",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211115",
+                        "surface-dark": "#321a20",
+                        "border-dark": "#64353f",
+                        "text-muted": "#c7949f"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["DM Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'DM Sans', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-full min-h-screen w-full overflow-x-hidden">
+<!-- Left Sidebar -->
+<aside class="w-64 flex-shrink-0 bg-background-dark border-r border-border-dark hidden md:flex flex-col justify-between h-screen sticky top-0">
+<div class="flex flex-col gap-4 p-4">
+<div class="flex gap-3 items-center mb-6">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Abstract colorful AI logo pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVMM1TIHE3HVMk2SaGpLx-Vd1_v1FfBZaCgnxOe7xowvEDvTZraadEln0FsPHJbv7-a_K0yvsBQ1ogGT6c2X4F0pyBq2ddaWeHvkmALlW7O2qwQXTz6j4ct7Ac3dPy75tAX2uG1VAsfVJXy2j3lW01MHyQsy3SJtbq9stxLqb0v50VhviiCBiIMOyKwlE5rBnE9cxPS68gRkyFP3K1ZIfBBnHwoxcm63kfITtQBsl3gYgzhtr-cfni6_AOPMhMoQmfTLU-lhfk");'></div>
+<div class="flex flex-col">
+<h1 class="text-slate-100 font-display text-base font-medium leading-normal">ReelForge AI</h1>
+<p class="text-text-muted text-sm font-normal leading-normal">Creator Plan</p>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-surface-dark transition-colors text-slate-100" href="#">
+<span class="material-symbols-outlined text-slate-100">home</span>
+<p class="text-sm font-medium leading-normal">Home</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-surface-dark text-slate-100" href="#">
+<span class="material-symbols-outlined text-slate-100 fill-1">video_library</span>
+<p class="text-sm font-medium leading-normal">My Videos</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-surface-dark transition-colors text-slate-100" href="#">
+<span class="material-symbols-outlined text-slate-100">content_copy</span>
+<p class="text-sm font-medium leading-normal">Templates</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-surface-dark transition-colors text-slate-100" href="#">
+<span class="material-symbols-outlined text-slate-100">mic</span>
+<p class="text-sm font-medium leading-normal">Voices</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-surface-dark transition-colors text-slate-100" href="#">
+<span class="material-symbols-outlined text-slate-100">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-4 p-4">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-slate-100 text-sm font-bold leading-normal tracking-[0.015em] transition-transform hover:scale-[1.02]">
+<span class="material-symbols-outlined mr-2 text-[20px]">add</span>
+<span class="truncate font-display">New Video</span>
+</button>
+<div class="flex flex-col gap-1 border-t border-border-dark pt-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-surface-dark transition-colors text-slate-100" href="#">
+<span class="material-symbols-outlined text-slate-100">help</span>
+<p class="text-sm font-medium leading-normal">Help</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-surface-dark transition-colors text-slate-100" href="#">
+<span class="material-symbols-outlined text-slate-100">logout</span>
+<p class="text-sm font-medium leading-normal">Sign Out</p>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-screen overflow-y-auto">
+<div class="flex-1 max-w-[1200px] w-full mx-auto p-4 lg:p-8 flex flex-col xl:flex-row gap-8">
+<!-- Center Column: Video & Details -->
+<div class="flex-1 flex flex-col gap-6 min-w-0">
+<!-- Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex flex-col gap-1">
+<h2 class="text-slate-100 font-display text-2xl sm:text-3xl font-bold leading-tight truncate">Anime Style Exploration</h2>
+<p class="text-text-muted text-sm font-normal">Created on Oct 24, 2023 • Project: Personal</p>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<button class="flex items-center justify-center rounded-lg h-9 px-4 bg-surface-dark hover:bg-surface-dark/80 text-slate-100 text-sm font-medium transition-colors">
+<span class="material-symbols-outlined mr-2 text-[18px]">content_copy</span>
+                                Duplicate
+                            </button>
+<button class="flex items-center justify-center rounded-lg h-9 px-4 bg-surface-dark hover:bg-surface-dark/80 text-primary text-sm font-medium transition-colors">
+<span class="material-symbols-outlined mr-2 text-[18px]">delete</span>
+                                Delete
+                            </button>
+</div>
+</div>
+<!-- Video Player -->
+<div class="relative bg-surface-dark rounded-xl overflow-hidden aspect-video shadow-lg border border-border-dark group flex items-center justify-center" data-alt="Anime style futuristic city street scene" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBDlKe-SEXeLV8D3osxBIPdU9s8MyVzpoQ9uTWyB81-zQS0JByq9RTN-Gbb6OAM2hCv09tapX0jLkHhOmB6FRIsVYyzY54PUKaBsc5nG6ntpDzm0dMB8UuL_LvuIThG8Px0OMtQcILMFw0PeZ8Cmcg67CGnBYHcZsDMTC9cncqZA0HTA2b1kSC6AiGIfek4aaRTCmSCuLyQ1CMzAOClDNsX-wQUFQ86vdsgzw60XrkTtw9XZdNj1XF8VqolkH0tlYmJyhNkztXL"); background-size: cover; background-position: center;'>
+<!-- Big Play Button overlay -->
+<button class="absolute z-10 flex items-center justify-center rounded-full size-16 bg-black/50 text-slate-100 backdrop-blur-sm hover:bg-primary/80 transition-all transform hover:scale-105">
+<span class="material-symbols-outlined text-[32px] fill-1 ml-1">play_arrow</span>
+</button>
+<!-- Controls bar -->
+<div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col gap-2">
+<!-- Progress -->
+<div class="flex h-4 items-center cursor-pointer group/progress relative">
+<div class="h-1.5 w-full rounded-full bg-slate-500/50 flex overflow-hidden">
+<div class="h-full bg-primary w-1/3 rounded-full relative"></div>
+</div>
+<div class="absolute left-1/3 -ml-2 size-4 rounded-full bg-slate-100 shadow scale-0 group-hover/progress:scale-100 transition-transform"></div>
+</div>
+<!-- Buttons -->
+<div class="flex items-center justify-between text-slate-100">
+<div class="flex items-center gap-4">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined fill-1">play_arrow</span></button>
+<div class="flex items-center gap-2 group/vol">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined">volume_up</span></button>
+<div class="w-16 h-1 bg-slate-500/50 rounded-full hidden group-hover/vol:block cursor-pointer">
+<div class="w-2/3 h-full bg-slate-100 rounded-full"></div>
+</div>
+</div>
+<span class="text-xs font-medium">0:20 / 1:00</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined">settings</span></button>
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined">fullscreen</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Metadata Badges -->
+<div class="flex flex-wrap gap-2 py-2">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-dark border border-border-dark text-xs text-slate-300 font-medium">
+<span class="material-symbols-outlined text-[14px] mr-1">timer</span> 60s
+                        </span>
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-dark border border-border-dark text-xs text-slate-300 font-medium">
+<span class="material-symbols-outlined text-[14px] mr-1">palette</span> Anime Style
+                        </span>
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-dark border border-border-dark text-xs text-slate-300 font-medium">
+<span class="material-symbols-outlined text-[14px] mr-1">record_voice_over</span> Voice: Sarah
+                        </span>
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-xs text-primary font-medium">
+<span class="material-symbols-outlined text-[14px] mr-1">monetization_on</span> 1 Credit Used
+                        </span>
+</div>
+<!-- Action Row -->
+<div class="flex flex-wrap gap-3 py-2 border-b border-border-dark pb-6">
+<button class="flex-1 sm:flex-none flex items-center justify-center rounded-lg h-10 px-6 bg-surface-dark hover:bg-surface-dark/80 border border-border-dark text-slate-100 text-sm font-medium transition-colors">
+<span class="material-symbols-outlined mr-2 text-[18px]">download</span>
+                            Download HD
+                        </button>
+<button class="flex-1 sm:flex-none flex items-center justify-center rounded-lg h-10 px-6 bg-primary hover:bg-primary/90 text-slate-100 text-sm font-bold transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined mr-2 text-[18px]">hd</span>
+                            Download 4K
+                        </button>
+</div>
+<!-- Editable Details -->
+<div class="flex flex-col gap-5 pt-2">
+<div class="flex flex-col gap-2">
+<label class="text-slate-100 text-sm font-medium font-display" for="video-title">Video Title</label>
+<input class="form-input w-full rounded-lg bg-surface-dark border-border-dark text-slate-100 focus:border-primary focus:ring-1 focus:ring-primary h-12 placeholder:text-text-muted transition-colors" id="video-title" type="text" value="Anime Style Exploration"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-slate-100 text-sm font-medium font-display" for="video-desc">Description</label>
+<textarea class="form-textarea w-full rounded-lg bg-surface-dark border-border-dark text-slate-100 focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-text-muted transition-colors resize-y" id="video-desc" rows="4">Exploring neon cityscapes with anime-inspired aesthetics. Generated using the v4 rendering engine with detailed background prompts.</textarea>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-slate-100 text-sm font-medium font-display" for="video-tags">Tags</label>
+<input class="form-input w-full rounded-lg bg-surface-dark border-border-dark text-slate-100 focus:border-primary focus:ring-1 focus:ring-primary h-12 placeholder:text-text-muted transition-colors" id="video-tags" type="text" value="anime, cyberpunk, neon, city, exploration"/>
+<p class="text-xs text-text-muted mt-1">Separate tags with commas</p>
+</div>
+</div>
+</div>
+<!-- Right Sidebar: Publishing -->
+<aside class="w-full xl:w-80 flex-shrink-0 flex flex-col gap-6">
+<div class="bg-surface-dark border border-border-dark rounded-xl p-5 flex flex-col gap-5">
+<h3 class="text-slate-100 font-display text-lg font-bold border-b border-border-dark pb-3">Publishing &amp; Sharing</h3>
+<!-- Social Integration -->
+<div class="flex flex-col gap-3">
+<h4 class="text-slate-300 text-sm font-medium">Quick Publish</h4>
+<div class="grid grid-cols-3 gap-2">
+<button class="flex flex-col items-center justify-center gap-2 p-3 rounded-lg bg-background-dark border border-border-dark hover:border-primary/50 hover:bg-primary/5 transition-all text-slate-300 hover:text-primary">
+<span class="material-symbols-outlined text-[24px]">smart_display</span>
+<span class="text-xs font-medium">YouTube</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 p-3 rounded-lg bg-background-dark border border-border-dark hover:border-primary/50 hover:bg-primary/5 transition-all text-slate-300 hover:text-primary">
+<span class="material-symbols-outlined text-[24px]">music_video</span>
+<span class="text-xs font-medium">TikTok</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 p-3 rounded-lg bg-background-dark border border-border-dark hover:border-primary/50 hover:bg-primary/5 transition-all text-slate-300 hover:text-primary">
+<span class="material-symbols-outlined text-[24px]">photo_camera</span>
+<span class="text-xs font-medium">Instagram</span>
+</button>
+</div>
+</div>
+<!-- Scheduling -->
+<div class="flex flex-col gap-3 pt-4 border-t border-border-dark">
+<div class="flex items-center justify-between">
+<h4 class="text-slate-300 text-sm font-medium">Schedule Release</h4>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-9 h-5 bg-background-dark peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary border border-border-dark"></div>
+</label>
+</div>
+<div class="flex flex-col gap-2 opacity-50 pointer-events-none"> <!-- Disabled state example -->
+<div class="relative">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<span class="material-symbols-outlined text-text-muted text-[18px]">calendar_today</span>
+</div>
+<input class="form-input bg-background-dark border border-border-dark text-slate-300 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5" disabled="" type="date"/>
+</div>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<span class="material-symbols-outlined text-text-muted text-[18px]">schedule</span>
+</div>
+<input class="form-input bg-background-dark border border-border-dark text-slate-300 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5" disabled="" type="time"/>
+</div>
+</div>
+</div>
+<!-- Share Link -->
+<div class="flex flex-col gap-3 pt-4 border-t border-border-dark">
+<h4 class="text-slate-300 text-sm font-medium">Share Link</h4>
+<div class="flex relative">
+<input class="form-input w-full bg-background-dark border border-border-dark text-slate-400 text-sm rounded-l-lg rounded-r-none focus:ring-primary focus:border-primary p-2.5 pr-12" readonly="" type="text" value="reelforge.ai/v/x7b9q2p"/>
+<button class="absolute right-0 top-0 bottom-0 px-3 bg-surface-dark border-y border-r border-border-dark rounded-r-lg hover:bg-surface-dark/80 text-slate-300 hover:text-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+</div>
+<button class="w-full flex items-center justify-center rounded-lg h-11 bg-primary hover:bg-primary/90 text-slate-100 text-sm font-bold mt-2 transition-all">
+                            Save Changes
+                        </button>
+</div>
+</aside>
+</div>
+</main>
+</div>
+</body></html>

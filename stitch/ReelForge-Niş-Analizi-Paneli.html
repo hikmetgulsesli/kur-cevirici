@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ReelForge Niş Analizi Paneli</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#3b7ced",
+          "background-light": "#f6f7f8",
+          "background-dark": "#111721",
+        },
+        fontFamily: {
+          "display": ["Space Grotesk", "sans-serif"],
+          "body": ["DM Sans", "sans-serif"]
+        },
+        borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+<style>
+  body {
+    font-family: 'DM Sans', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-body">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow">
+<!-- Sidebar -->
+<div class="flex h-full min-h-screen w-64 flex-col justify-between bg-slate-900 p-4 shrink-0 border-r border-slate-800">
+<div class="flex flex-col gap-4">
+<div class="flex gap-3 items-center mb-6">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="ReelForge Logo Placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCo1c-S9WsFXHnUcLp4cp-VKZrjCVJXylCE9gfyyfGdfD5aJ2tH4ibz-hS5pqBC7Dgab8ydKt704BqzbZS1mGNGbzaver_1useLs68wd_iTQRh8tEEF2-yN9iIFD-_qFLeThG2NWqZe9JHeP-zJnmxW5xIz2w9Ey1oVpmEIIJBHeUb71kDLSJ5bh_O0o2WSrgd7i3wc2ly-yOegPFfca4VzG6N2BXvP2O4uE_Xzf29uiBf7VIGgWkgj-KixL93M15nVosUCxk2E");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-bold leading-normal font-display">ReelForge</h1>
+<p class="text-slate-400 text-xs font-normal leading-normal">Yapay Zeka Video Platformu</p>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-300">dashboard</span>
+<p class="text-slate-300 text-sm font-medium leading-normal">Kontrol Paneli</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-primary" href="#">
+<span class="material-symbols-outlined text-primary">pie_chart</span>
+<p class="text-primary text-sm font-bold leading-normal">Niş Analizi</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-300">lightbulb</span>
+<p class="text-slate-300 text-sm font-medium leading-normal">İçerik Fikirleri</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-300">compare_arrows</span>
+<p class="text-slate-300 text-sm font-medium leading-normal">Rakip Analizi</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-300">group</span>
+<p class="text-slate-300 text-sm font-medium leading-normal">Hedef Kitle</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-300">settings</span>
+<p class="text-slate-300 text-sm font-medium leading-normal">Ayarlar</p>
+</a>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex flex-col flex-1 min-w-0">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-8 py-4 bg-background-light dark:bg-background-dark sticky top-0 z-10">
+<div class="flex items-center gap-8 flex-1">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-2xl text-primary">analytics</span>
+<h2 class="text-lg font-bold leading-tight font-display tracking-tight">Niş Analizi Paneli</h2>
+</div>
+<label class="flex flex-col max-w-md w-full !h-10">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full border border-slate-300 dark:border-slate-700 overflow-hidden bg-white dark:bg-slate-900 focus-within:ring-2 focus-within:ring-primary/50">
+<div class="text-slate-400 flex items-center justify-center pl-4 bg-transparent">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none rounded-none border-none bg-transparent focus:outline-none focus:ring-0 h-full placeholder:text-slate-400 px-4 text-sm font-normal text-slate-900 dark:text-slate-100" placeholder="Anahtar Kelime Ara..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-9 cursor-pointer border border-slate-300 dark:border-slate-700" data-alt="User Avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDjvHosF-EB0SY-hPLeXCqKOLqXwmbDvO7EaPKxogr-fkVLKxG1EMvGUr0N6NCwfQRJmL168lcfabd0k2GoMpi3TxGHiXc94vBeO2TQTbLq6nujflrcZmMzhi0baTMGEYEA2-TCFc90B1gwG-vfeXn4tTFleS73lM7BC7YvEsT-7-UHFoCJeMtHWewN0KOtVIIw8Hxve3oX7CSbmUTIC6a4d3iWdpnpfSyZJ_jD3Rsb1PY8spd8FDBOrQFlTu8j__O7aXjXAkxR");'></div>
+</div>
+</header>
+<div class="p-8 overflow-y-auto h-full">
+<div class="mb-8">
+<h3 class="text-3xl font-bold leading-tight font-display text-slate-900 dark:text-white mb-2">Niş Analizi Paneli</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Nişinizdeki trendleri, fırsatları ve rekabeti keşfedin.</p>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Left Column (Wider) -->
+<div class="lg:col-span-2 flex flex-col gap-6">
+<!-- Trending Topics -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
+<h4 class="text-lg font-bold font-display text-slate-900 dark:text-white mb-4">Popüler Konular</h4>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+<div class="flex flex-col gap-2 rounded-lg p-4 border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50">
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium">Yapay Zeka</p>
+<p class="text-slate-900 dark:text-white font-display text-2xl font-bold">10.5K</p>
+<p class="text-green-500 text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">trending_up</span> +25%</p>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-4 border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50">
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium">Kripto Para</p>
+<p class="text-slate-900 dark:text-white font-display text-2xl font-bold">8.2K</p>
+<p class="text-green-500 text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">trending_up</span> +15%</p>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-4 border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50">
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium">Tasarım</p>
+<p class="text-slate-900 dark:text-white font-display text-2xl font-bold">6.1K</p>
+<p class="text-red-500 text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">trending_down</span> -5%</p>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-4 border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50">
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium">Pazarlama</p>
+<p class="text-slate-900 dark:text-white font-display text-2xl font-bold">4.9K</p>
+<p class="text-green-500 text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">trending_up</span> +10%</p>
+</div>
+</div>
+</div>
+<!-- Competitor Analysis Chart Placeholder -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h4 class="text-lg font-bold font-display text-slate-900 dark:text-white">Rakip Analizi</h4>
+<button class="text-sm text-primary hover:underline">Tümünü Gör</button>
+</div>
+<div class="h-64 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center border border-slate-200 dark:border-slate-700 relative overflow-hidden">
+<div class="absolute bottom-0 left-0 w-full h-full flex items-end justify-around px-8 pb-4">
+<!-- Mock bars -->
+<div class="w-12 bg-primary/80 rounded-t-sm" style="height: 60%"></div>
+<div class="w-12 bg-purple-500/80 rounded-t-sm" style="height: 85%"></div>
+<div class="w-12 bg-cyan-400/80 rounded-t-sm" style="height: 45%"></div>
+<div class="w-12 bg-primary/80 rounded-t-sm" style="height: 70%"></div>
+<div class="w-12 bg-purple-500/80 rounded-t-sm" style="height: 55%"></div>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium z-10 bg-white/80 dark:bg-slate-900/80 px-3 py-1 rounded backdrop-blur-sm">Görüntülenme ve Etkileşim Karşılaştırması</p>
+</div>
+</div>
+<!-- Keyword Explorer -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
+<h4 class="text-lg font-bold font-display text-slate-900 dark:text-white mb-4">Anahtar Kelime Gezgini</h4>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead>
+<tr class="border-b border-slate-200 dark:border-slate-700">
+<th class="pb-3 font-semibold text-slate-600 dark:text-slate-400">Anahtar Kelime</th>
+<th class="pb-3 font-semibold text-slate-600 dark:text-slate-400">Arama Hacmi</th>
+<th class="pb-3 font-semibold text-slate-600 dark:text-slate-400">Rekabet</th>
+<th class="pb-3 font-semibold text-slate-600 dark:text-slate-400 text-right">Trend</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr>
+<td class="py-3 text-slate-900 dark:text-slate-200 font-medium">Yapay zeka araçları</td>
+<td class="py-3 text-slate-700 dark:text-slate-300">125,000</td>
+<td class="py-3"><span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400">Yüksek</span></td>
+<td class="py-3 text-right text-green-500"><span class="material-symbols-outlined text-[18px] align-middle">call_made</span></td>
+</tr>
+<tr>
+<td class="py-3 text-slate-900 dark:text-slate-200 font-medium">ChatGPT eğitim</td>
+<td class="py-3 text-slate-700 dark:text-slate-300">84,500</td>
+<td class="py-3"><span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400">Orta</span></td>
+<td class="py-3 text-right text-green-500"><span class="material-symbols-outlined text-[18px] align-middle">call_made</span></td>
+</tr>
+<tr>
+<td class="py-3 text-slate-900 dark:text-slate-200 font-medium">Midjourney promptları</td>
+<td class="py-3 text-slate-700 dark:text-slate-300">42,100</td>
+<td class="py-3"><span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Düşük</span></td>
+<td class="py-3 text-right text-slate-400"><span class="material-symbols-outlined text-[18px] align-middle">horizontal_rule</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Column (Sidebar) -->
+<div class="flex flex-col gap-6">
+<!-- Content Gaps (Opportunities) -->
+<div class="bg-gradient-to-br from-primary/10 to-purple-500/10 dark:from-primary/20 dark:to-purple-500/20 rounded-xl p-6 border border-primary/20 shadow-sm">
+<h4 class="text-lg font-bold font-display text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">flare</span>
+İçerik Boşlukları (Fırsatlar)
+</h4>
+<div class="flex flex-col gap-3">
+<div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm p-4 rounded-lg border border-slate-200 dark:border-slate-700">
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Yeni Başlayanlar için AI Müzik</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-2">Yüksek arama hacmi, çok düşük rekabet. Eğitim içerikleri eksik.</p>
+<div class="flex justify-between items-center">
+<span class="text-xs font-medium px-2 py-1 rounded bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400">Fırsat Skoru: 92/100</span>
+<button class="text-primary hover:text-primary/80"><span class="material-symbols-outlined text-[20px]">add_circle</span></button>
+</div>
+</div>
+<div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm p-4 rounded-lg border border-slate-200 dark:border-slate-700">
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Yerel İşletmeler için AI Otomasyon</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-2">Büyüyen trend, spesifik vaka analizleri talep görüyor.</p>
+<div class="flex justify-between items-center">
+<span class="text-xs font-medium px-2 py-1 rounded bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400">Fırsat Skoru: 85/100</span>
+<button class="text-primary hover:text-primary/80"><span class="material-symbols-outlined text-[20px]">add_circle</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Audience Insights -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
+<h4 class="text-lg font-bold font-display text-slate-900 dark:text-white mb-4">Hedef Kitle Demografisi</h4>
+<div class="flex flex-col items-center justify-center gap-4">
+<!-- Donut Chart Placeholder -->
+<div class="relative size-40 rounded-full border-[16px] border-slate-100 dark:border-slate-800 flex items-center justify-center before:content-[''] before:absolute before:inset-[-16px] before:rounded-full before:border-[16px] before:border-transparent before:border-t-primary before:border-r-primary before:border-b-purple-500 before:rotate-45">
+<div class="text-center">
+<span class="block text-2xl font-bold font-display text-slate-900 dark:text-white">68%</span>
+<span class="block text-xs text-slate-500">18-34 Yaş</span>
+</div>
+</div>
+<div class="w-full grid grid-cols-2 gap-2 mt-2">
+<div class="flex items-center gap-2 text-sm">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="text-slate-600 dark:text-slate-400">18-24 (45%)</span>
+</div>
+<div class="flex items-center gap-2 text-sm">
+<div class="w-3 h-3 rounded-full bg-purple-500"></div>
+<span class="text-slate-600 dark:text-slate-400">25-34 (23%)</span>
+</div>
+<div class="flex items-center gap-2 text-sm">
+<div class="w-3 h-3 rounded-full bg-cyan-400"></div>
+<span class="text-slate-600 dark:text-slate-400">35-44 (20%)</span>
+</div>
+<div class="flex items-center gap-2 text-sm">
+<div class="w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-600"></div>
+<span class="text-slate-600 dark:text-slate-400">Diğer (12%)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Smart Suggestions -->
+<div class="bg-slate-900 rounded-xl p-6 border border-slate-800 shadow-sm relative overflow-hidden">
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-primary/20 blur-3xl rounded-full"></div>
+<h4 class="text-lg font-bold font-display text-white mb-4 flex items-center gap-2 relative z-10">
+<span class="material-symbols-outlined text-cyan-400">smart_toy</span>
+Akıllı Öneriler
+</h4>
+<p class="text-sm text-slate-300 mb-4 relative z-10">Mevcut trendlere dayalı AI analizli içerik fikirleri.</p>
+<ul class="flex flex-col gap-3 relative z-10">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-cyan-400 text-[18px] mt-0.5">check_circle</span>
+<span class="text-sm text-slate-200">"Top 5 AI Tools for Productivity" başlıklı bir listicle video formatı deneyin.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-cyan-400 text-[18px] mt-0.5">check_circle</span>
+<span class="text-sm text-slate-200">Kapak fotoğraflarınızda daha kontrast renkler kullanmak tıklanma oranını %12 artırabilir.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-cyan-400 text-[18px] mt-0.5">check_circle</span>
+<span class="text-sm text-slate-200">Shorts videolarınızı akşam 19:00 - 21:00 arası yayınlamayı planlayın.</span>
+</li>
+</ul>
+<button class="w-full mt-6 py-2 px-4 bg-primary hover:bg-primary/90 text-white text-sm font-medium rounded-lg transition-colors relative z-10">
+Tüm Önerileri Gör
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

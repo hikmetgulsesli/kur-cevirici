@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ReelForge - My Videos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e21d48",
+                        "background-light": "#fdf8f9",
+                        "background-dark": "#1a1012",
+                        "surface-dark": "#2d1b1f",
+                        "border-dark": "#46252c",
+                        "text-muted": "#c7949f"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["DM Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'DM Sans', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex antialiased">
+<!-- Sidebar -->
+<aside class="w-64 bg-surface-dark border-r border-border-dark flex flex-col justify-between hidden md:flex shrink-0">
+<div class="p-4 flex flex-col gap-6">
+<!-- Logo -->
+<div class="flex items-center gap-3 px-2">
+<div class="size-10 rounded-lg bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-white font-display font-bold text-xl shadow-lg">
+                    R
+                </div>
+<div class="flex flex-col">
+<h1 class="font-display text-lg font-bold leading-tight">ReelForge</h1>
+<p class="text-text-muted text-xs font-medium uppercase tracking-wider">Video Library</p>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-border-dark transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary group" href="#">
+<span class="material-symbols-outlined text-[20px]">video_library</span>
+<span class="text-sm font-medium">My Videos</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-border-dark transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">generating_tokens</span>
+<span class="text-sm font-medium">Credits</span>
+<span class="ml-auto bg-border-dark text-xs py-0.5 px-2 rounded-full text-slate-300">1,250</span>
+</a>
+</nav>
+</div>
+<!-- Settings / User -->
+<div class="p-4 flex flex-col gap-1 border-t border-border-dark">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-border-dark transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary transition-colors">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<div class="mt-4 flex items-center gap-3 px-3 py-2">
+<img alt="User Avatar" class="size-8 rounded-full object-cover" data-alt="Portrait of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmYzGyL5PqOdlx5kDTC89bI2aBa8o7rRzI71R4D5hIDoFr9PNKnYRFV6Y7xph_HIh3tCxyUN-FzcJKBvfjGiHPHgRYMD0kYDDfY7hzursBSPyc6lSvX_pubPf5yB4V3VXn_-rJiP0AR8D5L9dd1lYBfnpssouqvNKAZnOfZ_dUSv93cuHmUonbg7SOgHcAhFkKvUgYShIPWQGWCe-KhV8kWTj07CfWSE1FPWOBl_hPgwFk56qxsxwM64gpRxDrVfynBrE4BwSF"/>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="text-sm font-medium text-white truncate">Alex Designer</span>
+<span class="text-xs text-text-muted truncate">Pro Plan</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0 overflow-hidden">
+<!-- Header -->
+<header class="h-16 border-b border-border-dark flex items-center justify-between px-6 lg:px-8 bg-surface-dark/50 backdrop-blur-sm sticky top-0 z-10">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-slate-300 hover:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="font-display text-xl font-bold text-white tracking-tight hidden sm:block">My Videos</h2>
+</div>
+<div class="flex items-center gap-4 flex-1 justify-end max-w-2xl">
+<!-- Search -->
+<div class="relative w-full max-w-md hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[20px]">search</span>
+<input class="w-full bg-surface-dark border border-border-dark rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder:text-text-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-shadow" placeholder="Search videos..." type="text"/>
+</div>
+<!-- Create Button -->
+<button class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Create Video</span>
+</button>
+</div>
+</header>
+<!-- Content Area -->
+<div class="flex-1 overflow-y-auto p-6 lg:p-8">
+<!-- Filters & Controls -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+<!-- Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-2 sm:pb-0 scrollbar-hide">
+<button class="px-4 py-1.5 rounded-full bg-border-dark text-white text-sm font-medium whitespace-nowrap border border-transparent">
+                        All Videos
+                    </button>
+<button class="px-4 py-1.5 rounded-full bg-surface-dark text-slate-300 hover:text-white hover:bg-border-dark text-sm font-medium whitespace-nowrap border border-border-dark transition-colors">
+                        Completed
+                    </button>
+<button class="px-4 py-1.5 rounded-full bg-surface-dark text-slate-300 hover:text-white hover:bg-border-dark text-sm font-medium whitespace-nowrap border border-border-dark transition-colors flex items-center gap-1.5">
+                        Rendering <span class="size-2 rounded-full bg-amber-500 animate-pulse"></span>
+</button>
+<button class="px-4 py-1.5 rounded-full bg-surface-dark text-slate-300 hover:text-white hover:bg-border-dark text-sm font-medium whitespace-nowrap border border-border-dark transition-colors">
+                        Published
+                    </button>
+</div>
+<!-- View Toggles & Actions -->
+<div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+<div class="hidden sm:flex items-center bg-surface-dark border border-border-dark rounded-lg p-0.5">
+<button aria-label="Grid View" class="p-1.5 rounded-md bg-border-dark text-white shadow-sm">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+</button>
+<button aria-label="List View" class="p-1.5 rounded-md text-text-muted hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">view_list</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Video Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Card 1: Completed -->
+<div class="group flex flex-col bg-surface-dark border border-border-dark rounded-xl overflow-hidden hover:border-border-dark/80 hover:shadow-lg transition-all">
+<div class="relative aspect-video bg-border-dark">
+<img alt="Video Thumbnail" class="w-full h-full object-cover" data-alt="Abstract colorful neon waves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvAyrk6keL4J1G6DipUp_vTEcoIZ1Uh1JhU71qXvW-Rf0-VT54O5i4Gx4IsMe5s-_5yt42LZowfb9deLO6l06MJRzIXhMpB1s6dlj5y--6DOMlHm-9EIPu3zzfjweaJ0LuwkIQZuryAHS6i_LG7zNUEv0e1eHUASS82DVxKJQjAgMybpSt0PbpLhcjnUa-2ZMWX9HqB02B-NWEG-VuUi9nGBC_jmSzKgouJWIPF3IUZWasyp2wkkPXMib28StoqEuKPAi2XVe9"/>
+<!-- Duration Badge -->
+<div class="absolute bottom-2 right-2 bg-black/70 backdrop-blur-sm text-white text-xs font-medium px-1.5 py-0.5 rounded">
+                            0:45
+                        </div>
+<!-- Checkbox (Hover) -->
+<div class="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<input class="size-4 rounded border-slate-500 bg-black/50 text-primary focus:ring-primary focus:ring-offset-0" type="checkbox"/>
+</div>
+<!-- Status Badge -->
+<div class="absolute top-2 right-2 bg-emerald-500/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+                            Ready
+                        </div>
+</div>
+<div class="p-4 flex flex-col gap-1.5">
+<div class="flex items-start justify-between gap-2">
+<h3 class="font-display font-semibold text-white truncate text-base" title="Product Showcase Fall 2024">Product Showcase Fall 2024</h3>
+<button class="text-text-muted hover:text-white transition-colors shrink-0">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="flex items-center text-xs text-text-muted gap-2">
+<span>Oct 24, 2024</span>
+<span class="size-1 rounded-full bg-border-dark"></span>
+<span>1080p</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Rendering -->
+<div class="group flex flex-col bg-surface-dark border border-border-dark rounded-xl overflow-hidden hover:border-border-dark/80 hover:shadow-lg transition-all relative">
+<div class="relative aspect-video bg-border-dark">
+<img alt="Video Thumbnail" class="w-full h-full object-cover opacity-60 grayscale-[30%]" data-alt="Retro computer setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq3fg0HUIcb_srjroTjRSWT1gfU5-KHJ40r_J9gDXxoxE7gpxfGKESGe1Gh_9rPjIw9_c_48v2hoGLVNq0Z-17C4uRhFa7wq3sEV9FW08Xm-m9uho_F2JbZFKBfv3w0lRbv1wYRszAjk7fOQv_unUDjRnzTs8qG-nOO56N0z1YHyGpWkUpHgW12T_VOTMAV01J_YRAkUbzRE1ZA42hbOFV8QsjJ2qVl8GbEkGfPPD44T6HSM1u33yUvvIiQ2TzjgqBiqIpww5M"/>
+<!-- Progress Overlay -->
+<div class="absolute inset-0 bg-background-dark/40 flex flex-col items-center justify-center p-4">
+<div class="w-12 h-12 rounded-full border-4 border-amber-500/20 border-t-amber-500 animate-spin mb-2"></div>
+<span class="text-amber-400 font-medium text-sm drop-shadow-md">Rendering 68%</span>
+</div>
+<!-- Duration Badge -->
+<div class="absolute bottom-2 right-2 bg-black/70 backdrop-blur-sm text-white text-xs font-medium px-1.5 py-0.5 rounded">
+                            2:15
+                        </div>
+<!-- Checkbox (Hover) -->
+<div class="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<input class="size-4 rounded border-slate-500 bg-black/50 text-primary focus:ring-primary focus:ring-offset-0" type="checkbox"/>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-1.5">
+<div class="flex items-start justify-between gap-2">
+<h3 class="font-display font-semibold text-white truncate text-base text-slate-300" title="Explainer Video - Tech Startup">Explainer Video - Tech Startup</h3>
+<button class="text-text-muted hover:text-white transition-colors shrink-0">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="flex items-center text-xs text-text-muted gap-2">
+<span>Today, 10:42 AM</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Published -->
+<div class="group flex flex-col bg-surface-dark border border-border-dark rounded-xl overflow-hidden hover:border-border-dark/80 hover:shadow-lg transition-all">
+<div class="relative aspect-video bg-border-dark">
+<img alt="Video Thumbnail" class="w-full h-full object-cover" data-alt="Abstract liquid marble pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMqaPSXu8D0GdLWfvxHTauU4rDgH2RGyD2luwZIsNDjS566CRvd91NqvtqAohiIgfUkmVjaoLbp_9JceJOJtGJQ-U80bHRCEh7-MGSNz_FodZ0laZFiDrThE4fUwyzi7_mhumz5efrpZLps2UVnwu9IsIavt3KAfYkA9sWM9ugbnsSk3xUYTFxDrK61dalODPmhTfpA81vAk5bd3wAMhA1SeWg54nff0jyYeUPWBftAuaoPnTIQXtj8wkCFhTenr_CzU_J7G9a"/>
+<!-- Duration Badge -->
+<div class="absolute bottom-2 right-2 bg-black/70 backdrop-blur-sm text-white text-xs font-medium px-1.5 py-0.5 rounded">
+                            0:15
+                        </div>
+<!-- Checkbox (Hover) -->
+<div class="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<input class="size-4 rounded border-slate-500 bg-black/50 text-primary focus:ring-primary focus:ring-offset-0" type="checkbox"/>
+</div>
+<!-- Status Badge -->
+<div class="absolute top-2 right-2 bg-blue-500/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">public</span>
+                            Published
+                        </div>
+</div>
+<div class="p-4 flex flex-col gap-1.5">
+<div class="flex items-start justify-between gap-2">
+<h3 class="font-display font-semibold text-white truncate text-base" title="Social Media Ad Campaign">Social Media Ad Campaign</h3>
+<button class="text-text-muted hover:text-white transition-colors shrink-0">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="flex items-center text-xs text-text-muted gap-2">
+<span>Oct 20, 2024</span>
+<span class="size-1 rounded-full bg-border-dark"></span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">visibility</span> 1.2k</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State (Hidden in this view, included for requirements) -->
+<div class="hidden flex-col items-center justify-center py-20 px-4 text-center border-2 border-dashed border-border-dark rounded-2xl mt-8">
+<div class="size-48 mb-6 relative">
+<!-- Abstract representation of empty state illustration -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-purple-500/20 rounded-full blur-xl"></div>
+<span class="material-symbols-outlined text-[100px] text-border-dark relative z-10 block text-center leading-[192px]">movie_edit</span>
+</div>
+<h3 class="font-display text-2xl font-bold text-white mb-2">No videos found</h3>
+<p class="text-text-muted max-w-md mx-auto mb-8">You haven't created any videos matching these filters. Start generating your first AI video to populate your library.</p>
+<button class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-medium shadow-md transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+<span>Create Your First Video</span>
+</button>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between mt-12 pt-6 border-t border-border-dark">
+<p class="text-sm text-text-muted hidden sm:block">Showing <span class="font-medium text-white">1</span> to <span class="font-medium text-white">12</span> of <span class="font-medium text-white">48</span> results</p>
+<div class="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-end">
+<button class="px-3 py-1.5 rounded-lg border border-border-dark bg-surface-dark text-slate-300 hover:text-white hover:bg-border-dark text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                        Previous
+                    </button>
+<div class="flex items-center gap-1 hidden sm:flex">
+<button class="size-8 rounded-lg bg-primary text-white text-sm font-medium flex items-center justify-center">1</button>
+<button class="size-8 rounded-lg hover:bg-surface-dark text-slate-300 hover:text-white text-sm font-medium flex items-center justify-center transition-colors">2</button>
+<button class="size-8 rounded-lg hover:bg-surface-dark text-slate-300 hover:text-white text-sm font-medium flex items-center justify-center transition-colors">3</button>
+<span class="text-text-muted px-1">...</span>
+<button class="size-8 rounded-lg hover:bg-surface-dark text-slate-300 hover:text-white text-sm font-medium flex items-center justify-center transition-colors">8</button>
+</div>
+<button class="px-3 py-1.5 rounded-lg border border-border-dark bg-surface-dark text-slate-300 hover:text-white hover:bg-border-dark text-sm font-medium transition-colors">
+                        Next
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

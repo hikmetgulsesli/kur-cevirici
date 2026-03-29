@@ -1,0 +1,29 @@
+=== US-006: Kur Listesi — CurrencyList component ===
+COMPLETED: 2026-03-29T01:36:25+00:00
+FILES CHANGED:
+  - src/components/CurrencyList.tsx (new)
+  - src/components/CurrencyList.css (new)
+  - src/components/__tests__/CurrencyList.test.tsx (new)
+  - src/types/index.ts (new, from previous stories)
+  - src/services/coingecko.ts (new, from previous stories)
+  - src/services/__tests__/coingecko.test.ts (new, from previous stories)
+  - vitest.config.ts (new)
+  - package.json (updated test scripts)
+  - tsconfig.json (updated for vitest types)
+  - index.html (added Google Fonts)
+  - src/index.css (design tokens added)
+
+KEY DECISIONS:
+  - Used useState and useCallback hooks for favorites management
+  - Implemented localStorage persistence for favorites with error handling
+  - Used pseudo-random 24h change values based on currency ID for consistent demo data
+  - Sorted currencies: crypto (BTC, ETH) first, then fiat, with favorites at top within each group
+  - All visible text in Turkish per language rule
+
+DEPENDENCIES ADDED:
+  - vitest: ^4.1.2
+  - @vitest/ui: ^4.1.2
+  - @testing-library/jest-dom: (latest)
+  - @testing-library/react: (latest)
+  - @testing-library/dom: (latest)
+  - jsdom: (latest)

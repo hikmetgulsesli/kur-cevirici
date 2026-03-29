@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sonic Pulse - Playlist Düzenle</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#ffd4dc",
+                        "surface-container-high": "#2a2a2c",
+                        "surface-container-highest": "#353437",
+                        "on-secondary-fixed-variant": "#6e00ab",
+                        "surface-container-lowest": "#0e0e10",
+                        "secondary": "#e2b6ff",
+                        "primary": "#a8e8ff",
+                        "on-surface-variant": "#bbc9cf",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#e9c3ff",
+                        "on-background": "#e5e1e4",
+                        "background": "#131315",
+                        "on-primary-fixed-variant": "#004e5f",
+                        "tertiary-fixed-dim": "#ffb1c2",
+                        "primary-fixed": "#b4ebff",
+                        "primary-container": "#00d4ff",
+                        "on-secondary-fixed": "#2f004d",
+                        "surface-variant": "#353437",
+                        "on-tertiary-container": "#a10048",
+                        "on-secondary": "#4d007a",
+                        "on-error": "#690005",
+                        "outline": "#859398",
+                        "surface-container-low": "#1c1b1d",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#e2b6ff",
+                        "inverse-primary": "#00677e",
+                        "on-tertiary": "#66002b",
+                        "on-primary-container": "#00586b",
+                        "inverse-surface": "#e5e1e4",
+                        "surface-tint": "#3cd7ff",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#f3daff",
+                        "on-surface": "#e5e1e4",
+                        "outline-variant": "#3c494e",
+                        "on-primary-fixed": "#001f27",
+                        "secondary-container": "#8900d5",
+                        "primary-fixed-dim": "#3cd7ff",
+                        "inverse-on-surface": "#313032",
+                        "surface-container": "#201f21",
+                        "surface": "#131315",
+                        "tertiary-container": "#ffacbe",
+                        "on-tertiary-fixed": "#3f0018",
+                        "surface-bright": "#39393b",
+                        "on-tertiary-fixed-variant": "#8f0040",
+                        "tertiary-fixed": "#ffd9e0",
+                        "surface-dim": "#131315",
+                        "on-primary": "#003642"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+        }
+        .glass-panel {
+            background: rgba(28, 27, 29, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #3c494e;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #00d4ff;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30 antialiased overflow-hidden">
+<!-- Mock Background for Context -->
+<div class="fixed inset-0 z-0 flex pointer-events-none opacity-40 blur-3xl">
+<div class="absolute top-0 left-0 w-96 h-96 bg-primary-container rounded-full mix-blend-screen opacity-20 animate-pulse"></div>
+<div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-secondary-container rounded-full mix-blend-screen opacity-10"></div>
+</div>
+<!-- Layout Wrapper -->
+<div class="relative z-10 min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
+<!-- Modal Container -->
+<div class="glass-panel w-full max-w-2xl h-[870px] flex flex-col rounded-[2.5rem] overflow-hidden outline outline-1 outline-outline-variant/20 shadow-2xl scale-100">
+<!-- Header (Based on SideNavBar Identity) -->
+<header class="p-8 flex items-center justify-between bg-surface-container-low/50">
+<div class="flex flex-col">
+<h1 class="font-headline text-3xl font-bold tracking-tighter text-on-surface uppercase">
+                        Playlist Düzenle
+                    </h1>
+<p class="font-headline font-medium uppercase tracking-widest text-xs text-primary/70 mt-1">
+                        Edit your sonic pulse
+                    </p>
+</div>
+<div class="p-3 bg-surface-bright/10 rounded-2xl">
+<span class="material-symbols-outlined text-primary scale-125">library_music</span>
+</div>
+</header>
+<!-- Main Content: Song List -->
+<main class="flex-1 overflow-y-auto px-4 md:px-8 py-4 custom-scrollbar">
+<div class="space-y-2">
+<!-- Song Row -->
+<div class="group flex items-center gap-4 p-4 rounded-2xl hover:bg-surface-bright/10 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]">
+<div class="relative w-14 h-14 rounded-lg overflow-hidden shrink-0 shadow-lg group-hover:scale-105 transition-transform">
+<img class="w-full h-full object-cover" data-alt="Abstract vibrant techno album art cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDab1S6KYhU1G5aYHzxELa_Tu5fZ8eZSQ-kr9iyZnXFV0V0i-DKQjTcch6MgbBUbSpxPpJ7-sM6WWARCkejDqnRwU7sb0N8nWZYlfaUqJF001FzRhgtm_mZTuwbfb6m3FMLA6BtJv7tY8H7UH4x7bMunX8uhvP_v-oBw6uy_GQQlrXVlLbBT7epc4fIMWlKAqb3MP4fQdrx1ByclyAYEea54o2AoUcOX3yWPF7FFFz8sZCp4FiklvI2ojMoF5tyqDTZi9BCf7Y_bCM"/>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline font-bold text-lg text-on-surface truncate tracking-tight">Şarkı Adı</h3>
+<p class="font-body text-sm text-on-surface-variant truncate">Sanatçı Adı</p>
+</div>
+<div class="relative flex items-center">
+<button class="group/btn w-10 h-10 flex items-center justify-center rounded-full hover:bg-error-container/20 text-on-surface-variant hover:text-error transition-all active:scale-90" title="Şarkı Çıkar">
+<span class="material-symbols-outlined">close</span>
+<!-- Tooltip -->
+<span class="absolute right-full mr-3 px-3 py-1 bg-surface-container-highest text-on-surface text-[10px] font-bold uppercase tracking-wider rounded-lg opacity-0 group-hover/btn:opacity-100 pointer-events-none whitespace-nowrap transition-opacity border border-outline-variant/30">
+                                    Bu şarkıyı çıkarmak istediğinize emin misiniz?
+                                </span>
+</button>
+</div>
+</div>
+<!-- Song Row 2 -->
+<div class="group flex items-center gap-4 p-4 rounded-2xl hover:bg-surface-bright/10 transition-all duration-300">
+<div class="relative w-14 h-14 rounded-lg overflow-hidden shrink-0 shadow-lg group-hover:scale-105 transition-transform">
+<img class="w-full h-full object-cover" data-alt="Atmospheric sunset gradient vinyl artwork" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrUOmaEvEsCQh5n29EgCYtpoygG7j7HM4I3MPAN8iLN4QoIKgRCFg_JQFO0M-5Qtc-V4a-eQ0ttBB_9axaKDH6yh9CJuMnjcel8a101LFTG-DDYy7NzWjqxPEf0lBrcyt7kdLa59RvQS40Zdk_KQWL5sz-zbyu2OX4FkCUp-qPXSSXjJd3d_YxTgTBHhv90l7tY-opjdKPbukh79Rzf4xouRkvkGEy0CHNR5-A_XY4tTDmYHgFugIZp3KqkCcq5a0fATs_D0EZhyE"/>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline font-bold text-lg text-on-surface truncate tracking-tight">Sonic Wave</h3>
+<p class="font-body text-sm text-on-surface-variant truncate">Neon Architect</p>
+</div>
+<button class="group/btn relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-error-container/20 text-on-surface-variant hover:text-error transition-all active:scale-90">
+<span class="material-symbols-outlined">close</span>
+<span class="absolute right-full mr-3 px-3 py-1 bg-surface-container-highest text-on-surface text-[10px] font-bold uppercase tracking-wider rounded-lg opacity-0 group-hover/btn:opacity-100 pointer-events-none whitespace-nowrap transition-opacity border border-outline-variant/30">
+                                Bu şarkıyı çıkarmak istediğinize emin misiniz?
+                            </span>
+</button>
+</div>
+<!-- Song Row 3 -->
+<div class="group flex items-center gap-4 p-4 rounded-2xl hover:bg-surface-bright/10 transition-all duration-300">
+<div class="relative w-14 h-14 rounded-lg overflow-hidden shrink-0 shadow-lg group-hover:scale-105 transition-transform">
+<img class="w-full h-full object-cover" data-alt="Digital glitch art music visualizer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtiva2l-2RJizyixs44bmGaewdef1N4V5rSTG_gGNeyMM17NkeoZKO8azK1eT52ddf5VQ8msnH6gUUvKdGDssKX84n6r8CU1zZEcJ4r5XaxMYCX0EZilvOc0RSUWd9mnaM9GoaeHYRGlylVBc6pfKftfRk4MqYZjvxVNTeuGtPpNUapGKxhWzei5zSOrwUavIXUC9sPZEivXwlZRaaJ1dWdft-o4jB-zw8GcujS3tiy4tKupmPfR37ye9C-wiIYKAtIlv21IG4CIk"/>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline font-bold text-lg text-on-surface truncate tracking-tight">Pulse Velocity</h3>
+<p class="font-body text-sm text-on-surface-variant truncate">Synth Driver</p>
+</div>
+<button class="group/btn relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-error-container/20 text-on-surface-variant hover:text-error transition-all active:scale-90">
+<span class="material-symbols-outlined">close</span>
+<span class="absolute right-full mr-3 px-3 py-1 bg-surface-container-highest text-on-surface text-[10px] font-bold uppercase tracking-wider rounded-lg opacity-0 group-hover/btn:opacity-100 pointer-events-none whitespace-nowrap transition-opacity border border-outline-variant/30">
+                                Bu şarkıyı çıkarmak istediğinize emin misiniz?
+                            </span>
+</button>
+</div>
+<!-- Song Row 4 -->
+<div class="group flex items-center gap-4 p-4 rounded-2xl hover:bg-surface-bright/10 transition-all duration-300">
+<div class="relative w-14 h-14 rounded-lg overflow-hidden shrink-0 shadow-lg group-hover:scale-105 transition-transform">
+<img class="w-full h-full object-cover" data-alt="Laser light show concert photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD8DBOM3KwqViZjqBjyGoIhw5bH9BfuQMkLAnd1qsiobaAU0K2mPQh1jr5uVrmnpo7zsl7HrkywCpnDP09AM3_JKCPwcTWORivpFAXReLTNsQkx2NFK4v8rDd5x6Mr8mTHsx7s_rvbB0B_cs7t2PuvBh7ih25u9pQ3fCal2gywI2mUy1rntuwM-ITP1mG488r6UYt7aQWm7liZOVWwePcoNvvPJnTAd-EUdv1NslrUkppGBQlTGdRfYpVBxhmPuHkhV8eh3lFzqS0"/>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-headline font-bold text-lg text-on-surface truncate tracking-tight">Midnight Protocol</h3>
+<p class="font-body text-sm text-on-surface-variant truncate">Cyber Core</p>
+</div>
+<button class="group/btn relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-error-container/20 text-on-surface-variant hover:text-error transition-all active:scale-90">
+<span class="material-symbols-outlined">close</span>
+<span class="absolute right-full mr-3 px-3 py-1 bg-surface-container-highest text-on-surface text-[10px] font-bold uppercase tracking-wider rounded-lg opacity-0 group-hover/btn:opacity-100 pointer-events-none whitespace-nowrap transition-opacity border border-outline-variant/30">
+                                Bu şarkıyı çıkarmak istediğinize emin misiniz?
+                            </span>
+</button>
+</div>
+</div>
+<!-- Danger Action Section -->
+<div class="mt-8 pt-8 border-t border-outline-variant/10">
+<div class="bg-error-container/5 rounded-[2rem] p-6 border border-error-container/20 flex flex-col items-center text-center">
+<p class="font-headline text-xs font-bold uppercase tracking-[0.2em] text-error mb-4">Dangerous Territory</p>
+<button class="px-8 py-3 bg-error-container text-on-error-container font-headline font-bold uppercase tracking-widest text-sm rounded-full hover:bg-on-error-container hover:text-error transition-all active:scale-95 shadow-[0_0_25px_rgba(147,0,10,0.3)] group/del relative">
+                            Playlist Sil
+                            <!-- Confirmation Tooltip for Delete -->
+<span class="absolute -top-12 left-1/2 -translate-x-1/2 px-4 py-2 bg-surface-container-highest text-on-surface text-xs font-bold uppercase tracking-wider rounded-xl opacity-0 group-hover/del:opacity-100 pointer-events-none whitespace-nowrap transition-all border border-error-container/40">
+                                Playlisti silmek istediğinize emin misiniz?
+                            </span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="p-6 bg-surface-container-low/80 backdrop-blur-md flex justify-center border-t border-outline-variant/10">
+<button class="flex items-center gap-2 px-10 py-4 bg-surface-bright/20 text-on-surface font-headline font-bold uppercase tracking-[0.3em] text-xs rounded-full hover:bg-primary hover:text-on-primary transition-all duration-300 group">
+<span class="material-symbols-outlined text-[18px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                    Geri
+                </button>
+</footer>
+</div>
+</div>
+<!-- Navigation Mirror (Mobile Visual Shell) -->
+<nav class="fixed bottom-0 left-0 w-full z-[100] flex justify-around items-center px-6 pb-8 pt-4 bg-[#131315]/80 backdrop-blur-xl rounded-t-3xl border-t border-[#e5e1e4]/15 md:hidden">
+<div class="flex flex-col items-center justify-center text-[#e5e1e4]/60 px-4 py-2">
+<span class="material-symbols-outlined">play_circle</span>
+<span class="font-be-vietnam-pro text-[10px] uppercase font-bold mt-1">Player</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#e5e1e4]/60 px-4 py-2">
+<span class="material-symbols-outlined">queue_music</span>
+<span class="font-be-vietnam-pro text-[10px] uppercase font-bold mt-1">Queue</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#e5e1e4]/60 px-4 py-2">
+<span class="material-symbols-outlined">mic_external_on</span>
+<span class="font-be-vietnam-pro text-[10px] uppercase font-bold mt-1">Lyrics</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#00d4ff]/10 text-[#00d4ff] rounded-2xl px-4 py-2 shadow-[0_0_15px_rgba(0,212,255,0.2)]">
+<span class="material-symbols-outlined">edit</span>
+<span class="font-be-vietnam-pro text-[10px] uppercase font-bold mt-1">Edit</span>
+</div>
+</nav>
+</body></html>

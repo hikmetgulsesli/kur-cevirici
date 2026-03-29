@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ReelForge Voice Selection Step 4</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e02485",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#211119",
+                        "slate-900": "#1b0e15",
+                        "slate-100": "#f3e8ed"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["DM Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-slate-900 dark:text-slate-100 min-h-screen flex flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-100 dark:border-primary/20 px-10 py-3 bg-white dark:bg-background-dark sticky top-0 z-10">
+<div class="flex items-center gap-4 text-slate-900 dark:text-slate-100">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+</div>
+<h2 class="font-display text-xl font-bold leading-tight tracking-[-0.015em]">ReelForge</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDfKSQAl2jEH20_z1oNIr-pw6itlVjwaUEs1szJz-b1GyPsHex-f41RKemnZlaOwG3gOz7JIbdXGvdaIUfvQTKteCRs8ENk9ucJSvoab2Iclv9QNB7FCR_SeERQUYsGnzzPjJZ72pkH4b7TRwAXMdLpY6Wh00nbnl_mGe6bnb9R_AwFceCnwvpchVOD_z-4rsr6lfD5mDlZOnv1KcTQUAI_YTaGWCpfAdgUCVz-eEU2zQzuqUviLEoLNpy790fYN5UowC67fYmj");'></div>
+</div>
+</header>
+<main class="flex-1 flex flex-col max-w-[1200px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 gap-8">
+<!-- Progress Stepper -->
+<div class="flex flex-col gap-3 w-full max-w-3xl mx-auto">
+<div class="flex gap-6 justify-between items-center">
+<p class="font-display text-lg font-bold leading-normal">Step 4: Voice Selection</p>
+<p class="text-sm font-medium leading-normal text-primary">Step 4 of 7</p>
+</div>
+<div class="rounded-full bg-primary/20 dark:bg-primary/10 h-2 w-full overflow-hidden">
+<div class="h-full rounded-full bg-primary transition-all duration-300" style="width: 57%;"></div>
+</div>
+<div class="flex justify-between text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">
+<span>Script</span>
+<span>Visuals</span>
+<span>Audio</span>
+<span class="text-primary font-bold">Voice</span>
+<span>Music</span>
+<span>Review</span>
+<span>Export</span>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="flex flex-col lg:flex-row gap-8 mt-4">
+<!-- Left Column: Voices -->
+<div class="flex-1 flex flex-col gap-6">
+<!-- Tabs -->
+<div class="flex border-b border-primary/20 dark:border-primary/10 gap-8">
+<button class="flex items-center justify-center border-b-[3px] border-b-primary pb-3 pt-2 group">
+<p class="font-display text-sm font-bold leading-normal tracking-[0.015em] text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">ElevenLabs (Premium)</p>
+</button>
+<button class="flex items-center justify-center border-b-[3px] border-b-transparent pb-3 pt-2 group">
+<p class="font-display text-sm font-bold leading-normal tracking-[0.015em] text-slate-500 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-100 transition-colors">Edge TTS (Free)</p>
+</button>
+</div>
+<!-- Voice Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<!-- Selected Voice Card -->
+<div class="relative bg-white dark:bg-slate-900/50 rounded-xl p-4 border-2 border-primary shadow-sm flex flex-col items-center gap-3 cursor-pointer hover:shadow-md transition-shadow">
+<div class="absolute top-3 right-3 text-primary">
+<span class="material-symbols-outlined filled">check_circle</span>
+</div>
+<div class="relative w-24 h-24 mt-2">
+<div class="absolute inset-0 bg-cover bg-center rounded-full" data-alt="Portrait of Sarah, a female voice" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCagiH-YRv1EGE5AsHzGLTrfQp64CqP19x5G_0Ko8dGk5IVp4FZ7zPwJAqAAr1mA0Eyw43oPb0OU0_0wmdZ1m6naGRlmmxtiTm6Jm9vKYqD4BMxU3UWUsBQYUpJlC1neyM_mL_bi_jR_yMZj7jSKuRHbQGTjbjqbHYgiccHG_6MjOy6xrk6cEH8XrWoxkRmsQEqN5_CbWrW27UjLaR-GPpRU4RpFGxPzCDpnn7-fJv_xyuYxyC1a6lDR8FHt-PEByWVN-laZs4d");'></div>
+<button class="absolute -bottom-2 -right-2 bg-primary text-white rounded-full p-2 hover:bg-primary/90 transition-colors shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">play_arrow</span>
+</button>
+</div>
+<div class="text-center mt-2">
+<h3 class="font-display font-bold text-lg">Sarah</h3>
+<div class="flex gap-2 justify-center mt-1">
+<span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full font-medium">Female</span>
+<span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-full font-medium">American</span>
+</div>
+</div>
+</div>
+<!-- Voice Card -->
+<div class="relative bg-white dark:bg-slate-900/50 rounded-xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center gap-3 cursor-pointer hover:border-primary/50 hover:shadow-md transition-all group">
+<div class="relative w-24 h-24 mt-2">
+<div class="absolute inset-0 bg-cover bg-center rounded-full" data-alt="Portrait of James, a male voice" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCDg78fk6QB1IQwEHbYZV6m25Kew09kf-orer9QLsdBcidLcsoQaML6wSxdNGjw4nXLln_idY9LrbaeQ4C7tpWDCoB19Lb_43dF4EjkMIWA0BP8AWNvnWK0SLhBiVcL-Vo1CgPOuhurdLcEVfUIrBnYontm-kNKcgg7_Na7kMUXwtYO5i5TAync_vW8ItvSCORSPIKlbwoEXzR1PPqt1oFSTyI1ti6vtPVPasBr6fTB-GN3CMksA5qyg5TymETpwc06PyoZbI3k");'></div>
+<button class="absolute -bottom-2 -right-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full p-2 group-hover:bg-primary group-hover:text-white transition-colors shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">play_arrow</span>
+</button>
+</div>
+<div class="text-center mt-2">
+<h3 class="font-display font-bold text-lg">James</h3>
+<div class="flex gap-2 justify-center mt-1">
+<span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-full font-medium">Male</span>
+<span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-full font-medium">British</span>
+</div>
+</div>
+</div>
+<!-- Voice Card -->
+<div class="relative bg-white dark:bg-slate-900/50 rounded-xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center gap-3 cursor-pointer hover:border-primary/50 hover:shadow-md transition-all group">
+<div class="relative w-24 h-24 mt-2">
+<div class="absolute inset-0 bg-cover bg-center rounded-full" data-alt="Portrait of Aria, a female voice" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBtIP8skvyGGjD8l7vHw-kTGdqnVCT4kYXHE1-lFe6nL4DK42U9TPSZ4xsEmt88WN0qrBfzAvTKZtfiSgC0B7L-wV-wR5vt4Dm5uUznz284w6Zlu-GYsvGRi0-Lia1Rv3M6owvhJSBRxfotUNO1rui_VtWjYU7FnBWV8i6oTHsq1hbJU0xMUO34KX3Y_cQhhdUNOpq4-Y3byk0L9QaqA4nq_YfMvC6ZZhNXMycJSKqgNBSpF0dWWuRM79fUa5eKt4yPl_77WadP");'></div>
+<button class="absolute -bottom-2 -right-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full p-2 group-hover:bg-primary group-hover:text-white transition-colors shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">play_arrow</span>
+</button>
+</div>
+<div class="text-center mt-2">
+<h3 class="font-display font-bold text-lg">Aria</h3>
+<div class="flex gap-2 justify-center mt-1">
+<span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-full font-medium">Female</span>
+<span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-full font-medium">Australian</span>
+</div>
+</div>
+</div>
+<!-- Voice Card -->
+<div class="relative bg-white dark:bg-slate-900/50 rounded-xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center gap-3 cursor-pointer hover:border-primary/50 hover:shadow-md transition-all group">
+<div class="relative w-24 h-24 mt-2">
+<div class="absolute inset-0 bg-cover bg-center rounded-full" data-alt="Portrait of Michael, a male voice" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDypA3NxzXX8Q3LKjJANf38wra30ft-TPlrUuASuHzhqslfpsx6Qm7u_1bPV4MxhtrMQDzQysJ9IjdaYnQ_7gd55iQNrDrNuKFKMUy8v7SBQh2xWpkHu-VyC9GPxGIIpb2K52k7zL5iCCfQCJzZdg7S7zPpC26EiTJkMiqJTbFUJAVV2TBx10YfwtU7RAoCXKPDokL8i1Rko49FhZ0E6_rDjs67v0s9c7KRKrpjTV_jfPxjzZ7nrDDWLy1G0tCD-Zopsx9OnB4e");'></div>
+<button class="absolute -bottom-2 -right-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full p-2 group-hover:bg-primary group-hover:text-white transition-colors shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">play_arrow</span>
+</button>
+</div>
+<div class="text-center mt-2">
+<h3 class="font-display font-bold text-lg">Michael</h3>
+<div class="flex gap-2 justify-center mt-1">
+<span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-full font-medium">Male</span>
+<span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-full font-medium">American</span>
+</div>
+</div>
+</div>
+<!-- Voice Card -->
+<div class="relative bg-white dark:bg-slate-900/50 rounded-xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center gap-3 cursor-pointer hover:border-primary/50 hover:shadow-md transition-all group">
+<div class="relative w-24 h-24 mt-2">
+<div class="absolute inset-0 bg-cover bg-center rounded-full" data-alt="Portrait of Emma, a female voice" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCYD7HEXXQ2cwIcN0f1EVxmqkj_ZMHqnouZUBme3uWpdsvvp8Hq8C4WaDsRAHyxkGlBd8uwm-PvKWRTZjHoLFZVLf3QO2ll5Ic5hnAMyANHWpXlkWkzsjkyUetMFQ7KNYzp3dL9zel6G6hD7UKCVZEjk0qEObuWNEa6FvBGMhfyZAQ46xy3Lz6TS1HKL4FxMt6I-i0SeYKu1cdntRNaueZE22-m1DPF9_CQ_XoOAJ9P2Hq5RmmA-UxxbfxBrG0IP0KDYAKYQ8Fw");'></div>
+<button class="absolute -bottom-2 -right-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full p-2 group-hover:bg-primary group-hover:text-white transition-colors shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">play_arrow</span>
+</button>
+</div>
+<div class="text-center mt-2">
+<h3 class="font-display font-bold text-lg">Emma</h3>
+<div class="flex gap-2 justify-center mt-1">
+<span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-full font-medium">Female</span>
+<span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-full font-medium">British</span>
+</div>
+</div>
+</div>
+<!-- Voice Card -->
+<div class="relative bg-white dark:bg-slate-900/50 rounded-xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col items-center gap-3 cursor-pointer hover:border-primary/50 hover:shadow-md transition-all group">
+<div class="relative w-24 h-24 mt-2">
+<div class="absolute inset-0 bg-cover bg-center rounded-full" data-alt="Portrait of David, a male voice" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPHpBhibEkfMHfiGPHhfnKqtTYHPaAwFiD69lR1EZrCsnO-nuw-cRNN_YxyYG42yMX4ubWblZeMlX56KD5S9DximF6ADDCVQlGXWm3ltUHcjEpWzx4WhJCPWrOc1pSuWV1Axwov_0s0Sow7Xr9RKzIAo4pl07a4YPHScz6jT6D53HdHk7LsgiezNvNjyiBChrHYKRNya5PjRqiqZ-Z8jo4Dgtb1vu-GM4_qoJ-bkkVc-_6m3kKsnOOaR8yLwiPTg38EaUE6j5A");'></div>
+<button class="absolute -bottom-2 -right-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full p-2 group-hover:bg-primary group-hover:text-white transition-colors shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">play_arrow</span>
+</button>
+</div>
+<div class="text-center mt-2">
+<h3 class="font-display font-bold text-lg">David</h3>
+<div class="flex gap-2 justify-center mt-1">
+<span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-full font-medium">Male</span>
+<span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-full font-medium">Irish</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Customization -->
+<div class="w-full lg:w-80 flex flex-col gap-6">
+<div class="bg-white dark:bg-slate-900/50 rounded-xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
+<h2 class="font-display text-xl font-bold leading-tight mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">tune</span>
+                        Voice Customization
+                    </h2>
+<!-- Voice Speed Slider -->
+<div class="flex flex-col gap-4 mb-8">
+<div class="flex justify-between items-center">
+<label class="font-medium text-sm">Voice Speed</label>
+<span class="text-sm font-bold text-primary bg-primary/10 px-2 py-1 rounded">1.0x</span>
+</div>
+<div class="relative pt-1">
+<input class="w-full h-2 bg-primary/20 rounded-lg appearance-none cursor-pointer accent-primary" max="2" min="0.5" step="0.1" type="range" value="1"/>
+<div class="flex justify-between text-xs text-slate-500 dark:text-slate-400 mt-2">
+<span>0.5x</span>
+<span>Normal</span>
+<span>2.0x</span>
+</div>
+</div>
+</div>
+<!-- Pitch Adjustment Toggle -->
+<div class="flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-6">
+<div>
+<label class="font-medium text-sm block">Pitch Adjustment</label>
+<span class="text-xs text-slate-500 dark:text-slate-400">Enable advanced pitch control</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 dark:bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="flex justify-between items-center mt-auto pt-8 border-t border-slate-200 dark:border-slate-800">
+<button class="px-6 py-3 rounded-lg font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+                Back
+            </button>
+<button class="px-8 py-3 rounded-lg font-medium text-white bg-primary hover:bg-primary/90 transition-colors shadow-md shadow-primary/20 flex items-center gap-2">
+                Next: Background Music
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</main>
+</div>
+</body></html>
