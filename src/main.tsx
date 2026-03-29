@@ -1,26 +1,36 @@
-import { StrictMode } from 'react'
+import { StrictMode, useState } from 'react'
 import { createRoot } from 'react-dom/client'
+import { SettingsProvider } from './contexts/SettingsContext'
+import { SettingsModal } from './components/Settings'
 import './index.css'
-import './components/CurrencyList.css'
-import { CurrencyList } from './components/CurrencyList'
-import type { ExchangeRate } from './types'
-
-// Demo exchange rates for development
-const demoRates: ExchangeRate = {
-  try: 1,
-  btc: 4500000,
-  eth: 280000,
-  usd: 38.50,
-  eur: 41.20,
-  gbp: 48.90,
-  timestamp: Date.now(),
-};
 
 function App() {
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false)
+
   return (
-    <main style={{ padding: '2rem', maxWidth: '600px', margin: '0 auto' }}>
-      <CurrencyList rates={demoRates} />
-    </main>
+    <SettingsProvider>
+      <div className="app">
+        <header className="app-header">
+          <h1 className="app-title">Kur Çevirici</h1>
+          <button
+            className="settings-icon-btn"
+            onClick={() => setIsSettingsOpen(true)}
+            aria-label="Ayarlar"
+          >
+            <span className="material-symbols-outlined">settings</span>
+          </button>
+        </header>
+        <main className="app-main">
+          <p style={{ color: 'var(--on-surface-variant)', textAlign: 'center', marginTop: '2rem' }}>
+            Ayarlar modalini acmak icin sag ustteki çark simgesine tiklayin.
+          </p>
+        </main>
+        <SettingsModal
+          isOpen={isSettingsOpen}
+          onClose={() => setIsSettingsOpen(false)}
+        />
+      </div>
+    </SettingsProvider>
   )
 }
 
