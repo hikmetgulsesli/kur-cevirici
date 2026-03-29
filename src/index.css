@@ -1,12 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Design Tokens - Kinetic Ledger Design System */
+  --color-primary: #ffb874;
+  --color-primary-container: #f7931a;
+  --color-on-primary: #4a2800;
+  --color-on-primary-container: #4a2800;
+  
+  --color-secondary: #00b954;
+  --color-secondary-container: #00b954;
+  --color-on-secondary: #003d1f;
+  --color-on-secondary-container: #d1ffdf;
+  --color-on-secondary-fixed: #002c15;
+  
+  --color-tertiary: #ff8982;
+  --color-tertiary-container: #ffacbe;
+  --color-on-tertiary: #66002b;
+  --color-on-tertiary-container: #a10048;
+  
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+  --color-on-error: #690005;
+  --color-on-error-container: #ffdad6;
+  
+  --color-background: #131313;
+  --color-on-background: #e5e2e1;
+  --color-surface: #131313;
+  --color-on-surface: #e5e2e1;
+  --color-surface-variant: #353534;
+  --color-on-surface-variant: #c4c7c0;
+  
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container: #201f1f;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #353534;
+  --color-surface-bright: #393939;
+  --color-surface-dim: #131313;
+  
+  --color-outline: #9e9693;
+  --color-outline-variant: #4a4543;
+  
+  --color-inverse-surface: #e5e2e1;
+  --color-inverse-on-surface: #313032;
+  --color-inverse-primary: #f7931a;
+  
+  /* Typography */
+  --font-headline: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Spacing Scale */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: #1a1a2e;
-  color: #eee;
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headline);
+  font-weight: 600;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+}
+
+/* Utility Classes */
+.glass-panel {
+  backdrop-filter: blur(20px);
+  background: rgba(42, 42, 44, 0.6);
+}
+
+.neon-glow-primary {
+  filter: drop-shadow(0 0 8px rgba(247, 147, 26, 0.4));
 }
