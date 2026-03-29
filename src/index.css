@@ -1,3 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+@import './components/Skeleton.css';
+@import './components/ErrorState.css';
+
+:root {
+  /* Surface hierarchy */
+  --surface: #131313;
+  --surface-container-low: #1c1b1b;
+  --surface-container: #201f1f;
+  --surface-container-high: #2a2a2c;
+  --surface-container-highest: #353534;
+  --surface-bright: #39393b;
+  --surface-variant: #353437;
+  --surface-container-lowest: #0e0e10;
+
+  /* Primary (amber/orange) */
+  --primary: #ffb874;
+  --primary-container: #f7931a;
+  --on-primary: #ffffff;
+  --on-primary-container: #131313;
+
+  /* Secondary (green for profit) */
+  --secondary: #00b954;
+  --secondary-container: #00b954;
+  --on-secondary: #ffffff;
+  --on-secondary-fixed: #ffffff;
+
+  /* Tertiary (red for loss) */
+  --tertiary: #ff8982;
+  --tertiary-container: #ff8982;
+  --on-tertiary: #131313;
+  --on-tertiary-fixed: #131313;
+
+  /* Error */
+  --error: #ff8982;
+
+  /* Semantic colors */
+  --on-surface: #e5e2e1;
+  --on-surface-variant: #c4c1c0;
+  --outline-variant: rgba(229, 226, 225, 0.15);
+
+  /* Typography */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,8 +67,13 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: #1a1a2e;
-  color: #eee;
+  font-family: var(--font-body);
+  background-color: var(--surface);
+  color: var(--on-surface);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+#root {
   min-height: 100vh;
 }

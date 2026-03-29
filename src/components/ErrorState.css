@@ -1,0 +1,59 @@
+/* Error State Styles */
+.error-state-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-8);
+  text-align: center;
+}
+
+.error-icon {
+  font-size: 3rem;
+  color: var(--error);
+  margin-bottom: var(--spacing-4);
+}
+
+.error-title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--on-surface);
+  margin-bottom: var(--spacing-3);
+}
+
+.error-message {
+  font-size: 0.875rem;
+  color: var(--on-surface-variant);
+  margin-bottom: var(--spacing-5);
+  max-width: 280px;
+}
+
+.error-retry-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-5);
+  background: var(--primary-container);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--on-primary-container);
+  cursor: pointer;
+  transition: all 150ms ease-out;
+}
+
+.error-retry-btn:hover {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.error-retry-btn:active {
+  transform: scale(0.98);
+}
+
+.error-retry-icon {
+  font-size: 1.125rem;
+}
