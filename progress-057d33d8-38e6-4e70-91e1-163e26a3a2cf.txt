@@ -1,0 +1,36 @@
+=== US-009: Ayarlar — Settings panel with theme toggle ===
+COMPLETED: 2026-03-29T04:48:00Z
+FILES CHANGED:
+  - src/types/index.ts
+  - src/contexts/SettingsContext.tsx
+  - src/components/Settings.tsx
+  - src/components/Settings.css
+  - src/components/__tests__/Settings.test.tsx
+  - src/setupTests.ts
+  - vitest.config.ts
+  - src/index.css
+  - src/main.tsx
+  - package.json
+  - package-lock.json
+
+KEY DECISIONS:
+  - Used React Context for settings state management
+  - Extracted ModalContent to separate component with local state to avoid useEffect setState lint error
+  - Used key prop to force re-mount of ModalContent when modal opens (resets local state)
+  - Material Symbols Outlined for icons via CDN
+  - Design tokens from Stitch Ayarlar-Modal.html
+
+DEPENDENCIES ADDED:
+  - vitest (dev)
+  - @testing-library/react (dev)
+  - @testing-library/jest-dom (dev)
+  - jsdom (dev)
+
+IMPLEMENTATION SUMMARY:
+  - SettingsContext provides theme, defaultSourceCurrency, defaultTargetCurrency
+  - SettingsModal opens via settings icon in header
+  - Theme toggle: Koyu (dark, default) / Acik (light)
+  - dark class toggled on html element
+  - Currency dropdowns for source/target with USD, EUR, GBP, TRY, BTC, ETH
+  - Settings persist to localStorage under key 'kur-cevirici-settings'
+  - 27 passing tests
