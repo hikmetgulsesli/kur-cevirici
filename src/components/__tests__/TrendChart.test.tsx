@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/vitest';
 import { TrendChart } from '../TrendChart';
 
 describe('TrendChart', () => {
@@ -79,11 +79,10 @@ describe('TrendChart', () => {
   });
 
   describe('Data Generation', () => {
-    it('should generate 7 data points for each currency', () => {
+    it('should generate 7 day labels in gg.aa format', () => {
       render(<TrendChart />);
-      // The chart renders 7 points via Recharts - we verify by checking the component
-      // doesn't throw and renders correctly
-      expect(screen.getByRole('tabpanel')).toBeInTheDocument();
+      const dayLabels = screen.getAllByText(/^\d{2}\.\d{2}$/);
+      expect(dayLabels).toHaveLength(7);
     });
   });
 

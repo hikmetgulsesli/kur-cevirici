@@ -63,14 +63,6 @@ function generateTrendData(currency: string): ChartDataPoint[] {
 const CURRENCIES = ['BTC', 'ETH', 'USD', 'EUR', 'GBP'] as const;
 type CurrencyType = typeof CURRENCIES[number];
 
-const CURRENCY_LABELS: Record<CurrencyType, string> = {
-  BTC: 'BTC',
-  ETH: 'ETH',
-  USD: 'USD',
-  EUR: 'EUR',
-  GBP: 'GBP',
-};
-
 interface CustomTooltipPayload {
   value: number;
 }
@@ -99,8 +91,10 @@ function CustomTooltip({ active, payload, label, chartData }: CustomTooltipProps
 
 export function TrendChart({ baseCurrency = 'BTC' }: TrendChartProps) {
   const [selectedCurrency, setSelectedCurrency] = useState<CurrencyType>(
-    (CURRENCIES.includes(baseCurrency as CurrencyType) ? baseCurrency : 'BTC') as CurrencyType
+    CURRENCIES.find((c) => c === baseCurrency) ?? 'BTC'
   );
+  
+  const chartId = useMemo(() => `chart-panel-${selectedCurrency.toLowerCase()}`, [selectedCurrency]);
   
   const data = useMemo(() => generateTrendData(selectedCurrency), [selectedCurrency]);
   
@@ -118,17 +112,25 @@ export function TrendChart({ baseCurrency = 'BTC' }: TrendChartProps) {
               key={currency}
               type="button"
               role="tab"
+              id={`${currency}-tab`}
               aria-selected={selectedCurrency === currency}
+              aria-controls={chartId}
               className={`currency-tab ${selectedCurrency === currency ? 'active' : ''}`}
               onClick={() => handleCurrencyChange(currency)}
             >
-              {CURRENCY_LABELS[currency]}
+              {currency}
             </button>
           ))}
         </div>
       </header>
       
-      <div className="chart-wrapper" role="tabpanel" aria-label={`${selectedCurrency} 7 gunluk trend grafigi`}>
+      <div
+        className="chart-wrapper"
+        role="tabpanel"
+        id={chartId}
+        aria-labelledby={`${selectedCurrency}-tab`}
+        aria-label={`${selectedCurrency} 7 gunluk trend grafigi`}
+      >
         <ResponsiveContainer width="100%" height={200}>
           <LineChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
             <XAxis
